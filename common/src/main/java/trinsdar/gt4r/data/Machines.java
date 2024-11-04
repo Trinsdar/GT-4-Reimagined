@@ -1,12 +1,6 @@
 package trinsdar.gt4r.data;
 
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreBlocks;
-import io.github.gregtechintergalactical.gtcore.data.GTCoreMaterials;
-import io.github.gregtechintergalactical.gtcore.machine.DrumMachine;
-import io.github.gregtechintergalactical.gtcore.machine.LockerMachine;
-import io.github.gregtechintergalactical.gtcore.machine.MaterialMachine;
-import io.github.gregtechintergalactical.gtcore.machine.WorkbenchMachine;
 import muramasa.antimatter.blockentity.single.BlockEntityTransformer;
 import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.machine.Tier;
@@ -19,6 +13,12 @@ import muramasa.antimatter.machine.types.TankMachine;
 import muramasa.antimatter.blockentity.single.BlockEntityDigitalTransformer;
 import muramasa.antimatter.util.Utils;
 import net.minecraft.ChatFormatting;
+import org.gtreimagined.gtcore.data.GTCoreBlocks;
+import org.gtreimagined.gtcore.data.GTCoreMaterials;
+import org.gtreimagined.gtcore.machine.DrumMachine;
+import org.gtreimagined.gtcore.machine.LockerMachine;
+import org.gtreimagined.gtcore.machine.MaterialMachine;
+import org.gtreimagined.gtcore.machine.WorkbenchMachine;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.BlockBatBox;
 import trinsdar.gt4r.block.BlockRedstoneMachine;

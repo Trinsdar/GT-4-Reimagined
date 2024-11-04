@@ -1,10 +1,10 @@
 package trinsdar.gt4r.data;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreItems;
 import muramasa.antimatter.capability.item.EmptyContainer;
 import muramasa.antimatter.gui.SlotType;
 import muramasa.antimatter.gui.slot.AbstractSlot;
 import muramasa.antimatter.gui.slot.SlotFake;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.gui.slots.SlotCoil;
 import trinsdar.gt4r.gui.slots.SlotData;
 import trinsdar.gt4r.gui.slots.SlotFluidDisplaySettable;

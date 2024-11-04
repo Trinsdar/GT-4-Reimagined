@@ -14,10 +14,10 @@ import net.minecraft.tags.BiomeTags;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreBlocks.SHALE;
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreBlocks.SLATE;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.data.AntimatterStoneTypes.*;
+import static org.gtreimagined.gtcore.data.GTCoreBlocks.SHALE;
+import static org.gtreimagined.gtcore.data.GTCoreBlocks.SLATE;
 import static trinsdar.gt4r.data.GT4RData.*;
 import static trinsdar.gt4r.data.Materials.*;
 

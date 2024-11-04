@@ -1,6 +1,5 @@
 package trinsdar.gt4r.items;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreTools;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.material.MaterialTags;
 import muramasa.antimatter.tool.AntimatterItemTier;
@@ -17,6 +16,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import org.gtreimagined.gtcore.data.GTCoreTools;
 import org.jetbrains.annotations.Nullable;
 import tesseract.TesseractCapUtils;
 import tesseract.api.gt.IEnergyHandler;

@@ -1,10 +1,10 @@
 package trinsdar.gt4r.loader.machines;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreItems;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;

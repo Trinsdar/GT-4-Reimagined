@@ -1,7 +1,6 @@
 package trinsdar.gt4r.loader.machines;
 
 import earth.terrarium.botarium.common.fluid.base.FluidHolder;
-import io.github.gregtechintergalactical.gtcore.data.GTCoreTags;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.material.Material;
@@ -12,20 +11,21 @@ import muramasa.antimatter.util.AntimatterPlatformUtils;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import org.gtreimagined.gtcore.data.GTCoreTags;
 import tesseract.FluidPlatformUtils;
 import tesseract.TesseractGraphWrappers;
 import trinsdar.gt4r.data.GT4RData;
 
 import java.util.List;
 
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreItems.Plantball;
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreItems.StickyResin;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
 import static net.minecraft.world.item.Items.*;
 import static net.minecraft.world.item.Items.DIRT;
 import static net.minecraft.world.level.block.Blocks.GRASS_BLOCK;
+import static org.gtreimagined.gtcore.data.GTCoreItems.Plantball;
+import static org.gtreimagined.gtcore.data.GTCoreItems.StickyResin;
 import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.CENTRIFUGE;
 

@@ -1,6 +1,5 @@
 package trinsdar.gt4r.loader.crafting;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreTools;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.data.AntimatterDefaultTools;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
@@ -12,6 +11,7 @@ import muramasa.antimatter.tool.IAntimatterTool;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.ItemStack;
+import org.gtreimagined.gtcore.data.GTCoreTools;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.data.CustomTags;
@@ -23,10 +23,10 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 import static com.google.common.collect.ImmutableMap.of;
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreItems.MotorLV;
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreTags.*;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.Diamond;
+import static org.gtreimagined.gtcore.data.GTCoreItems.MotorLV;
+import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static trinsdar.gt4r.data.CustomTags.*;
 import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.ToolTypes.ROCK_CUTTER;

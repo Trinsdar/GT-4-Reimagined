@@ -1,10 +1,9 @@
 package trinsdar.gt4r.data;
 
 import com.google.common.collect.ImmutableMap;
-import io.github.gregtechintergalactical.gtcore.data.GTCoreTags;
-import io.github.gregtechintergalactical.gtcore.item.ItemPowerUnit;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import muramasa.antimatter.AntimatterAPI;
+import muramasa.antimatter.Ref;
 import muramasa.antimatter.data.AntimatterDefaultTools;
 import muramasa.antimatter.item.ItemBattery;
 import muramasa.antimatter.material.Material;
@@ -18,6 +17,8 @@ import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import org.gtreimagined.gtcore.data.GTCoreTags;
+import org.gtreimagined.gtcore.item.ItemPowerUnit;
 import org.jetbrains.annotations.NotNull;
 import tesseract.TesseractCapUtils;
 import tesseract.api.gt.IEnergyHandlerItem;
@@ -45,9 +46,9 @@ public class ToolTypes {
 
         @Override
         public Map<String, Object> getFromResult(@NotNull ItemStack stack) {
-            CompoundTag nbt = stack.getTag().getCompound(muramasa.antimatter.Ref.TAG_TOOL_DATA);
-            Material primary = AntimatterAPI.get(Material.class, nbt.getString(muramasa.antimatter.Ref.KEY_TOOL_DATA_PRIMARY_MATERIAL));
-            Material secondary = AntimatterAPI.get(Material.class, nbt.getString(muramasa.antimatter.Ref.KEY_TOOL_DATA_SECONDARY_MATERIAL));
+            CompoundTag nbt = stack.getTag().getCompound(Ref.TAG_TOOL_DATA);
+            Material primary = AntimatterAPI.get(Material.class, nbt.getString(Ref.KEY_TOOL_DATA_PRIMARY_MATERIAL));
+            Material secondary = AntimatterAPI.get(Material.class, nbt.getString(Ref.KEY_TOOL_DATA_SECONDARY_MATERIAL));
             return ImmutableMap.of("primary", primary, "secondary", secondary, "energy", getEnergy(stack).getA(), "maxEnergy", getEnergy(stack).getB());
         }
     });
@@ -79,9 +80,9 @@ public class ToolTypes {
 
         @Override
         public Map<String, Object> getFromResult(@NotNull ItemStack stack) {
-            CompoundTag nbt = stack.getTag().getCompound(muramasa.antimatter.Ref.TAG_TOOL_DATA);
-            Material primary = AntimatterAPI.get(Material.class, nbt.getString(muramasa.antimatter.Ref.KEY_TOOL_DATA_PRIMARY_MATERIAL));
-            Material secondary = AntimatterAPI.get(Material.class, nbt.getString(muramasa.antimatter.Ref.KEY_TOOL_DATA_SECONDARY_MATERIAL));
+            CompoundTag nbt = stack.getTag().getCompound(Ref.TAG_TOOL_DATA);
+            Material primary = AntimatterAPI.get(Material.class, nbt.getString(Ref.KEY_TOOL_DATA_PRIMARY_MATERIAL));
+            Material secondary = AntimatterAPI.get(Material.class, nbt.getString(Ref.KEY_TOOL_DATA_SECONDARY_MATERIAL));
             return ImmutableMap.of("primary", primary, "secondary", secondary, "energy", getEnergy(stack).getA(), "maxEnergy", getEnergy(stack).getB());
         }
     });
@@ -106,15 +107,15 @@ public class ToolTypes {
     private static ItemStack getBrokenItem(ItemStack tool, ItemLike broken){
         ItemStack powerUnit = new ItemStack(broken);
         Tuple<Long, Long> tuple = getEnergy(tool);
-        CompoundTag dataTag = powerUnit.getOrCreateTagElement(muramasa.antimatter.Ref.TAG_ITEM_ENERGY_DATA);
+        CompoundTag dataTag = powerUnit.getOrCreateTagElement(Ref.TAG_ITEM_ENERGY_DATA);
         IEnergyHandlerItem handler = TesseractCapUtils.INSTANCE.getEnergyHandlerItem(powerUnit).orElse(null);
         if (handler != null){
             handler.setEnergy(tuple.getA());
             handler.setCapacity(tuple.getB());
             powerUnit = handler.getContainer().getItemStack();
         } else {
-            dataTag.putLong(muramasa.antimatter.Ref.KEY_ITEM_ENERGY, tuple.getA());
-            dataTag.putLong(muramasa.antimatter.Ref.KEY_ITEM_MAX_ENERGY, tuple.getB());
+            dataTag.putLong(Ref.KEY_ITEM_ENERGY, tuple.getA());
+            dataTag.putLong(Ref.KEY_ITEM_MAX_ENERGY, tuple.getB());
         }
         return powerUnit;
     }

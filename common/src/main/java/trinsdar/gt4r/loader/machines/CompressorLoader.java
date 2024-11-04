@@ -1,18 +1,18 @@
 package trinsdar.gt4r.loader.machines;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreItems;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.tags.ItemTags;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.CustomTags;
 import muramasa.antimatter.data.ForgeCTags;
 import trinsdar.gt4r.data.GT4RData;
 
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreItems.CompressedFireClay;
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreItems.Plantball;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
+import static org.gtreimagined.gtcore.data.GTCoreItems.CompressedFireClay;
+import static org.gtreimagined.gtcore.data.GTCoreItems.Plantball;
 import static trinsdar.gt4r.data.CustomTags.CORALS;
 import static trinsdar.gt4r.data.CustomTags.VINES;
 import static trinsdar.gt4r.data.Materials.*;

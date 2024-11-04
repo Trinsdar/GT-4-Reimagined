@@ -24,7 +24,6 @@ import trinsdar.gt4r.data.GT4RData;
 import java.util.function.Consumer;
 
 import static com.google.common.collect.ImmutableMap.of;
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreItems.StickyResin;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.Coal;
 import static muramasa.antimatter.data.AntimatterMaterials.Stone;

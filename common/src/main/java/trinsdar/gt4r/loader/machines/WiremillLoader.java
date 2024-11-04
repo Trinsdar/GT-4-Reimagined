@@ -1,12 +1,12 @@
 package trinsdar.gt4r.loader.machines;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreItems;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.pipe.PipeSize;
 import muramasa.antimatter.pipe.types.Wire;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.GT4RData;
 
 import static muramasa.antimatter.data.AntimatterMaterials.Charcoal;

@@ -1,8 +1,8 @@
 package trinsdar.gt4r.loader.multi;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreItems;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.GT4RData;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;

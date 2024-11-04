@@ -2,7 +2,6 @@ package trinsdar.gt4r.loader.crafting;
 
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
-import io.github.gregtechintergalactical.gtcore.block.RedstoneWire;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.AntimatterConfig;
 import muramasa.antimatter.data.AntimatterDefaultTools;
@@ -15,6 +14,7 @@ import muramasa.antimatter.util.AntimatterPlatformUtils;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import org.gtreimagined.gtcore.block.RedstoneWire;
 import trinsdar.gt4r.GT4RRef;
 
 import java.util.Map;

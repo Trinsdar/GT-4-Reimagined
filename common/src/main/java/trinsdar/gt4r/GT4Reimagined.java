@@ -1,7 +1,5 @@
 package trinsdar.gt4r;
 
-import io.github.gregtechintergalactical.gtcore.data.GTCoreItems;
-import io.github.gregtechintergalactical.gtcore.item.ItemPowerUnit;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.datagen.AntimatterDynamics;
@@ -18,6 +16,8 @@ import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.gtreimagined.gtcore.data.GTCoreItems;
+import org.gtreimagined.gtcore.item.ItemPowerUnit;
 import trinsdar.gt4r.config.OreConfigHandler;
 import trinsdar.gt4r.data.*;
 import trinsdar.gt4r.data.client.ScreenFactories;

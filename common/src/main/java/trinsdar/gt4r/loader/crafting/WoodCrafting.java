@@ -1,6 +1,5 @@
 package trinsdar.gt4r.loader.crafting;
 
-import io.github.gregtechintergalactical.gtcore.GTCoreConfig;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;
 import muramasa.antimatter.util.AntimatterPlatformUtils;
@@ -12,6 +11,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import org.gtreimagined.gtcore.GTCoreConfig;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 

@@ -1,8 +1,6 @@
 package trinsdar.gt4r.data;
 
 import earth.terrarium.botarium.common.registry.fluid.FluidProperties;
-import io.github.gregtechintergalactical.gtcore.data.GTCoreTools;
-import io.github.gregtechintergalactical.gtcore.item.ItemPowerUnit;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.Ref;
 import muramasa.antimatter.cover.CoverFactory;
@@ -36,6 +34,8 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
+import org.gtreimagined.gtcore.data.GTCoreTools;
+import org.gtreimagined.gtcore.item.ItemPowerUnit;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.BlockCasing;
 import trinsdar.gt4r.block.BlockFakeCasing;

@@ -33,42 +33,36 @@ dependencies{
         exclude(group: "net.fabricmc.fabric-api")
         exclude(group: "com.github.LlamaLad7")
     }
-    modImplementation("net.feltmc:felt-recipe-api:1.0.0-${project.minecraft_version}"){
+    modImplementation("net.feltmc:felt-recipe-api:1.0.1"){
         exclude(group: "net.fabricmc.fabric-api")
         exclude(group: "com.terraformersmc")
     }
-    modImplementation("net.feltmc:felt-player-item-api:1.0.0-${project.minecraft_version}"){
+    modImplementation("net.feltmc:felt-player-item-api:1.1.0"){
         exclude(group: "net.fabricmc.fabric-api")
         exclude(group: "com.terraformersmc")
     }
-    modImplementation("net.feltmc:felt-enchanting-api:1.0.0-${project.minecraft_version}") { transitive false }
-    modImplementation("earth.terrarium:botarium-fabric-1.18.2:${project.botarium_version}")
-    modImplementation(include("com.github.Trinsdar.Felt-API:felt-durability-item-api:c4015755f9")){ transitive false }
+    modImplementation("net.feltmc:felt-enchanting-api:1.1.0") { transitive false }
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
-    /*modImplementation("io.github.fabricators_of_create:Porting-Lib:1.1.310-beta+1.18.2-dev.${rootProject.port_lib_hash}"){
-        exclude(group: "net.fabricmc.fabric-api")
-    }*/
-    modImplementation("com.github.Trinsdar:ARRP:0.6.7-hotfix")
-    modImplementation "maven.modrinth:carbon-config:2ngFmmhP"
-    implementation("io.github.gregtechintergalactical:gtcore-fabric:${rootProject.gt_core_version}-${rootProject.minecraft_version}:dev"){
+    modImplementation("dev.trinsdar:arrp:0.6.7")
+    modImplementation(include("org.gt-reimagined:gtcore-fabric:${rootProject.gt_core_version}-${rootProject.minecraft_version}")){
         transitive = false
     }
-    include("io.github.gregtechintergalactical:gtcore-fabric:${rootProject.gt_core_version}-${rootProject.minecraft_version}"){
-        transitive = false
-    }
+    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:3.1.0")
     modRuntimeOnly("com.gtnewhorizon.structurelib:structurelib-fabric:${project.structurelib_version}-${project.minecraft_version}")
-    modRuntimeOnly "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.18.2:${project.resourcefullib_version}"
     modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rootProject.rei_version}"
-    modCompileOnly("mezz.jei:jei-${rootProject.minecraft_version}-common-api:${rootProject.jei_version}")
-    modCompileOnly("mezz.jei:jei-${rootProject.minecraft_version}-fabric-api:${rootProject.jei_version}")
+    modCompileOnly("mezz.jei:jei-${rootProject.minecraft_version}-fabric:${rootProject.jei_version}")
     modImplementation("teamreborn:energy:${rootProject.energy_version}") {
         transitive = false
     }
     modRuntimeOnly("com.terraformersmc:modmenu:${rootProject.mod_menu_version}") {
         exclude(group: "net.fabricmc.fabric-api")
     }
+    modImplementation "maven.modrinth:carbon-config:${project.carbon_config_fabric_version}"
+    modImplementation("earth.terrarium:botarium-fabric-1.18.2:${project.botarium_version}")
+    modRuntimeOnly "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.18.2:${project.resourcefullib_version}"
     modRuntimeOnly("dev.latvian.mods:kubejs-fabric:${rootProject.kubejs_version}")
+
 }
 
 architectury {

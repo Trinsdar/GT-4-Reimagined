@@ -13,8 +13,8 @@ import net.minecraft.world.item.Items;
 
 import java.util.UUID;
 
-import static io.github.gregtechintergalactical.gtcore.data.GTCoreTools.DRILL;
 import static muramasa.antimatter.data.AntimatterDefaultTools.PICKAXE;
+import static org.gtreimagined.gtcore.data.GTCoreTools.DRILL;
 
 public class CommonEvents {
     @SuppressWarnings("NoTranslation")

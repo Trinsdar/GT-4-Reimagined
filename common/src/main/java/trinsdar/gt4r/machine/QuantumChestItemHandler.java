@@ -1,9 +1,9 @@
 package trinsdar.gt4r.machine;
 
 
-import io.github.gregtechintergalactical.gtcore.data.SlotTypes;
-import io.github.gregtechintergalactical.gtcore.machine.InfiniteSlotTrackedHandler;
 import muramasa.antimatter.capability.machine.MachineItemHandler;
+import org.gtreimagined.gtcore.data.SlotTypes;
+import org.gtreimagined.gtcore.machine.InfiniteSlotTrackedHandler;
 import trinsdar.gt4r.blockentity.single.BlockEntityQuantumChest;
 
 public class QuantumChestItemHandler extends MachineItemHandler<BlockEntityQuantumChest> {

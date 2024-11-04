@@ -1,9 +1,9 @@
 package trinsdar.gt4r.items;
 
-import io.github.gregtechintergalactical.gtcore.item.ItemPowerUnit;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.texture.Texture;
+import org.gtreimagined.gtcore.item.ItemPowerUnit;
 
 import java.util.ArrayList;
 import java.util.List;

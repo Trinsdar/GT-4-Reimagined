@@ -1,12 +1,12 @@
 package trinsdar.gt4r.data;
 
-import io.github.gregtechintergalactical.gtcore.data.RecipeBuilders.SteamBuilder;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.recipe.IRecipe;
 import muramasa.antimatter.recipe.RecipeProxies;
 import muramasa.antimatter.recipe.map.RecipeBuilder;
 import muramasa.antimatter.recipe.map.RecipeMap;
 import net.minecraft.world.item.Items;
+import org.gtreimagined.gtcore.data.RecipeBuilders.SteamBuilder;
 import trinsdar.gt4r.GT4RRef;
 
 import static muramasa.antimatter.machine.Tier.MV;
