@@ -7,11 +7,13 @@ import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.pipe.PipeSize;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
+import muramasa.antimatter.util.Utils;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.nbt.CompoundTag;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.GT4RRef;
 import muramasa.antimatter.data.ForgeCTags;
 import trinsdar.gt4r.data.GT4RData;
@@ -157,12 +159,7 @@ public class Parts {
         for (Material it : in){
             for (Material im : b){
                 for (Material ib : tz){
-                    CompoundTag nbt = new CompoundTag();
-                    nbt.putString("tm", it.getId());
-                    nbt.putString("mm", im.getId());
-                    nbt.putString("bm", ib.getId());
-                    ItemStack stack = new ItemStack(MixedMetal, 1);
-                    stack.getOrCreateTag().put(muramasa.antimatter.Ref.TAG_TOOL_DATA, nbt);
+                    ItemStack stack = MixedMetalIngot.getMixedMetalIngot(it, im, ib);
                     provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
                             stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
                 }
@@ -173,12 +170,7 @@ public class Parts {
         for (Material it : is){
             for (Material im : b){
                 for (Material ib : tz){
-                    CompoundTag nbt = new CompoundTag();
-                    nbt.putString("tm", it.getId());
-                    nbt.putString("mm", im.getId());
-                    nbt.putString("bm", ib.getId());
-                    ItemStack stack = new ItemStack(MixedMetal, 2);
-                    stack.getOrCreateTag().put(muramasa.antimatter.Ref.TAG_TOOL_DATA, nbt);
+                    ItemStack stack = Utils.ca(2, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
                     provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
                             stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
                 }
@@ -187,12 +179,7 @@ public class Parts {
         for (Material it : is){
             for (Material im : b){
                 for (Material ib : ase){
-                    CompoundTag nbt = new CompoundTag();
-                    nbt.putString("tm", it.getId());
-                    nbt.putString("mm", im.getId());
-                    nbt.putString("bm", ib.getId());
-                    ItemStack stack = new ItemStack(MixedMetal, 3);
-                    stack.getOrCreateTag().put(muramasa.antimatter.Ref.TAG_TOOL_DATA, nbt);
+                    ItemStack stack = Utils.ca(3, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
                     provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
                             stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
                 }
@@ -202,12 +189,7 @@ public class Parts {
         for (Material it : st){
             for (Material im : b){
                 for (Material ib : tz){
-                    CompoundTag nbt = new CompoundTag();
-                    nbt.putString("tm", it.getId());
-                    nbt.putString("mm", im.getId());
-                    nbt.putString("bm", ib.getId());
-                    ItemStack stack = new ItemStack(MixedMetal, 3);
-                    stack.getOrCreateTag().put(muramasa.antimatter.Ref.TAG_TOOL_DATA, nbt);
+                    ItemStack stack = Utils.ca(3, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
                     provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
                             stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
                 }
@@ -216,12 +198,7 @@ public class Parts {
         for (Material it : st){
             for (Material im : b){
                 for (Material ib : ase){
-                    CompoundTag nbt = new CompoundTag();
-                    nbt.putString("tm", it.getId());
-                    nbt.putString("mm", im.getId());
-                    nbt.putString("bm", ib.getId());
-                    ItemStack stack = new ItemStack(MixedMetal, 4);
-                    stack.getOrCreateTag().put(muramasa.antimatter.Ref.TAG_TOOL_DATA, nbt);
+                    ItemStack stack = Utils.ca(4, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
                     provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
                             stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
                 }
@@ -229,24 +206,14 @@ public class Parts {
         }
         for (Material im : b){
             for (Material ib : tz){
-                CompoundTag nbt = new CompoundTag();
-                nbt.putString("tm", TungstenSteel.getId());
-                nbt.putString("mm", im.getId());
-                nbt.putString("bm", ib.getId());
-                ItemStack stack = new ItemStack(MixedMetal, 5);
-                stack.getOrCreateTag().put(muramasa.antimatter.Ref.TAG_TOOL_DATA, nbt);
+                ItemStack stack = Utils.ca(5, MixedMetalIngot.getMixedMetalIngot(TungstenSteel, im, ib));
                 provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_tungstensteel_" + im.getId() + "_" + ib.getId(), "parts",
                         stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(TungstenSteel), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
             }
         }
         for (Material im : b){
             for (Material ib : ase){
-                CompoundTag nbt = new CompoundTag();
-                nbt.putString("tm", TungstenSteel.getId());
-                nbt.putString("mm", im.getId());
-                nbt.putString("bm", ib.getId());
-                ItemStack stack = new ItemStack(MixedMetal, 6);
-                stack.getOrCreateTag().put(muramasa.antimatter.Ref.TAG_TOOL_DATA, nbt);
+                ItemStack stack = Utils.ca(6, MixedMetalIngot.getMixedMetalIngot(TungstenSteel, im, ib));
                 provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_tungstensteel_" + im.getId() + "_" + ib.getId(), "parts",
                         stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(TungstenSteel), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
             }

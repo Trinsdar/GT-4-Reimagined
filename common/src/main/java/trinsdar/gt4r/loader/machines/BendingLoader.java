@@ -4,6 +4,8 @@ import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import org.gtreimagined.gtcore.data.GTCoreItems;
+import org.gtreimagined.gtcore.data.GTCoreTags;
 import trinsdar.gt4r.data.GT4RData;
 import trinsdar.gt4r.data.TierMaps;
 
@@ -29,7 +31,7 @@ public class BendingLoader {
             if (!m.has(ROD)) return;
             PLATE_BENDER.RB().ii(ROD.getMaterialIngredient(m, 1), TierMaps.INT_CIRCUITS.get(1)).io(RING.get(m, 2)).add(m.getId() + "_ring", duration, 24);
         });
-        PLATE_BENDER.RB().ii(RecipeIngredient.of(GT4RData.MixedMetal, 1)).io(new ItemStack(GT4RData.AdvancedAlloy)).add("advanced_alloy",100, 8);
+        PLATE_BENDER.RB().ii(RecipeIngredient.of(GTCoreTags.INGOTS_MIXED_METAL, 1).setIgnoreNbt()).io(new ItemStack(GTCoreItems.AdvancedAlloy)).add("advanced_alloy",100, 8);
         PLATE_BENDER.RB().ii(PLATE.getMaterialIngredient(Tin, 2)).io(new ItemStack(GT4RData.CellTin)).add("tin_cell",200, 8);
         PLATE_BENDER.RB().ii(PLATE.getMaterialIngredient(Iron, 3)).io(new ItemStack(Items.BUCKET)).add("bucket",200, 4);
     }

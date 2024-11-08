@@ -23,10 +23,6 @@ public class BlockCrafting {
     public static void loadRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider) {
         provider.addStackRecipe(output, GT4RRef.ID, "firebricks", "blocks",
                 new ItemStack(FIRE_BRICKS), of('F', GTCoreItems.FireBrick), "FF", "FF");
-        provider.addStackRecipe(output, GT4RRef.ID, "reinforce_glass_v", "blocks",
-                new ItemStack(REINFORCED_GLASS, 7), of('G', ForgeCTags.GLASS, 'A', AdvancedAlloy), "GAG", "GGG", "GAG");
-        provider.addStackRecipe(output, GT4RRef.ID, "reinforce_glass_h", "blocks",
-                new ItemStack(REINFORCED_GLASS, 7), of('G', ForgeCTags.GLASS, 'A', AdvancedAlloy), "GGG", "AGA", "GGG");
         provider.addStackRecipe(output, GT4RRef.ID, "standard_machine", "blocks",
                 new ItemStack(STANDARD_MACHINE_CASING, 4), of('I', PLATES_WROUGHT_ALUMINIUM, 'C', CIRCUITS_BASIC, 'M', CustomTags.MACHINE_HULLS_BASIC), "III", "CMC", "III");
         provider.addStackRecipe(output, GT4RRef.ID, "reinforced_machine", "blocks",

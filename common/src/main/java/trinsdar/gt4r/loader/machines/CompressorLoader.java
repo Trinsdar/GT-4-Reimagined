@@ -5,6 +5,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.tags.ItemTags;
 import org.gtreimagined.gtcore.data.GTCoreItems;
+import org.gtreimagined.gtcore.data.GTCoreTags;
 import trinsdar.gt4r.data.CustomTags;
 import muramasa.antimatter.data.ForgeCTags;
 import trinsdar.gt4r.data.GT4RData;
@@ -34,7 +35,7 @@ public class CompressorLoader {
             }
         });
         COMPRESSOR.RB().ii(RecipeIngredient.of(GTCoreItems.CarbonMesh, 1)).io(PLATE.get(Carbon, 1)).add("carbon_plate",400, 2);
-        COMPRESSOR.RB().ii(RecipeIngredient.of(CustomTags.INGOTS_MIXED_METAL, 1).setIgnoreNbt()).io(new ItemStack(GT4RData.AdvancedAlloy)).add("advanced_alloy",400, 2);
+        COMPRESSOR.RB().ii(RecipeIngredient.of(GTCoreTags.INGOTS_MIXED_METAL, 1).setIgnoreNbt()).io(new ItemStack(GTCoreItems.AdvancedAlloy)).add("advanced_alloy",400, 2);
         COMPRESSOR.RB().ii(RecipeIngredient.of(Items.SNOWBALL, 1)).io(new ItemStack(Items.SNOW_BLOCK)).add("snow_block",400, 2);
         COMPRESSOR.RB().ii(DUST.getMaterialIngredient(Glowstone, 4)).io(new ItemStack(Items.GLOWSTONE)).add("glowstone",400, 2);
         COMPRESSOR.RB().ii(RecipeIngredient.of(Items.SNOW_BLOCK, 1)).io(new ItemStack(Items.ICE)).add("ice",400, 2);

@@ -68,7 +68,6 @@ public class GT4RItemTagProvider extends AntimatterItemTagProvider {
             this.tag(TagUtils.getForgelikeItemTag("stone_ores/amethyst")).add(AntimatterPlatformUtils.INSTANCE.getItemFromID(new ResourceLocation(GT4RRef.MOD_BLUEPOWER, "amethyst_ore")));
         }
 
-        this.tag(INGOTS_MIXED_METAL).add(MixedMetal);
         this.tag(TagUtils.getForgelikeItemTag("plates/constantan")).addTag(AntimatterMaterialTypes.PLATE.getMaterialTag(Cupronickel));
         this.tag(TagUtils.getForgelikeItemTag("ingots/constantan")).addTag(AntimatterMaterialTypes.INGOT.getMaterialTag(Cupronickel));
 

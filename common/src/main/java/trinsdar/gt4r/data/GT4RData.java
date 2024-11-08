@@ -132,8 +132,6 @@ public class GT4RData {
 
     public static ItemBasic<?> LavaFilter = new ItemBasic<>(GT4RRef.ID, "lava_filter", new Item.Properties().tab(Ref.TAB_ITEMS).defaultDurability(100));
 
-    public static ItemBasic<?> MixedMetal = new ItemMixedMetal();
-    public static ItemBasic<?> AdvancedAlloy = new ItemBasic<>(GT4RRef.ID,"advanced_alloy");
     public static ItemBasic<?> MachineParts = new ItemBasic<>(GT4RRef.ID, "machine_parts");
     public static ItemBasic<?> StorageDataOrb = new ItemStorageOrb(GT4RRef.ID, "storage_data_orb").tip("A High Capacity Data Storage");
 
