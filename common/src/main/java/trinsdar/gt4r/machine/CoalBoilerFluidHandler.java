@@ -8,7 +8,7 @@ import trinsdar.gt4r.blockentity.single.BlockEntityCoalBoiler;
 public class CoalBoilerFluidHandler extends MachineFluidHandler<BlockEntityCoalBoiler> {
 
     public CoalBoilerFluidHandler(BlockEntityCoalBoiler tile) {
-        super(tile, 16000, 1000 * (250 + tile.getMachineTier().getIntegerId()));
+        super(tile);
         tanks.put(FluidDirection.INPUT, FluidTanks.create(tile, SlotType.FL_IN, b -> {
             b.tank(16000);
             return b;

@@ -23,7 +23,7 @@ import trinsdar.gt4r.data.SlotTypes;
 public class BlockEntityDigitalTank extends BlockEntityTank<BlockEntityDigitalTank> {
     public BlockEntityDigitalTank(Machine<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
-        this.fluidHandler.set(() -> new MachineFluidHandler<BlockEntityDigitalTank>(this, 256000, 251000){
+        this.fluidHandler.set(() -> new MachineFluidHandler<>(this, 256000) {
             @Nullable
             @Override
             public FluidTanks getOutputTanks() {

@@ -13,7 +13,7 @@ public class BlockEntityQuantumTank extends BlockEntityTank<BlockEntityQuantumTa
 
     public BlockEntityQuantumTank(Machine<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
-        this.fluidHandler.set(() -> new MachineFluidHandler<BlockEntityQuantumTank>(this, Integer.MAX_VALUE, 265000){
+        this.fluidHandler.set(() -> new MachineFluidHandler<>(this, Integer.MAX_VALUE) {
             @Nullable
             @Override
             public FluidTanks getOutputTanks() {

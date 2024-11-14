@@ -10,13 +10,13 @@ import trinsdar.gt4r.data.CustomTags;
 import static muramasa.antimatter.machine.MachineFlag.GUI;
 
 public class UpgradeableFluidHandler<T extends BlockEntityMachine<T> & IUpgradeProvider> extends MachineFluidHandler<T> {
-    public UpgradeableFluidHandler(T tile, int capacity, int pressure) {
-        this(tile, capacity, pressure, tile.has(GUI) ? tile.getMachineType().getSlots(SlotType.FL_IN, tile.getMachineTier()).size() : 0,
+    public UpgradeableFluidHandler(T tile, int capacity) {
+        this(tile, capacity, tile.has(GUI) ? tile.getMachineType().getSlots(SlotType.FL_IN, tile.getMachineTier()).size() : 0,
                 tile.has(GUI) ? tile.getMachineType().getSlots(SlotType.FL_OUT, tile.getMachineTier()).size() : 0);
     }
 
-    public UpgradeableFluidHandler(T tile, int capacity, int pressure, int inputCount, int outputCount) {
-        super(tile, capacity, pressure, inputCount + 1, outputCount);
+    public UpgradeableFluidHandler(T tile, int capacity, int inputCount, int outputCount) {
+        super(tile, capacity, inputCount + 1, outputCount);
         tanks.put(FluidDirection.INPUT, FluidTanks.create(tile, SlotType.FL_IN, b -> {
             for (int i = 0; i < inputCount + 1; i++) {
                 if (i == inputCount){
@@ -30,6 +30,6 @@ public class UpgradeableFluidHandler<T extends BlockEntityMachine<T> & IUpgradeP
     }
 
     public UpgradeableFluidHandler(T tile) {
-        this(tile, 32000, 1000 * (250 + tile.getMachineTier().getIntegerId()));
+        this(tile, 32000);
     }
 }

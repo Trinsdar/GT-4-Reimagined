@@ -122,11 +122,11 @@ public class BlockEntityHeatExchanger extends BlockEntityMachine<BlockEntityHeat
     public static class HeatExchangerFluidHandler extends MachineFluidHandler<BlockEntityHeatExchanger>{
 
         public HeatExchangerFluidHandler(BlockEntityHeatExchanger tile) {
-            this(tile, 8000 * (1 + tile.getMachineTier().getIntegerId()), 1000 * (250 + tile.getMachineTier().getIntegerId()));
+            this(tile, 8000 * (1 + tile.getMachineTier().getIntegerId()));
         }
 
-        public HeatExchangerFluidHandler(BlockEntityHeatExchanger tile, int capacity, int pressure) {
-            super(tile, capacity, pressure);
+        public HeatExchangerFluidHandler(BlockEntityHeatExchanger tile, int capacity) {
+            super(tile, capacity);
             tanks.put(FluidDirection.INPUT, FluidTanks.create(tile, SlotType.FL_IN, b -> {
                 for (int i = 0; i < 2; i++) {
                     Predicate<FluidHolder> validator = f -> {
