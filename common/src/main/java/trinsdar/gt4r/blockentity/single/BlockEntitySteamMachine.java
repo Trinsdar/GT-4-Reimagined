@@ -2,6 +2,7 @@ package trinsdar.gt4r.blockentity.single;
 
 import earth.terrarium.botarium.common.fluid.base.FluidHolder;
 import muramasa.antimatter.blockentity.BlockEntityMachine;
+import muramasa.antimatter.capability.machine.MachineFluidHandler;
 import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import muramasa.antimatter.machine.MachineFlag;
 import muramasa.antimatter.machine.Tier;
@@ -23,6 +24,7 @@ public class BlockEntitySteamMachine extends BlockEntityMachine<BlockEntitySteam
 
     public BlockEntitySteamMachine(Machine<?> type, BlockPos pos, BlockState state) {
         super(type, pos, state);
+        fluidHandler.set(() -> new MachineFluidHandler<>(this, 64000));
         recipeHandler.set(() -> new SteamMachineRecipeHandler(this));
     }
 
