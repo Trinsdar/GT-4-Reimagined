@@ -1,34 +1,50 @@
-archivesBaseName = "${rootProject.archive_base_name}-common"
-version = "${rootProject.mod_version}-${rootProject.minecraft_version}"
+plugins {
+    id "fabric-loom"
+    id 'xyz.wagyourtail.unimined.expect-platform' version '1.0.5'
+}
+archivesBaseName = "${project.archive_base_name}-common"
+
+def accessWidenerFile = project(":antimatter-common").file("src/main/resources/antimatter.accesswidener")
 
 loom {
-    accessWidenerPath = file("../AntimatterAPI/common/src/main/resources/antimatter.accesswidener")
+    accessWidenerPath = accessWidenerFile
 }
 
 
 dependencies{
-    modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-    compileOnly("com.blamejared.crafttweaker:CraftTweaker-common-1.18.2:${rootProject.crafttweaker_version}")
-    modCompileOnly("dev.latvian.mods:kubejs-fabric:${rootProject.kubejs_version}")
-    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.2.0-beta.11"))
-    implementation(project(path: ":tesseract-common", configuration: "namedElements"))
-    implementation(project(path: ":antimatter-common", configuration: "namedElements"))
-    implementation("org.gt-reimagined:gtcore-common:${rootProject.gt_core_version}-${rootProject.minecraft_version}"){
-        transitive = false
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-${project.minecraft_version}:${project.mappings_version}@zip")
     }
-    modImplementation("com.gtnewhorizon.structurelib:structurelib-common:${project.structurelib_version}-${project.minecraft_version}")
-    modImplementation("io.github.fabricators_of_create:Porting-Lib:${rootProject.port_lib_version}-beta+1.18.2-stable"){
+    implementation(expectPlatform.annotationsDep)
+    //subprojects
+    implementation(project(":tesseract-common"))
+    implementation(project(":antimatter-common"))
+
+    //gt-reimagined-lib deps
+    compileOnly("com.blamejared.crafttweaker:CraftTweaker-common-1.18.2:${project.crafttweaker_version}")
+    modCompileOnly("dev.latvian.mods:kubejs-fabric:${project.kubejs_version}")
+    modImplementation("io.github.fabricators_of_create:Porting-Lib:${project.port_lib_version}-beta+1.18.2-stable"){
         exclude(group: "net.fabricmc.fabric-api")
         exclude(group: "com.github.LlamaLad7")
     }
+    modImplementation("net.feltmc:felt-player-item-api:1.1.0"){
+        transitive = false
+    }
     modImplementation("net.feltmc:felt-enchanting-api:1.1.0") { transitive false }
-    modImplementation("earth.terrarium:botarium-common-1.18.2:${project.botarium_version}")
-    modImplementation "maven.modrinth:carbon-config:2ngFmmhP"
+    implementation(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
+    modCompileOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+    modCompileOnly("mezz.jei:jei-${project.minecraft_version}-fabric:${project.jei_version}")
     modCompileOnly("dev.trinsdar:arrp:0.6.7")
-    modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:${rootProject.rei_version}"
-    modCompileOnly("mezz.jei:jei-${rootProject.minecraft_version}-common-api:${rootProject.jei_version}")
-}
+    implementation("org.gt-reimagined:structurelib-common:${project.structurelib_version}-${project.minecraft_version}")
+    modImplementation "maven.modrinth:carbon-config:${project.carbon_config_fabric_version}"
+    modImplementation("earth.terrarium:botarium-fabric-1.18.2:${project.botarium_version}")
+    modImplementation "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.18.2:${project.resourcefullib_version}"
 
-architectury {
-    common("forge", "fabric")
+    //gt4r deps
+    implementation("org.gt-reimagined:gtcore-common:${project.gt_core_version}-${project.minecraft_version}") {
+        transitive = false
+
+    }
 }

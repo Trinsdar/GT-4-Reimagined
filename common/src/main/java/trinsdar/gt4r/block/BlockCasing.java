@@ -7,8 +7,6 @@ import muramasa.antimatter.datagen.providers.AntimatterItemModelProvider;
 import muramasa.antimatter.dynamic.BlockDynamic;
 import muramasa.antimatter.registration.ITextureProvider;
 import muramasa.antimatter.texture.Texture;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
@@ -18,6 +16,8 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import trinsdar.gt4r.data.GT4RData;
+import xyz.wagyourtail.unimined.expect.annotation.Environment;
+import xyz.wagyourtail.unimined.expect.annotation.Environment.EnvType;
 
 public class BlockCasing extends BlockDynamic {
 

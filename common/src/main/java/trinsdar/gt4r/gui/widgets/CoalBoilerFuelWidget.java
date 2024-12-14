@@ -10,12 +10,12 @@ import muramasa.antimatter.gui.widget.WidgetSupplier;
 import muramasa.antimatter.integration.jeirei.AntimatterJEIREIPlugin;
 import muramasa.antimatter.mixin.client.AbstractContainerScreenAccessor;
 import muramasa.antimatter.blockentity.BlockEntityMachine;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.TextComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import trinsdar.gt4r.blockentity.single.BlockEntityCoalBoiler;
+import xyz.wagyourtail.unimined.expect.annotation.Environment;
+import xyz.wagyourtail.unimined.expect.annotation.Environment.EnvType;
 
 public class CoalBoilerFuelWidget extends Widget {
     private int fuel = 0, maxFuel = 0;

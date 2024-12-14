@@ -14,7 +14,7 @@ public class BlockEntityMacerator extends BlockEntityUpgradeableMachine<BlockEnt
         super(type, pos, state);
         recipeHandler.set(() -> new MachineRecipeHandler<>(this){
             @Override
-            protected IRecipeMap getRecipeMap() {
+            public IRecipeMap getRecipeMap() {
                 if (tile.getMachineTier() == LV) return RecipeMaps.MACERATOR;
                 return super.getRecipeMap();
             }

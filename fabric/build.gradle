@@ -1,11 +1,18 @@
-archivesBaseName = "${rootProject.archive_base_name}-fabric"
-version = "${rootProject.mod_version}-${rootProject.minecraft_version}"
+import xyz.wagyourtail.unimined.expect.task.ExpectPlatformJar
 
-def generatedResources = file("src/generated/resources")
+plugins {
+    id "fabric-loom"
+    id 'xyz.wagyourtail.unimined.expect-platform' version '1.0.5'
+}
+archivesBaseName = "${project.archive_base_name}-fabric"
+
 def accessWidenerFile = project(":antimatter-common").file("src/main/resources/antimatter.accesswidener")
 
 loom {
     accessWidenerPath = accessWidenerFile
+    mixin {
+        defaultRefmapName = "gt4r.refmap.json"
+    }
 }
 
 repositories {
@@ -14,21 +21,20 @@ repositories {
     }
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDir generatedResources
-        }
-    }
-}
-
 dependencies{
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.layered() {
+        officialMojangMappings()
+        parchment("org.parchmentmc.data:parchment-${project.minecraft_version}:${project.mappings_version}@zip")
+    }
+    implementation(expectPlatform.annotationsDep)
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-    common(project(path: ":tesseract-common", configuration: "namedElements")) { transitive false }
-    common(project(path: ":antimatter-common", configuration: "namedElements")) { transitive false }
-    implementation(project(path: ":tesseract-fabric", configuration: "namedElements")) { transitive false }
-    implementation(project(path: ":antimatter-fabric", configuration: "namedElements"))
+    implementation(project(path: ":tesseract-common")) { transitive false }
+    implementation(project(path: ":tesseract-fabric")) { transitive false }
+    implementation(project(path: ":antimatter-common")) { transitive false }
+    implementation(project(path: ":antimatter-fabric")) { transitive false }
+    compileOnly(project(":common"))
     modImplementation("io.github.fabricators_of_create:Porting-Lib:${rootProject.port_lib_version}-beta+1.18.2-stable"){
         exclude(group: "net.fabricmc.fabric-api")
         exclude(group: "com.github.LlamaLad7")
@@ -42,16 +48,12 @@ dependencies{
         exclude(group: "com.terraformersmc")
     }
     modImplementation("net.feltmc:felt-enchanting-api:1.1.0") { transitive false }
-    common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
     modImplementation("dev.trinsdar:arrp:0.6.7")
-    modImplementation(include("org.gt-reimagined:gtcore-fabric:${rootProject.gt_core_version}-${rootProject.minecraft_version}")){
-        transitive = false
+    modImplementation("org.gt-reimagined:structurelib-fabric:${project.structurelib_version}-${project.minecraft_version}")
+    modImplementation "me.shedaniel:RoughlyEnoughItems-fabric:${rootProject.rei_version}"
+    modCompileOnly("mezz.jei:jei-${rootProject.minecraft_version}-fabric:${rootProject.jei_version}"){
+        exclude(group: "mezz.jei", module: "jei-1.18.2-fabric-api")
     }
-    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:3.1.0")
-    modRuntimeOnly("com.gtnewhorizon.structurelib:structurelib-fabric:${project.structurelib_version}-${project.minecraft_version}")
-    modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${rootProject.rei_version}"
-    modCompileOnly("mezz.jei:jei-${rootProject.minecraft_version}-fabric:${rootProject.jei_version}")
     modImplementation("teamreborn:energy:${rootProject.energy_version}") {
         transitive = false
     }
@@ -59,17 +61,23 @@ dependencies{
         exclude(group: "net.fabricmc.fabric-api")
     }
     modImplementation "maven.modrinth:carbon-config:${project.carbon_config_fabric_version}"
-    modImplementation("earth.terrarium:botarium-fabric-1.18.2:${project.botarium_version}")
-    modRuntimeOnly "com.teamresourceful.resourcefullib:resourcefullib-fabric-1.18.2:${project.resourcefullib_version}"
-    modRuntimeOnly("dev.latvian.mods:kubejs-fabric:${rootProject.kubejs_version}")
+    modImplementation("earth.terrarium:botarium-fabric-1.18.2:${project.botarium_version}"){
+        transitive = false
+    }
+    modImplementation("com.teamresourceful.resourcefullib:resourcefullib-fabric-1.18.2:${project.resourcefullib_version}")
+    modRuntimeOnly("dev.latvian.mods:kubejs-fabric:${project.kubejs_version}")
 
-}
 
-architectury {
-    fabric()
+    modImplementation(include("org.gt-reimagined:gtcore-fabric:${rootProject.gt_core_version}-${rootProject.minecraft_version}")){
+        transitive = false
+    }
+    modImplementation("com.terraformersmc.terraform-api:terraform-wood-api-v1:3.1.0")
+    modRuntimeOnly("curse.maven:energizedpower-782147:4567261")
 }
 
 processResources {
+    from project(":common").sourceSets.main.resources
+    exclude('gtuassets1.14')
 
     def toReplace = [
             "version"             : project.mod_version
@@ -80,36 +88,31 @@ processResources {
         expand toReplace
     }
 }
-sourcesJar {
-    def commonSources = project(":antimatter-common").sourcesJar
-    dependsOn commonSources
-    from commonSources.archiveFile.map { zipTree(it) }
+
+tasks.named('compileJava', JavaCompile) {
+    source(project(":common").sourceSets.main.allSource)
 }
 
-/*
-publishing {
-    tasks.publish.dependsOn "build", "reobfJar"
-    publications {
-        mavenJava(org.gradle.api.publish.maven.MavenPublication) {
-            //artifactId = archivesBaseName
-            artifact shadowJar
-        }
-    }
-    repositories {
-        if (rootProject.isCI && rootProject.isRELEASE) {
-            maven {
-                name = "GitHubPackages"
-                url = "https://maven.pkg.github.com/GregTech-Intergalactical/TesseractAPI"
-                credentials {
-                    username = System.getenv("GITHUB_ACTOR")
-                    password = System.getenv("GITHUB_TOKEN")
-                }
-            }
-        } else {
-            maven { url "file:///${project.projectDir}/mcmodsrepo"}
-        }
-    }
-    //repositories {
-    //    rootProject.configurePublishingRepositories(delegate)
-    //}
-}*/
+sourcesJar {
+    from(project(':common').sourceSets.main.allSource)
+}
+
+tasks.create("platformJar", ExpectPlatformJar){
+    platformName = "fabric"
+    inputFiles = sourceSets.main.output
+    archiveClassifier.set "dev"
+    remap = [
+            "xyz/wagyourtail/unimined/expect/annotation/Environment": "net/fabricmc/api/Environment",
+            "xyz/wagyourtail/unimined/expect/annotation/Environment\$EnvType": "net/fabricmc/api/EnvType",
+    ]
+}
+
+remapJar {
+    inputFile.set platformJar.archiveFile
+    dependsOn platformJar
+    archiveClassifier.set null
+}
+
+jar{
+    archiveClassifier.set "dev-unmapped"
+}

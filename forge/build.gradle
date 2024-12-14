@@ -1,61 +1,88 @@
-archivesBaseName = "${rootProject.archive_base_name}-forge"
-version = "${rootProject.mod_version}-${rootProject.minecraft_version}"
+import xyz.wagyourtail.unimined.expect.task.ExpectPlatformJar
+plugins {
+    id "net.neoforged.moddev.legacyforge"
+    id 'xyz.wagyourtail.unimined.expect-platform' version '1.0.5'
+}
+archivesBaseName = "${project.archive_base_name}-forge"
 
-architectury {
-    forge()
+neoForge {
+    version = "${project.minecraft_version}-${project.forge_version}"
+    def at = project(':antimatter-common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.add(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = project.minecraft_version
+        mappingsVersion = project.mappings_version
+    }
+    runs {
+        client {
+            client()
+
+        }
+        data {
+            data()
+        }
+        server {
+            server()
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
 }
 
-loom{
-    accessWidenerPath = project(":antimatter-common").file("src/main/resources/antimatter.accesswidener")
-    forge {
-        mixinConfigs("gt4r.mixins.json")
-    }
+def mainRefmapFile;
+
+mixin {
+    mainRefmapFile = add sourceSets.main, "gt4r.refmap.json"
+    config "gt4r.mixins.json"
 }
 
 
 dependencies {
-    forge "net.minecraftforge:forge:${project.minecraft_version}-${project.forge_version}"
+    implementation(expectPlatform.annotationsDep)
+    //subprojects
+    implementation(project(path: ":tesseract-forge"))
+    implementation(project(path: ":tesseract-common"))
+    implementation(project(path: ":antimatter-forge"))
+    implementation(project(path: ":antimatter-common"))
+    compileOnly(project(":common"))
+    //antimatter deps
     implementation 'org.apache.commons:commons-collections4:4.4'
-    //GT
-    implementation(project(path: ":tesseract-forge", configuration: "namedElements"))
-    common(project(path: ":tesseract-common", configuration: "namedElements"))
-
+    implementation("org.jetbrains:annotations:26.0.1")
+    //modCompileOnly("mezz.jei:jei-${rootProject.minecraft_version}-forge:${rootProject.jei_version}")
+    //modRuntimeOnly("mezz.jei:jei-${rootProject.minecraft_version}-forge:${rootProject.jei_version}")
+    modImplementation("mezz.jei:jei-1.18.2:9.7.2.1001")
+    modCompileOnly("me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}")
+    modCompileOnly("me.shedaniel.cloth:cloth-config-forge:6.5.133")
+    modImplementation("com.blamejared.crafttweaker:CraftTweaker-forge-1.18.2:${project.crafttweaker_version}")
+    modImplementation("dev.trinsdar:arrp-forge:0.6.7")
+    modImplementation("dev.trinsdar:terraform-utils-v1:3.1.5")
+    modImplementation("earth.terrarium:botarium-forge-1.18.2:${project.botarium_version}")
+    modImplementation("org.gt-reimagined:structurelib-forge:${project.structurelib_version}-${project.minecraft_version}")
+    modImplementation("com.teamresourceful.resourcefullib:resourcefullib-forge-1.18.2:${project.resourcefullib_version}")
+    modImplementation("maven.modrinth:carbon-config:${project.carbon_config_forge_version}")
+    modImplementation("dev.latvian.mods:kubejs-forge:${project.kubejs_version}")
+    modImplementation("dev.latvian.mods:rhino-forge:${project.rhino_version}")
+    modImplementation("dev.architectury:architectury-forge:${project.architectury_version}")
+    modRuntimeOnly("com.blamejared.crafttweaker:CraftTweaker-forge-1.18.2:${project.crafttweaker_version}")
+    modImplementation("curse.maven:the-one-probe-245211:${project.top_forge_file}")
+    implementation("io.github.llamalad7:mixinextras-forge:0.4.1")
     //MIXIN
     if (System.getProperty('idea.sync.active') != 'true') {
         annotationProcessor 'org.spongepowered:mixin:0.8.5-SNAPSHOT:processor'
     }
-    common(project(path: ":common", configuration: "namedElements")) { transitive false }
-    shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive false }
 
-    implementation(project(path: ":antimatter-forge", configuration: "namedElements")){
-        transitive = false;
-    }
-    common(project(path: ":antimatter-common", configuration: "namedElements")){
-        transitive = false;
-    }
-    modImplementation("earth.terrarium:botarium-forge-1.18.2:${project.botarium_version}")
-    modImplementation("dev.trinsdar:terraform-utils-v1:3.1.5")
-    modImplementation("com.teamresourceful.resourcefullib:resourcefullib-forge-1.18.2:${project.resourcefullib_version}")
-    //JEI
-    //modRuntimeOnly("mezz.jei:jei-${rootProject.minecraft_version}-forge:${rootProject.jei_version}")
-    //modImplementation "me.shedaniel:RoughlyEnoughItems-forge:${rootProject.rei_version}"
-    modRuntimeOnly("mezz.jei:jei-1.18.2:9.7.2.1001")
-    modImplementation("io.github.trinsdar:arrp-forge:0.6.7")
-    modImplementation "maven.modrinth:carbon-config:${project.carbon_config_forge_version}"
-    implementation("io.github.llamalad7:mixinextras-forge:0.3.5")
-    minecraftRuntimeLibraries(group: 'com.github.Speiger', name: 'Primitive-Collections', version: '[0.8,0.9)')
-    implementation("org.gt-reimagined:gtcore-forge:${rootProject.gt_core_version}-${rootProject.minecraft_version}:deobf"){
-        transitive = false
-    }
-    include("org.gt-reimagined:gtcore-forge:${rootProject.gt_core_version}-${rootProject.minecraft_version}"){
-        transitive = false
-    }
-    modRuntimeOnly(include("io.github.reforgedmods.terraform-api:terraform-wood-api-v1:3.1.5"))
-    modRuntimeOnly("com.gtnewhorizon.structurelib:structurelib-forge:${project.structurelib_version}-${project.minecraft_version}")
-    modRuntimeOnly("dev.latvian.mods:kubejs-forge:${rootProject.kubejs_version}")
+    //gt4r deps
+    //minecraftRuntimeLibraries(group: 'com.github.Speiger', name: 'Primitive-Collections', version: '[0.8,0.9)')
+    modImplementation(jarJar("org.gt-reimagined:gtcore-forge:${project.gt_core_version}-${project.minecraft_version}"))
+    modRuntimeOnly(jarJar("dev.trinsdar:terraform-wood-api-v1:3.1.5"))
     runtimeOnly("curse.maven:portality-291493:3840074")
     runtimeOnly("curse.maven:titanium-287342:4117991")
-    modImplementation("curse.maven:the-one-probe-245211:${rootProject.top_forge_file}")
+    modImplementation("curse.maven:the-one-probe-245211:${project.top_forge_file}")
     modImplementation("curse.maven:ctm-267602:3933537")
     modRuntimeOnly("curse.maven:worldstripper-250603:3670854")
     //modImplementation("com.simibubi.create:create-${minecraft_version}:0.5.0.i-249:slim") { transitive = false }
@@ -79,11 +106,38 @@ jar {
     }
 }
 
+tasks.named('compileJava', JavaCompile) {
+    source(project(":common").sourceSets.main.allSource)
+}
+
 processResources {
+    from project(":common").sourceSets.main.resources
+    exclude('gtuassets1.14')
+    exclude('assets/gt4r/textures/old_textures')
 
     inputs.property "version", project.mod_version
 
     filesMatching("META-INF/mods.toml") {
         expand "version": project.mod_version
     }
+}
+
+sourcesJar {
+    from(project(':common').sourceSets.main.allSource)
+}
+
+tasks.create("platformJar", ExpectPlatformJar){
+    platformName = "forge"
+    from(jarJar)
+    from(mainRefmapFile)
+    inputFiles = sourceSets.main.output
+    archiveClassifier.set "dev"
+    remap = ["xyz/wagyourtail/unimined/expect/annotation/Environment": "net/minecraftforge/api/distmarker/OnlyIn",
+             "xyz/wagyourtail/unimined/expect/annotation/Environment\$EnvType": "net/minecraftforge/api/distmarker/Dist",
+             "xyz/wagyourtail/unimined/expect/annotation/Environment\$EnvType.SERVER": "DEDICATED_SERVER"]
+}
+
+tasks.named('reobfJar', Jar).configure {
+    input.set(platformJar.archiveFile)
+    dependsOn platformJar
 }

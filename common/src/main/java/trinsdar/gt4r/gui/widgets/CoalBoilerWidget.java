@@ -8,12 +8,12 @@ import muramasa.antimatter.gui.Widget;
 import muramasa.antimatter.gui.container.ContainerMachine;
 import muramasa.antimatter.gui.widget.WidgetSupplier;
 import muramasa.antimatter.mixin.client.AbstractContainerScreenAccessor;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.network.chat.TextComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import trinsdar.gt4r.blockentity.single.BlockEntityCoalBoiler;
+import xyz.wagyourtail.unimined.expect.annotation.Environment;
+import xyz.wagyourtail.unimined.expect.annotation.Environment.EnvType;
 
 public class CoalBoilerWidget extends Widget {
     private int heat = 0, maxHeat = 0;
