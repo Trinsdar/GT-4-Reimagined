@@ -20,6 +20,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
+import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.GT4RRef;
 
 import java.util.ArrayList;
@@ -140,7 +141,12 @@ public class MaceratorLoader {
         });
         AntimatterAPI.all(StoneType.class, s -> {
             if (s.getMaterial() == NULL || !s.getMaterial().has(DUST) || s.isSandLike()) return;
-            UNIVERSAL_MACERATOR.RB().ii(RecipeIngredient.of(s.getState().getBlock().asItem(), 1)).io(DUST.get(s.getMaterial(), 1)).add(s.getId() + "_stone_to_" + s.getMaterial().getId() + "_dust",400, 2);
+            if (s == GTCoreBlocks.KIMBERLITE){
+                UNIVERSAL_MACERATOR.RB().ii(RecipeIngredient.of(s.getState().getBlock().asItem(), 1)).io(DUST.get(s.getMaterial(), 1), GEM.get(Diamond, 1)).outputChances(1.0, 0.0001).hide().add(s.getId() + "_stone_to_" + s.getMaterial().getId() + "_dust_hidden",400, 2);
+                UNIVERSAL_MACERATOR.RB().ii(RecipeIngredient.of(s.getState().getBlock().asItem(), 1)).io(DUST.get(s.getMaterial(), 1)).fake().add(s.getId() + "_stone_to_" + s.getMaterial().getId() + "_dust",400, 2);
+            } else {
+                UNIVERSAL_MACERATOR.RB().ii(RecipeIngredient.of(s.getState().getBlock().asItem(), 1)).io(DUST.get(s.getMaterial(), 1)).add(s.getId() + "_stone_to_" + s.getMaterial().getId() + "_dust",400, 2);
+            }
             if (s instanceof CobbleStoneType){
                 UNIVERSAL_MACERATOR.RB().ii(RecipeIngredient.of(((CobbleStoneType)s).getBlock("cobble").asItem(), 1)).io(DUST.get(s.getMaterial(), 1)).add("cobbled_" + s.getId() + "_to_" + s.getMaterial().getId() + "_dust",400, 2);
             }
