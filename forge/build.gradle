@@ -49,9 +49,9 @@ dependencies {
     implementation(expectPlatform.annotationsDep)
     //subprojects
     implementation(project(path: ":tesseract-forge"))
-    implementation(project(path: ":tesseract-common"))
+    compileOnly(project(path: ":tesseract-common"))
     implementation(project(path: ":antimatter-forge"))
-    implementation(project(path: ":antimatter-common"))
+    compileOnly(project(path: ":antimatter-common"))
     compileOnly(project(":common"))
     //antimatter deps
     implementation 'org.apache.commons:commons-collections4:4.4'
