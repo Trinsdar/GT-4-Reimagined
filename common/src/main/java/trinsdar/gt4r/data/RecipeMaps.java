@@ -6,6 +6,7 @@ import muramasa.antimatter.recipe.RecipeProxies;
 import muramasa.antimatter.recipe.map.RecipeBuilder;
 import muramasa.antimatter.recipe.map.RecipeMap;
 import net.minecraft.world.item.Items;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import org.gtreimagined.gtcore.data.RecipeBuilders.SteamBuilder;
 import trinsdar.gt4r.GT4RRef;
 
@@ -111,7 +112,7 @@ public class RecipeMaps {
         VACUUM_FREEZING.setGuiData(MULTI_DISPLAY, VACUUM_FREEZER);
         FUSION.setGuiData(MULTI_DISPLAY, FUSION_REACTOR);
         ORE_BYPRODUCTS.setIcon(() -> Items.IRON_ORE);
-        INT_CIRCUITS.setIcon(() -> TierMaps.INT_CIRCUITS_ITEMS.get(0));
+        INT_CIRCUITS.setIcon(() -> GTCoreItems.SELECTOR_TAG_ITEMS.get(0));
     }
 
     public static class UniversalMaceratorBuilder extends RecipeBuilder{

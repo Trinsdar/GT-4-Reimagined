@@ -226,10 +226,10 @@ public class Parts {
                 new ItemStack(ItemSuperconductor, 4), of('H', RecipeIngredient.of(Helium.getCellGas(1, CellTin)), 'T', AntimatterMaterialTypes.PLATE.getMaterialTag(Tungsten), 'I', IridiumReinforcedPlate, 'C', CIRCUITS_MASTER), "HHH", "TIT", "CCC");
         provider.shapeless(output, GT4RRef.ID, "bronze_dust",
                 AntimatterMaterialTypes.DUST.get(Bronze, 4), AntimatterMaterialTypes.DUST.get(AntimatterMaterials.Copper), AntimatterMaterialTypes.DUST.get(AntimatterMaterials.Copper), AntimatterMaterialTypes.DUST.get(AntimatterMaterials.Copper), AntimatterMaterialTypes.DUST.get(Tin));
-        provider.addItemRecipe(output, GT4RRef.ID, "int_circuit", "parts",
-                TierMaps.INT_CIRCUITS_ITEMS.get(0), of('R', AntimatterMaterialTypes.ROD.getMaterialTag(AntimatterMaterials.Iron), 'P', AntimatterMaterialTypes.PLATE.getMaterialTag(AntimatterMaterials.Iron), 'H', AntimatterDefaultTools.HAMMER.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "PHP", "RRR", "PWP");
-        provider.addItemRecipe(output, GT4RRef.ID, "int_circuit1", "parts",
-                TierMaps.INT_CIRCUITS_ITEMS.get(0), of('R', AntimatterMaterialTypes.ROD.getMaterialTag(WroughtIron), 'P', AntimatterMaterialTypes.PLATE.getMaterialTag(WroughtIron), 'H', AntimatterDefaultTools.HAMMER.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "PHP", "RRR", "PWP");
+        provider.addItemRecipe(output, GT4RRef.ID, "selector_tag", "parts",
+                SELECTOR_TAG_ITEMS.get(0), of('R', AntimatterMaterialTypes.ROD.getMaterialTag(AntimatterMaterials.Iron), 'P', AntimatterMaterialTypes.PLATE.getMaterialTag(AntimatterMaterials.Iron), 'H', AntimatterDefaultTools.HAMMER.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "PHP", "RRR", "PWP");
+        provider.addItemRecipe(output, GT4RRef.ID, "selector_tag_1", "parts",
+                SELECTOR_TAG_ITEMS.get(0), of('R', AntimatterMaterialTypes.ROD.getMaterialTag(WroughtIron), 'P', AntimatterMaterialTypes.PLATE.getMaterialTag(WroughtIron), 'H', AntimatterDefaultTools.HAMMER.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "PHP", "RRR", "PWP");
         provider.addItemRecipe(output, GT4RRef.ID, "motor_lv", "parts",
                 MotorLV, of('T', CABLE_TIN.getBlockItem(PipeSize.VTINY), 'C', WIRE_COPPER.getBlockItem(PipeSize.VTINY), 'I', AntimatterMaterialTypes.ROD.getMaterialTag(Steel), 'M', RODS_MAGNETIC), "TCI", "CMC", "ICT");
         provider.addItemRecipe(output, GT4RRef.ID, "motor_mv", "parts",

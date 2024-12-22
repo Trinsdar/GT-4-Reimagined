@@ -11,7 +11,6 @@ import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.BlockCasing;
 import trinsdar.gt4r.block.BlockFakeCasing;
 import trinsdar.gt4r.data.GT4RData;
-import trinsdar.gt4r.items.ItemIntCircuit;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -74,7 +73,6 @@ public class GT4RLocalizations {
             super.english(domain, locale);
             AntimatterAPI.all(BlockCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
             AntimatterAPI.all(BlockFakeCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
-            AntimatterAPI.all(ItemIntCircuit.class, domain).forEach(i -> override(i.getDescriptionId(), "Integrated Circuit (" + i.circuitId + ")"));
             override(Ref.ID, ROCK_CUTTER.getToolStack(NULL, NULL).getItem().getDescriptionId(), "Rock Cutter");
             override(GT4RData.StorageDataOrb.getDescriptionId(), "Data Orb");
             AntimatterAPI.all(Machine.class, domain).forEach(i -> {

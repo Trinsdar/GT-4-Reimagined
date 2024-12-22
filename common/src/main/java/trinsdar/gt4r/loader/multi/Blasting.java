@@ -4,6 +4,7 @@ import muramasa.antimatter.util.TagUtils;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.resources.ResourceLocation;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 
@@ -12,7 +13,6 @@ import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.material.MaterialTags.DIRECT_SMELT_INTO;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
 import static trinsdar.gt4r.data.CustomTags.DUSTS_COALS;
-import static trinsdar.gt4r.data.TierMaps.INT_CIRCUITS;
 import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.BASIC_BLASTING;
 import static trinsdar.gt4r.data.RecipeMaps.BLASTING;
@@ -54,6 +54,6 @@ public class Blasting {
         BLASTING.RB().ii(of(INGOT.get(Osmium,1)), of(INGOT.get(Iridium, 1))).io(INGOT_HOT.get(Osmiridium, 2)).add("osmiridium",10000, 120, GT4RMaterialTags.BLAST_FURNACE_TEMP.getInt(Osmiridium));
         BLASTING.RB().ii(of(INGOT.get(Iron,6)), of(INGOT.get(Nickel, 1)), of(INGOT.get(Chromium, 1)), of(INGOT.get(Manganese, 1))).io(INGOT.get(StainlessSteel, 9)).add("stainless_steel",10200, 120, GT4RMaterialTags.BLAST_FURNACE_TEMP.getInt(StainlessSteel));
         BLASTING.RB().ii(of(INGOT.get(Iron,1)), of(INGOT.get(Aluminium, 1)), of(INGOT.get(Chromium, 1))).io(INGOT_HOT.get(Kanthal, 3)).add("kanthal",5100, 120, GT4RMaterialTags.BLAST_FURNACE_TEMP.getInt(Kanthal));
-        BLASTING.RB().ii(of(INGOT.get(Nickel,4)), of(INGOT.get(Chromium, 1)), INT_CIRCUITS.get(2)).io(INGOT_HOT.get(Nichrome, 5)).add("nichrome",10200, 120, GT4RMaterialTags.BLAST_FURNACE_TEMP.getInt(Nichrome));
+        BLASTING.RB().ii(of(INGOT.get(Nickel,4)), of(INGOT.get(Chromium, 1)), GTCoreItems.SELECTOR_TAG_INGREDIENTS.get(2)).io(INGOT_HOT.get(Nichrome, 5)).add("nichrome",10200, 120, GT4RMaterialTags.BLAST_FURNACE_TEMP.getInt(Nichrome));
     }
 }

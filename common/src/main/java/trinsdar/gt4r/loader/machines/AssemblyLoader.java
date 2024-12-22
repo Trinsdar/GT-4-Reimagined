@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.resources.ResourceLocation;
 import muramasa.antimatter.data.ForgeCTags;
+import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 import trinsdar.gt4r.data.RecipeMaps;
 import trinsdar.gt4r.data.TierMaps;
@@ -50,8 +51,8 @@ public class AssemblyLoader {
         RecipeMaps.ASSEMBLER.RB().ii(of(CircuitBoardProcessor, 1), of(CircuitDataStorage, 1)).io(new ItemStack(CircuitDataControl, 2)).add("circuit_data_control", 3200, 4);
         RecipeMaps.ASSEMBLER.RB().ii(of(CircuitBoardProcessor, 1), of(LapotronCrystal, 1)).io(new ItemStack(CircuitEnergyFlow, 1)).add("circuit_energy_flow", 3200, 4);
         RecipeMaps.ASSEMBLER.RB().ii(of(CircuitDataControl, 1), of(CircuitDataStorage, 8)).io(new ItemStack(DataOrb, 1)).add("data_orb",12800, 16);
-        RecipeMaps.ASSEMBLER.RB().ii(of(CarbonFibre, 2), TierMaps.INT_CIRCUITS.get(2)).io(new ItemStack(CarbonMesh)).add("carbon_mesh",800, 2);
-        RecipeMaps.ASSEMBLER.RB().ii(of(CarbonMesh, 16), TierMaps.INT_CIRCUITS.get(16)).io(new ItemStack(LavaFilter)).add("lava_filter",1600, 8);
+        RecipeMaps.ASSEMBLER.RB().ii(of(CarbonFibre, 2), SELECTOR_TAG_INGREDIENTS.get(2)).io(new ItemStack(CarbonMesh)).add("carbon_mesh",800, 2);
+        RecipeMaps.ASSEMBLER.RB().ii(of(CarbonMesh, 16), SELECTOR_TAG_INGREDIENTS.get(16)).io(new ItemStack(LavaFilter)).add("lava_filter",1600, 8);
         RecipeMaps.ASSEMBLER.RB().ii(of(PLATES_IRON_ALUMINIUM, 1), of(PUMP.getItem(LV), 1)).io(new ItemStack(PumpModule)).add("pump_module",800, 16);
         RecipeMaps.ASSEMBLER.RB().ii(of(PLATES_IRON_ALUMINIUM, 2), of(Items.IRON_BARS, 2)).io(new ItemStack(Drain)).add("drain",800, 16);
         RecipeMaps.ASSEMBLER.RB().ii(of(PLATES_IRON_ALUMINIUM, 1), of(Items.LEVER, 1)).io(new ItemStack(RedstoneMachineController)).add("redstone_machine_controller",800, 16);
