@@ -248,6 +248,7 @@ public class Parts {
                 NeutronReflector, of('C', AntimatterMaterialTypes.DUST.get(AntimatterMaterials.Coal), 'T', AntimatterMaterialTypes.DUST.get(Tin), 'I', AntimatterMaterialTypes.PLATE.get(AntimatterMaterials.Copper)), "TCT", "CIC", "TCT");
         provider.addItemRecipe(output, "upgrades", TransformerUpgrade,
                 of('G', ForgeCTags.GLASS, 'C', CABLE_GOLD.getBlockItem(PipeSize.VTINY), 'T', Machines.TRANSFORMER.getItem(MV), 'c', CIRCUITS_BASIC), "GGG", "CTC", "GcG");
+        provider.addItemRecipe(output, "upgrades", SteelUpgrade, of('S', PLATE.getMaterialTag(Steel), 'B', PLATE.getMaterialTag(Bronze)), "SSS", "SBS");
         provider.shapeless(output, GT4RRef.ID, "tape_from_empty", "tapes", new ItemStack(Tape), TapeEmpty, TapeEmpty, TapeEmpty, TapeEmpty);
         provider.shapeless(output, GT4RRef.ID, "duct_tape_from_empty", "tapes", new ItemStack(DuctTape), DuctTapeEmpty, DuctTapeEmpty, DuctTapeEmpty, DuctTapeEmpty);
         provider.shapeless(output, GT4RRef.ID, "fal_duct_tape_from_empty", "tapes", new ItemStack(FALDuctTape), FALDuctTapeEmpty, FALDuctTapeEmpty, FALDuctTapeEmpty, FALDuctTapeEmpty);

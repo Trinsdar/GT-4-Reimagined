@@ -8,12 +8,22 @@ import muramasa.antimatter.machine.MachineFlag;
 import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.recipe.IRecipe;
+import muramasa.antimatter.tool.AntimatterToolType;
 import muramasa.antimatter.util.TagUtils;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
 import tesseract.TesseractGraphWrappers;
+import trinsdar.gt4r.data.GT4RData;
 
 import static muramasa.antimatter.machine.Tier.BRONZE;
 import static trinsdar.gt4r.data.Machines.STEAM_FORGE_HAMMER;
@@ -31,6 +41,21 @@ public class BlockEntitySteamMachine extends BlockEntityMachine<BlockEntitySteam
     @Override
     public Tier getPowerLevel() {
         return Tier.LV;
+    }
+
+    @Override
+    public InteractionResult onInteractServer(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, @Nullable AntimatterToolType type) {
+        if (player.getItemInHand(hand).getItem() == GT4RData.SteelUpgrade){
+            CompoundTag nbt = new CompoundTag();
+            this.saveAdditional(nbt);
+            world.setBlock(pos, this.getMachineType().getBlockState(Tier.STEEL).defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, this.getFacing()), 3);
+            world.getBlockEntity(pos).load(nbt);
+            if (!player.isCreative()){
+                player.getItemInHand(hand).shrink(1);
+            }
+            return InteractionResult.SUCCESS;
+        }
+        return super.onInteractServer(state, world, pos, player, hand, hit, type);
     }
 
     public static class SteamMachineRecipeHandler extends MachineRecipeHandler<BlockEntitySteamMachine>{

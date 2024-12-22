@@ -1,9 +1,20 @@
 package trinsdar.gt4r.blockentity.single;
 
+import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.blockentity.BlockEntityMachine;
+import muramasa.antimatter.tool.AntimatterToolType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.Nullable;
+import trinsdar.gt4r.data.GT4RData;
 import trinsdar.gt4r.machine.CoalBoilerFluidHandler;
 import trinsdar.gt4r.machine.CoalBoilerRecipeHandler;
 
@@ -48,5 +59,20 @@ public class BlockEntityCoalBoiler extends BlockEntityMachine<BlockEntityCoalBoi
             v.set(((CoalBoilerRecipeHandler) r).getMaxHeat());
         });
         return v.get();
+    }
+
+    @Override
+    public InteractionResult onInteractServer(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, @Nullable AntimatterToolType type) {
+        if (player.getItemInHand(hand).getItem() == GT4RData.SteelUpgrade){
+            CompoundTag nbt = new CompoundTag();
+            this.saveAdditional(nbt);
+            world.setBlock(pos, this.getMachineType().getBlockState(Tier.STEEL).defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, this.getFacing()), 3);
+            world.getBlockEntity(pos).load(nbt);
+            if (!player.isCreative()){
+                player.getItemInHand(hand).shrink(1);
+            }
+            return InteractionResult.SUCCESS;
+        }
+        return super.onInteractServer(state, world, pos, player, hand, hit, type);
     }
 }

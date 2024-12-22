@@ -112,6 +112,7 @@ public class GT4RData {
     public static ItemCover RedstoneMachineController = AntimatterAPI.get(ItemCover.class, COVER_REDSTONE_MACHINE_CONTROLLER.getId(), GT4RRef.ID);
     public static ItemBasic<?> Shutter = new ItemBasic<>(GT4RRef.ID, "shutter").tip("Can be placed on machines as a cover");
 
+    public static ItemBasic<?> SteelUpgrade = new ItemBasic<>(GT4RRef.ID, "steel_upgrade").tip("Can be used to upgrade bronze steam machines to steel steam machines");
     public static ItemBasic<?> OverclockerUpgrade = new ItemBasic<>(GT4RRef.ID, "overclocker_upgrade");
     public static ItemBasic<?> TransformerUpgrade = new ItemBasic<>(GT4RRef.ID, "transformer_upgrade");
     public static ItemBasic<?> SteamUpgrade = new ItemBasic<>(GT4RRef.ID, "steam_upgrade");
