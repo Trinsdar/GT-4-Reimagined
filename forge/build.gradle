@@ -39,6 +39,7 @@ def mainRefmapFile;
 mixin {
     mainRefmapFile = add sourceSets.main, "gt4r.refmap.json"
     config "gt4r.mixins.json"
+    config "antimatter.mixins.json"
     config "antimatter-forge.mixins.json"
     config "antimatter.rei.mixins.json"
     config "tesseract-forge.mixins.json"
