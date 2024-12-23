@@ -63,7 +63,7 @@ dependencies {
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-forge:${project.rei_version}")
     modCompileOnly("me.shedaniel.cloth:cloth-config-forge:6.5.133")
     modImplementation("com.blamejared.crafttweaker:CraftTweaker-forge-1.18.2:${project.crafttweaker_version}")
-    modImplementation("dev.trinsdar:arrp-forge:0.6.7")
+    modImplementation("dev.trinsdar:arrp-forge:0.6.7.1")
     modImplementation("dev.trinsdar:terraform-utils-v1:3.1.5")
     modImplementation("earth.terrarium:botarium-forge-1.18.2:${project.botarium_version}")
     modImplementation("org.gt-reimagined:structurelib-forge:${project.structurelib_version}-${project.minecraft_version}")
