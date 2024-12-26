@@ -5,6 +5,7 @@ import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.capability.machine.MachineFluidHandler;
 import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import muramasa.antimatter.machine.MachineFlag;
+import muramasa.antimatter.machine.MachineState;
 import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.recipe.IRecipe;
@@ -60,6 +61,7 @@ public class BlockEntitySteamMachine extends BlockEntityMachine<BlockEntitySteam
 
     public static class SteamMachineRecipeHandler extends MachineRecipeHandler<BlockEntitySteamMachine>{
         protected boolean isSteamClear = false;
+        protected boolean firstBlockedRun = false;
 
         public SteamMachineRecipeHandler(BlockEntitySteamMachine tile) {
             super(tile);
@@ -78,12 +80,22 @@ public class BlockEntitySteamMachine extends BlockEntityMachine<BlockEntitySteam
 
         public void setSteamClear(boolean steamClear) {
             isSteamClear = steamClear;
+            if (steamClear){
+                firstBlockedRun = false;
+                checkRecipe();
+            }
         }
 
         @Override
         protected boolean canRecipeContinue() {
             isSteamClear = tile.level.isEmptyBlock(tile.worldPosition.relative(tile.getOutputFacing()));
-            return super.canRecipeContinue() && isSteamClear;
+            return super.canRecipeContinue() && (isSteamClear || !firstBlockedRun);
+        }
+
+        @Override
+        protected MachineState recipeFinish() {
+            if (!firstBlockedRun) firstBlockedRun = true;
+            return super.recipeFinish();
         }
 
         @Override
@@ -120,6 +132,19 @@ public class BlockEntitySteamMachine extends BlockEntityMachine<BlockEntitySteam
         @Override
         protected boolean consumeGeneratorResources(boolean simulate) {
             return isSteamClear && super.consumeGeneratorResources(simulate);
+        }
+
+        @Override
+        public CompoundTag serialize() {
+            CompoundTag tag = super.serialize();
+            tag.putBoolean("firstBlockedRun", firstBlockedRun);
+            return tag;
+        }
+
+        @Override
+        public void deserialize(CompoundTag nbt) {
+            super.deserialize(nbt);
+            firstBlockedRun = nbt.getBoolean("firstBlockedRun");
         }
     }
 }
