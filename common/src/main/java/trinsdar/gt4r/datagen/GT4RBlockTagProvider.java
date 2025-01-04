@@ -38,6 +38,6 @@ public class GT4RBlockTagProvider extends AntimatterBlockTagProvider {
         AntimatterAPI.all(BlockRedstoneMachine.class, GT4RRef.ID, cas -> {
             this.tag(AntimatterDefaultTools.WRENCH.getToolType()).add(cas);
         });
-        this.tag(BlockTags.NEEDS_IRON_TOOL).add(REINFORCED_GLASS, REINFORCED_STONE, IRIDIUM_REINFORCED_STONE);
+        this.tag(BlockTags.NEEDS_IRON_TOOL).add(IRIDIUM_REINFORCED_STONE);
     }
 }

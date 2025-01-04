@@ -49,20 +49,6 @@ public class BlockCasing extends BlockDynamic {
         return null;
     }
 
-    @Environment(EnvType.CLIENT)
-    public float getShadeBrightness(BlockState state, BlockGetter worldIn, BlockPos pos) {
-        return this == GT4RData.REINFORCED_GLASS ? 1.0F : super.getShadeBrightness(state, worldIn, pos);
-    }
-
-   /* public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
-        return true;
-    }*/
-
-    @Environment(EnvType.CLIENT)
-    public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
-        return (this == GT4RData.REINFORCED_GLASS && adjacentBlockState.is(this)) || super.skipRendering(state, adjacentBlockState, side);
-    }
-
     @Override
     public void onItemModelBuild(ItemLike item, AntimatterItemModelProvider prov) {
         prov.modelAndTexture(item, AntimatterBlockModelBuilder.getSimple()).tex(t -> t.putAll(AntimatterBlockModelBuilder.buildTextures(((ITextureProvider) item).getTextures())));

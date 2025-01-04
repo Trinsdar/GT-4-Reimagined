@@ -12,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.resources.ResourceLocation;
 import muramasa.antimatter.data.ForgeCTags;
+import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 import trinsdar.gt4r.data.RecipeMaps;
@@ -71,9 +72,9 @@ public class AssemblyLoader {
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Electrum, 4), PLATE.getMaterialIngredient(Silicon, 1)).io(new ItemStack(CircuitBoardAdvanced, 2)).add("circuit_board_advanced_1",1600,2);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Platinum, 1), of(CIRCUITS_ADVANCED, 1)).io(new ItemStack(CircuitBoardProcessor)).add("circuit_board_processor",1600,2);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Magnalium, 2), of(MACHINE_HULLS_BASIC, 1), of(BatteryRE, 1).setIgnoreNbt()).io(new ItemStack(WINDMILL.getItem(ULV), 1)).add("windmill",6400, 8);
-        RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(TungstenSteel, 1), of(REINFORCED_STONE, 1)).io(new ItemStack(TUNGSTENSTEEL_REINFORCED_STONE)).add("tungstensteel_reinforced_stone",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(TungstenSteel, 1), of(GTCoreBlocks.REINFORCED_STONE, 1)).io(new ItemStack(TUNGSTENSTEEL_REINFORCED_STONE)).add("tungstensteel_reinforced_stone",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(TungstenSteel, 1), of(IRIDIUM_REINFORCED_STONE, 1)).io(new ItemStack(IRIDIUM_TUNGSTENSTEEL_REINFORCED_STONE)).add("iridium_tungstensteel_reinforced_stone",400, 4);
-        RecipeMaps.ASSEMBLER.RB().ii(of(IridiumReinforcedPlate, 1), of(REINFORCED_STONE, 1)).io(new ItemStack(IRIDIUM_REINFORCED_STONE)).add("iridium_reinforced_stone",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(of(IridiumReinforcedPlate, 1), of(GTCoreBlocks.REINFORCED_STONE, 1)).io(new ItemStack(IRIDIUM_REINFORCED_STONE)).add("iridium_reinforced_stone",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(of(IridiumReinforcedPlate, 1), of(TUNGSTENSTEEL_REINFORCED_STONE, 1)).io(new ItemStack(IRIDIUM_TUNGSTENSTEEL_REINFORCED_STONE)).add("iridium_tungstensteel_reinforced_stone_1",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(GEM.getMaterialIngredient(Emerald, 8), of(CIRCUITS_ADVANCED, 1)).io(new ItemStack(CircuitDataStorage, 4)).add("circuit_data_storage",6400, 8);
         RecipeMaps.ASSEMBLER.RB().ii(GEM.getMaterialIngredient(Olivine, 8), of(CIRCUITS_ADVANCED, 1)).io(new ItemStack(CircuitDataStorage, 4)).add("circuit_data_storage_1",6400, 8);
@@ -97,10 +98,10 @@ public class AssemblyLoader {
         RecipeMaps.ASSEMBLER.RB().ii(of(CompressedCoalBall, 8), of(BLOCK.getMaterialTag(Iron), 1)).io(new ItemStack(CoalChunk)).add("coal_chunk_2",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Carbon, 4), of(MACHINE_HULLS_BASIC, 1), of(BatteryRE, 1).setIgnoreNbt()).io(new ItemStack(WINDMILL.getItem(ULV), 1)).add("windmill_1",6400, 8);
         //missing
-        RecipeMaps.ASSEMBLER.RB().ii(of(AdvancedAlloy, 1), of(getForgelikeItemTag("stone"), 8)).io(new ItemStack(REINFORCED_STONE, 8)).add("reinforced_stone",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(of(AdvancedAlloy, 1), of(getForgelikeItemTag("stone"), 8)).io(new ItemStack(GTCoreBlocks.REINFORCED_STONE, 8)).add("reinforced_stone",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(of(PLATE.getMaterialTag(Wood), 8), DUST.getMaterialIngredient(Redstone, 1)).io(new ItemStack(Items.NOTE_BLOCK)).add("note_block",800, 1);
         RecipeMaps.ASSEMBLER.RB().ii(of(PLATE.getMaterialTag(Wood), 8), GEM.getMaterialIngredient(Diamond, 1)).io(new ItemStack(Items.JUKEBOX)).add("jukebox",1600, 1);
-        RecipeMaps.ASSEMBLER.RB().ii(of(AdvancedAlloy, 2), of(ForgeCTags.GLASS, 7)).io(new ItemStack(REINFORCED_GLASS, 7)).add("reinforced_glass",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(of(AdvancedAlloy, 2), of(ForgeCTags.GLASS, 7)).io(new ItemStack(GTCoreBlocks.REINFORCED_GLASS, 7)).add("reinforced_glass",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(of(getTag("minecraft", "planks"), 8), DUST.getMaterialIngredient(Redstone, 1)).io(new ItemStack(Items.NOTE_BLOCK)).add("note_block_1",800, 1);
         RecipeMaps.ASSEMBLER.RB().ii(of(getTag("minecraft", "planks"), 8), GEM.getMaterialIngredient(Diamond, 1)).io(new ItemStack(Items.JUKEBOX)).add("jukebox_1",1600, 1);
         RecipeMaps.ASSEMBLER.RB().ii(of(CompressedCoalBall, 8), of(getForgelikeItemTag("obsidian"), 1)).io(new ItemStack(CoalChunk)).add("coal_chunk_3",400, 4);
