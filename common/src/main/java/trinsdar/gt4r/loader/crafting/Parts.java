@@ -25,6 +25,7 @@ import java.util.function.Consumer;
 import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.FOIL;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.PLATE;
+import static muramasa.antimatter.data.AntimatterMaterials.Iron;
 import static muramasa.antimatter.machine.Tier.MV;
 import static muramasa.antimatter.util.TagUtils.getForgelikeItemTag;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
@@ -153,71 +154,6 @@ public class Parts {
         provider.shapeless(output, GT4RRef.ID,"magnetic_steel_rod", "parts", AntimatterMaterialTypes.ROD.get(SteelMagnetic, 1), AntimatterMaterialTypes.ROD.getMaterialTag(Steel), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone));
         provider.addItemRecipe(output, GT4RRef.ID, "magnetic_iron_ingot_2", "parts", AntimatterMaterialTypes.INGOT.get(IronMagnetic), of('R', AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone), 'I', AntimatterMaterialTypes.INGOT.getMaterialTag(AntimatterMaterials.Iron)), "RRR", "RIR", "RRR");
         provider.shapeless(output, GT4RRef.ID,"magnetic_iron_rod", "parts", AntimatterMaterialTypes.ROD.get(IronMagnetic, 1), AntimatterMaterialTypes.ROD.getMaterialTag(AntimatterMaterials.Iron), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone), AntimatterMaterialTypes.DUST.getMaterialTag(AntimatterMaterials.Redstone));
-        Material[] in = new Material[]{AntimatterMaterials.Iron, WroughtIron, Nickel};
-        Material[] b = new Material[]{Bronze, Brass};
-        Material[] tz = new Material[]{Tin, Zinc};
-        for (Material it : in){
-            for (Material im : b){
-                for (Material ib : tz){
-                    ItemStack stack = MixedMetalIngot.getMixedMetalIngot(it, im, ib);
-                    provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
-                            stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
-                }
-            }
-        }
-        Material[] is = new Material[]{Invar, Steel};
-        Material[] ase = new Material[]{Aluminium, Silver, Electrum};
-        for (Material it : is){
-            for (Material im : b){
-                for (Material ib : tz){
-                    ItemStack stack = Utils.ca(2, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
-                    provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
-                            stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
-                }
-            }
-        }
-        for (Material it : is){
-            for (Material im : b){
-                for (Material ib : ase){
-                    ItemStack stack = Utils.ca(3, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
-                    provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
-                            stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
-                }
-            }
-        }
-        Material[] st = new Material[]{StainlessSteel, Titanium, Tungsten};
-        for (Material it : st){
-            for (Material im : b){
-                for (Material ib : tz){
-                    ItemStack stack = Utils.ca(3, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
-                    provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
-                            stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
-                }
-            }
-        }
-        for (Material it : st){
-            for (Material im : b){
-                for (Material ib : ase){
-                    ItemStack stack = Utils.ca(4, MixedMetalIngot.getMixedMetalIngot(it, im, ib));
-                    provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_" + it.getId() + "_" + im.getId() + "_" + ib.getId(), "parts",
-                            stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(it), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
-                }
-            }
-        }
-        for (Material im : b){
-            for (Material ib : tz){
-                ItemStack stack = Utils.ca(5, MixedMetalIngot.getMixedMetalIngot(TungstenSteel, im, ib));
-                provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_tungstensteel_" + im.getId() + "_" + ib.getId(), "parts",
-                        stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(TungstenSteel), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
-            }
-        }
-        for (Material im : b){
-            for (Material ib : ase){
-                ItemStack stack = Utils.ca(6, MixedMetalIngot.getMixedMetalIngot(TungstenSteel, im, ib));
-                provider.addStackRecipe(output, GT4RRef.ID, "mixed_metal_tungstensteel_" + im.getId() + "_" + ib.getId(), "parts",
-                        stack, of('T', AntimatterMaterialTypes.PLATE.getMaterialTag(TungstenSteel), 'M', AntimatterMaterialTypes.PLATE.getMaterialTag(im), 'B', AntimatterMaterialTypes.PLATE.getMaterialTag(ib)), "T", "M", "B");
-            }
-        }
         provider.shapeless(output, "fire_clay_dust", "parts", AntimatterMaterialTypes.DUST.get(Fireclay, 2), AntimatterMaterialTypes.DUST.getMaterialTag(Brick), AntimatterMaterialTypes.DUST.getMaterialTag(Clay));
         provider.shapeless(output, "iron_ingot_from_wrought", "parts", new ItemStack(Items.IRON_INGOT), AntimatterMaterialTypes.DUST.getMaterialTag(Ash), AntimatterMaterialTypes.INGOT.getMaterialTag(WroughtIron));
         provider.addStackRecipe(output, GT4RRef.ID, "super_conductor_wire", "parts",
@@ -259,5 +195,62 @@ public class Parts {
         provider.addItemRecipe(output, "hazmat", UniversalHazardSuitShirt, of('L', PLATE.getMaterialTag(Lead), 'A', PLATE.getMaterialTag(Aluminium), 'C', Items.CHAINMAIL_CHESTPLATE), "ALA", "LCL", "ALA");
         provider.addItemRecipe(output, "hazmat", UniversalHazardSuitPants, of('L', PLATE.getMaterialTag(Lead), 'A', PLATE.getMaterialTag(Aluminium), 'C', Items.CHAINMAIL_LEGGINGS), "ALA", "LCL", "ALA");
         provider.addItemRecipe(output, "hazmat", UniversalHazardSuitBoots, of('L', PLATE.getMaterialTag(Lead), 'A', PLATE.getMaterialTag(Aluminium), 'C', Items.CHAINMAIL_BOOTS), "ALA", "LCL", "ALA");
+        loadMixedMetal(output, provider);
+    }
+
+    public static void loadMixedMetal(Consumer<FinishedRecipe> consumer, AntimatterRecipeProvider provider){
+        mixedMetalRecipe(consumer, provider, Iron, Bronze, Tin, 1);
+        mixedMetalRecipe(consumer, provider, Iron, Bronze, Zinc, 1);
+        mixedMetalRecipe(consumer, provider, Iron, Bronze, Aluminium, 1);
+        mixedMetalRecipe(consumer, provider, Iron, Brass, Tin, 1);
+        mixedMetalRecipe(consumer, provider, Iron, Brass, Zinc, 1);
+        mixedMetalRecipe(consumer, provider, Iron, Brass, Aluminium, 1);
+        mixedMetalRecipe(consumer, provider, Nickel, Bronze, Tin, 1);
+        mixedMetalRecipe(consumer, provider, Nickel, Bronze, Zinc, 1);
+        mixedMetalRecipe(consumer, provider, Nickel, Bronze, Aluminium, 1);
+        mixedMetalRecipe(consumer, provider, Nickel, Brass, Tin, 1);
+        mixedMetalRecipe(consumer, provider, Nickel, Brass, Zinc, 1);
+        mixedMetalRecipe(consumer, provider, Nickel, Brass, Aluminium, 1);
+        mixedMetalRecipe(consumer, provider, Invar, Bronze, Tin, 2);
+        mixedMetalRecipe(consumer, provider, Invar, Bronze, Zinc, 2);
+        mixedMetalRecipe(consumer, provider, Invar, Bronze, Aluminium, 3);
+        mixedMetalRecipe(consumer, provider, Invar, Brass, Tin, 2);
+        mixedMetalRecipe(consumer, provider, Invar, Brass, Zinc, 2);
+        mixedMetalRecipe(consumer, provider, Invar, Brass, Aluminium, 3);
+        mixedMetalRecipe(consumer, provider, Steel, Bronze, Tin, 2);
+        mixedMetalRecipe(consumer, provider, Steel, Bronze, Zinc, 2);
+        mixedMetalRecipe(consumer, provider, Steel, Bronze, Aluminium, 3);
+        mixedMetalRecipe(consumer, provider, Steel, Brass, Tin, 2);
+        mixedMetalRecipe(consumer, provider, Steel, Brass, Zinc, 2);
+        mixedMetalRecipe(consumer, provider, Steel, Brass, Aluminium, 3);
+        mixedMetalRecipe(consumer, provider, StainlessSteel, Bronze, Tin, 3);
+        mixedMetalRecipe(consumer, provider, StainlessSteel, Bronze, Zinc, 3);
+        mixedMetalRecipe(consumer, provider, StainlessSteel, Bronze, Aluminium, 4);
+        mixedMetalRecipe(consumer, provider, StainlessSteel, Brass, Tin, 3);
+        mixedMetalRecipe(consumer, provider, StainlessSteel, Brass, Zinc, 3);
+        mixedMetalRecipe(consumer, provider, StainlessSteel, Brass, Aluminium, 4);
+        mixedMetalRecipe(consumer, provider, Titanium, Bronze, Tin, 3);
+        mixedMetalRecipe(consumer, provider, Titanium, Bronze, Zinc, 3);
+        mixedMetalRecipe(consumer, provider, Titanium, Bronze, Aluminium, 4);
+        mixedMetalRecipe(consumer, provider, Titanium, Brass, Tin, 3);
+        mixedMetalRecipe(consumer, provider, Titanium, Brass, Zinc, 3);
+        mixedMetalRecipe(consumer, provider, Titanium, Brass, Aluminium, 4);
+        mixedMetalRecipe(consumer, provider, Tungsten, Bronze, Tin, 3);
+        mixedMetalRecipe(consumer, provider, Tungsten, Bronze, Zinc, 3);
+        mixedMetalRecipe(consumer, provider, Tungsten, Bronze, Aluminium, 4);
+        mixedMetalRecipe(consumer, provider, Tungsten, Brass, Tin, 3);
+        mixedMetalRecipe(consumer, provider, Tungsten, Brass, Zinc, 3);
+        mixedMetalRecipe(consumer, provider, Tungsten, Brass, Aluminium, 4);
+        mixedMetalRecipe(consumer, provider, TungstenSteel, Bronze, Tin, 5);
+        mixedMetalRecipe(consumer, provider, TungstenSteel, Bronze, Zinc, 5);
+        mixedMetalRecipe(consumer, provider, TungstenSteel, Bronze, Aluminium, 6);
+        mixedMetalRecipe(consumer, provider, TungstenSteel, Brass, Tin, 5);
+        mixedMetalRecipe(consumer, provider, TungstenSteel, Brass, Zinc, 5);
+        mixedMetalRecipe(consumer, provider, TungstenSteel, Brass, Aluminium, 6);
+    }
+
+    public static void mixedMetalRecipe(Consumer<FinishedRecipe> consumer, AntimatterRecipeProvider provider, Material top, Material middle, Material bottom, int amount){
+        provider.addStackRecipe(consumer, GT4RRef.ID, "mixed_metal_from_" + top.getId() + "_" + middle.getId() + "_" + bottom.getId(), "mixed_metal", Utils.ca(amount, GTCoreItems.MixedMetalIngot.getMixedMetalIngot(top, middle, bottom)),
+                of('T', PLATE.getMaterialTag(top), 'M', PLATE.getMaterialTag(middle), 'B', PLATE.getMaterialTag(bottom)), "T", "M", "B");
     }
 }
