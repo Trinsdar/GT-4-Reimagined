@@ -47,7 +47,7 @@ public class GT4RBlockLootProvider extends AntimatterBlockLootProvider {
 
         AntimatterAPI.all(BlockCasing.class, providerDomain, this::add);
         AntimatterAPI.all(BlockFakeCasing.class, providerDomain, this::add);
-        if (!AntimatterAPI.isModLoaded("gti")){
+        if (!AntimatterAPI.isModLoaded("gt5r")){
             oreDrops();
         }
     }

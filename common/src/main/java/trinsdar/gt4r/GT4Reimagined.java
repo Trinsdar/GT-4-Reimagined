@@ -85,7 +85,7 @@ public class GT4Reimagined extends AntimatterMod {
                         l.addAll(Arrays.asList(GT4RData.Drill, GT4RData.DiamondDrill, GT4RData.AdvancedDrill, GT4RData.Chainsaw, GT4RData.AdvancedChainsaw,
                                 GT4RData.ElectricWrench, GT4RData.AdvancedWrench,GT4RData.ElectricScrewdriver, GT4RData.RockCutter));
                     } else {
-                        if (!AntimatterAPI.isModLoaded("gti")){
+                        if (!AntimatterAPI.isModLoaded("gt5r")){
                             l.addAll(AntimatterAPI.all(IAntimatterTool.class).stream().filter(i -> i.getAntimatterToolType().isPowered()).map(IBasicAntimatterTool::getItem).toList());
                             l.addAll(AntimatterAPI.all(ItemPowerUnit.class));
                             l.addAll(WRENCHBIT.all().stream().map(m -> WRENCHBIT.get(m)).toList());

@@ -25,7 +25,7 @@ public class WorldGenLoader {
 
 
     public static void init(WorldGenEvent event) {
-        if (AntimatterConfig.STONE_LAYERS.get() && !AntimatterAPI.isModLoaded("gti")){
+        if (AntimatterConfig.STONE_LAYERS.get() && !AntimatterAPI.isModLoaded("gt5r")){
             initStoneLayers(event);
         }
         initVanillaOres(event);
