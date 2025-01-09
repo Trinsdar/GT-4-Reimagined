@@ -1,0 +1,10 @@
+[*.java]
+ij_java_class_count_to_use_import_on_demand = 999
+ij_java_class_names_in_javadoc = 1
+ij_java_imports_layout = *,|,javax.**,java.**,|,$*
+
+[{*.gradle.kts,*.kt,*.kts,*.main.kts}]
+ij_kotlin_imports_layout = *,java.**,javax.**,kotlin.**,^
+ij_kotlin_name_count_to_use_star_import = 2147483647
+ij_kotlin_name_count_to_use_star_import_for_members = 3
+ij_kotlin_packages_to_use_import_on_demand =
