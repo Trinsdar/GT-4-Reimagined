@@ -94,7 +94,7 @@ public class GT4Reimagined extends AntimatterMod {
                             l.addAll(BUZZSAW_BLADE.all().stream().filter(m -> m != Steel).map(m -> BUZZSAW_BLADE.get(m)).toList());
                         } else {
                             l.add(GT4RData.RockCutterPowerUnit);
-                            l.add(AntimatterAPI.get(IAntimatterTool.class, "rock_cutter").getItem());
+                            l.add(AntimatterAPI.get(IAntimatterTool.class, "rock_cutter", GT4RRef.ID).getItem());
                         }
                     }
                 });

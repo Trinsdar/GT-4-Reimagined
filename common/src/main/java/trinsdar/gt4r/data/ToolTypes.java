@@ -17,6 +17,7 @@ import net.minecraft.world.inventory.CraftingContainer;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
+import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreTags;
 import org.gtreimagined.gtcore.item.ItemPowerUnit;
 import org.jetbrains.annotations.NotNull;
@@ -40,7 +41,8 @@ public class ToolTypes {
         public ItemStack build(CraftingContainer inv, MaterialRecipe.Result mats) {
             Material m = (Material) mats.mats.get("secondary");
             Tuple<Long, Long> battery = (Tuple<Long, Long>) mats.mats.get("battery");
-            IAntimatterTool type = AntimatterAPI.get(IAntimatterTool.class, id.replace('-', '_'));
+            String domain = id.equals(ROCK_CUTTER.getId()) ? GT4RRef.ID : GTCore.ID;
+            IAntimatterTool type = AntimatterAPI.get(IAntimatterTool.class, id.replace('-', '_'), domain);
             return type.resolveStack((Material) mats.mats.get("primary"), m == null ? NULL : m, battery.getA(), battery.getB());
         }
 
@@ -73,7 +75,8 @@ public class ToolTypes {
         @Override
         public ItemStack build(CraftingContainer inv, MaterialRecipe.Result mats) {
             Tuple<Long, Tuple<Long, Material>> t = (Tuple<Long, Tuple<Long, Material>>) mats.mats.get("secondary");
-            IAntimatterTool type = AntimatterAPI.get(IAntimatterTool.class, id.replace('-', '_'), GT4RRef.ANTIMATTER);
+            String domain = id.equals(ROCK_CUTTER.getId()) ? GT4RRef.ID : GTCore.ID;
+            IAntimatterTool type = AntimatterAPI.get(IAntimatterTool.class, id.replace('-', '_'), domain);
             t.getB().getB();
             return type.resolveStack((Material) mats.mats.get("primary"), t.getB().getB(), t.getA(), t.getB().getA());
         }

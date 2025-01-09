@@ -11,6 +11,7 @@ import muramasa.antimatter.tool.IAntimatterTool;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.ItemStack;
+import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreTools;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
@@ -77,9 +78,9 @@ public class ToolCrafting {
                 ROCK_CUTTER.getToolStack(Material.NULL, Material.NULL), of('D', PropertyIngredient.builder("primary").types(AntimatterMaterialTypes.DUST).tags(GT4RMaterialTags.ROCK_CUTTER).build(), 'S', AntimatterDefaultTools.FILE.getTag(), 'P', PropertyIngredient.builder("secondary").itemTags(POWER_UNIT_ROCK_CUTTER).build()), "DS", "DP", "D ");
 
 
-        IAntimatterTool drill_lv = AntimatterAPI.get(IAntimatterTool.class, "drill_lv");
-        IAntimatterTool drill_mv = AntimatterAPI.get(IAntimatterTool.class, "drill_mv");
-        IAntimatterTool drill_hv = AntimatterAPI.get(IAntimatterTool.class, "drill_hv");
+        IAntimatterTool drill_lv = AntimatterAPI.get(IAntimatterTool.class, "drill_lv", GTCore.ID);
+        IAntimatterTool drill_mv = AntimatterAPI.get(IAntimatterTool.class, "drill_mv", GTCore.ID);
+        IAntimatterTool drill_hv = AntimatterAPI.get(IAntimatterTool.class, "drill_hv", GTCore.ID);
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.DRILL.getId() + "-lv"),output, GT4RRef.ID, GTCoreTools.DRILL.getId() + "_lv_" + "recipe", "antimatter_drills",
                 resolveStack(drill_lv, Material.NULL, Aluminium, 0, 100000), of('B', PropertyIngredient.of(AntimatterMaterialTypes.DRILLBIT, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").mats(Aluminium).types(PLATE).build(), 's', SCREW.getMaterialTag(Steel), 'b', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build(), 'M', MotorLV), "sBS", "PMP", "PbP");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.DRILL.getId() + "-mv"),output, GT4RRef.ID, GTCoreTools.DRILL.getId() + "_mv_" + "recipe", "antimatter_drills",
@@ -94,9 +95,9 @@ public class ToolCrafting {
                 resolveStack(drill_hv, Material.NULL, Titanium, 0, 100000), of('B', PropertyIngredient.of(AntimatterMaterialTypes.DRILLBIT, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").itemTags(POWER_UNIT_HV).build()), "BS", "P ");
 
 
-        IAntimatterTool chainsaw_lv = AntimatterAPI.get(IAntimatterTool.class, "chainsaw_lv");
-        IAntimatterTool chainsaw_mv = AntimatterAPI.get(IAntimatterTool.class, "chainsaw_mv");
-        IAntimatterTool chainsaw_hv = AntimatterAPI.get(IAntimatterTool.class, "chainsaw_hv");
+        IAntimatterTool chainsaw_lv = AntimatterAPI.get(IAntimatterTool.class, "chainsaw_lv", GTCore.ID);
+        IAntimatterTool chainsaw_mv = AntimatterAPI.get(IAntimatterTool.class, "chainsaw_mv", GTCore.ID);
+        IAntimatterTool chainsaw_hv = AntimatterAPI.get(IAntimatterTool.class, "chainsaw_hv", GTCore.ID);
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.CHAINSAW.getId() + "-lv"),output, GT4RRef.ID, GTCoreTools.CHAINSAW.getId() + "_lv_" + "recipe", "antimatter_chainsaws",
                 resolveStack(chainsaw_lv, Material.NULL, Aluminium, 0, 100000), of('B', PropertyIngredient.of(AntimatterMaterialTypes.CHAINSAWBIT, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").mats(Aluminium).types(PLATE).build(), 's', SCREW.getMaterialTag(Steel), 'b', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build(), 'M', MotorLV), "sBS", "PMP", "PbP");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.CHAINSAW.getId() + "-mv"),output, GT4RRef.ID, GTCoreTools.CHAINSAW.getId() + "_mv_" + "recipe", "antimatter_chainsaws",
@@ -110,9 +111,9 @@ public class ToolCrafting {
         provider.addToolRecipe(ToolTypes.UNIT_POWERED_TOOL_BUILDER.get(GTCoreTools.CHAINSAW.getId() + "-hv"),output, GT4RRef.ID, GTCoreTools.CHAINSAW.getId() + "_hv_power_unit_" + "recipe", "antimatter_chainsaws",
                 resolveStack(chainsaw_hv, Material.NULL, Titanium, 0, 100000), of('B', PropertyIngredient.of(AntimatterMaterialTypes.CHAINSAWBIT, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").itemTags(POWER_UNIT_HV).build()), "BS", "P ");
 
-        IAntimatterTool electric_wrench_lv = AntimatterAPI.get(IAntimatterTool.class, "electric_wrench_lv");
-        IAntimatterTool electric_wrench_mv = AntimatterAPI.get(IAntimatterTool.class, "electric_wrench_mv");
-        IAntimatterTool electric_wrench_hv = AntimatterAPI.get(IAntimatterTool.class, "electric_wrench_hv");
+        IAntimatterTool electric_wrench_lv = AntimatterAPI.get(IAntimatterTool.class, "electric_wrench_lv", GTCore.ID);
+        IAntimatterTool electric_wrench_mv = AntimatterAPI.get(IAntimatterTool.class, "electric_wrench_mv", GTCore.ID);
+        IAntimatterTool electric_wrench_hv = AntimatterAPI.get(IAntimatterTool.class, "electric_wrench_hv", GTCore.ID);
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.ELECTRIC_WRENCH.getId() + "-lv"),output, GT4RRef.ID, GTCoreTools.ELECTRIC_WRENCH.getId() + "_lv_" + "recipe", "antimatter_electric_wrenches",
                 resolveStack(electric_wrench_lv, Material.NULL, Aluminium, 0, 100000), of('B', PropertyIngredient.of(AntimatterMaterialTypes.WRENCHBIT, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").mats(Aluminium).types(PLATE).build(), 's', SCREW.getMaterialTag(Steel), 'b', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build(), 'M', MotorLV), "sBS", "PMP", "PbP");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.ELECTRIC_WRENCH.getId() + "-mv"),output, GT4RRef.ID, GTCoreTools.ELECTRIC_WRENCH.getId() + "_mv_" + "recipe", "antimatter_electric_wrenches",
@@ -127,9 +128,9 @@ public class ToolCrafting {
                 resolveStack(electric_wrench_hv, Material.NULL, Titanium, 0, 100000), of('B', PropertyIngredient.of(AntimatterMaterialTypes.WRENCHBIT, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").itemTags(POWER_UNIT_HV).build()), "BS", "P ");
 
 
-        IAntimatterTool buzzsaw_lv = AntimatterAPI.get(IAntimatterTool.class, "buzzsaw_lv");
-        IAntimatterTool buzzsaw_mv = AntimatterAPI.get(IAntimatterTool.class, "buzzsaw_mv");
-        IAntimatterTool buzzsaw_hv = AntimatterAPI.get(IAntimatterTool.class, "buzzsaw_hv");
+        IAntimatterTool buzzsaw_lv = AntimatterAPI.get(IAntimatterTool.class, "buzzsaw_lv", GTCore.ID);
+        IAntimatterTool buzzsaw_mv = AntimatterAPI.get(IAntimatterTool.class, "buzzsaw_mv", GTCore.ID);
+        IAntimatterTool buzzsaw_hv = AntimatterAPI.get(IAntimatterTool.class, "buzzsaw_hv", GTCore.ID);
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.BUZZSAW.getId() + "-lv"),output, GT4RRef.ID, GTCoreTools.BUZZSAW.getId() + "_lv_" + "recipe", "antimatter_buzzsaws",
                 resolveStack(buzzsaw_lv, Material.NULL, Aluminium, 0, 100000), of('B', PropertyIngredient.of(BUZZSAW_BLADE, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").mats(Aluminium).types(PLATE).build(), 's', SCREW.getMaterialTag(Steel), 'b', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build(), 'M', MotorLV), "PbM", "SBP", "sPP");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.BUZZSAW.getId() + "-mv"),output, GT4RRef.ID, GTCoreTools.BUZZSAW.getId() + "_mv_" + "recipe", "antimatter_buzzsaws",
@@ -143,7 +144,7 @@ public class ToolCrafting {
         provider.addToolRecipe(ToolTypes.UNIT_POWERED_TOOL_BUILDER.get(GTCoreTools.BUZZSAW.getId() + "-hv"),output, GT4RRef.ID, GTCoreTools.BUZZSAW.getId() + "_hv_power_unit_" + "recipe", "antimatter_buzzsaws",
                 resolveStack(buzzsaw_hv, Material.NULL, Titanium, 0, 100000), of('B', PropertyIngredient.of(BUZZSAW_BLADE, "primary"), 'S', AntimatterDefaultTools.SCREWDRIVER.getTag(), 'P', PropertyIngredient.builder("secondary").itemTags(POWER_UNIT_HV).build()), "PS", "B ");
 
-        IAntimatterTool electric_screwdriver_lv = AntimatterAPI.get(IAntimatterTool.class, "electric_screwdriver_lv");
+        IAntimatterTool electric_screwdriver_lv = AntimatterAPI.get(IAntimatterTool.class, "electric_screwdriver_lv", GTCore.ID);
 
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(GTCoreTools.ELECTRIC_SCREWDRIVER.getId() + "-lv"), output, GT4RRef.ID, GTCoreTools.ELECTRIC_SCREWDRIVER.getId() + "_lv", "antimatter_electric_screwdrivers",
                 electric_screwdriver_lv.resolveStack(Material.NULL, Aluminium, 0, 100000), of('R', PropertyIngredient.builder("primary").types(ROD).tool(GTCoreTools.ELECTRIC_SCREWDRIVER, true).build(), 'b', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build(), 'M', MotorLV, 'S', PropertyIngredient.builder("secondary").mats(Aluminium).types(PLATE).build()), "R  ", " RM", " bS");
