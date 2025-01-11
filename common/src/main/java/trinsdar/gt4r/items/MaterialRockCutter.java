@@ -34,11 +34,6 @@ public class MaterialRockCutter extends GTCoreTools.PoweredTool {
     }
 
     @Override
-    public String getId() {
-        return type.getId();
-    }
-
-    @Override
     public int getItemColor(ItemStack stack, @org.jetbrains.annotations.Nullable Block block, int i) {
         if (i == 1) return Titanium.getRGB();
         return super.getItemColor(stack, block, i);

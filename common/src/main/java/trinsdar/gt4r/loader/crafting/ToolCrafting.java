@@ -73,9 +73,10 @@ public class ToolCrafting {
     }
 
     private static void loadBreakablePoweredRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider){
-        provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(ROCK_CUTTER.getId()), output, GT4RRef.ID, "rock_cutter_1", "rock_cutters", ROCK_CUTTER.getToolStack(Material.NULL, Material.NULL), of('D', PropertyIngredient.builder("primary").types(AntimatterMaterialTypes.DUST).tags(GT4RMaterialTags.ROCK_CUTTER).build(), 'P', PropertyIngredient.builder("secondary").mats(Titanium, TungstenSteel).types(PLATE).build(), 'R', PropertyIngredient.builder("secondary").mats(Titanium, TungstenSteel).types(ROD).build(), 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "DR ", "DP ", "DCB");
-        provider.addToolRecipe(ToolTypes.UNIT_POWERED_TOOL_BUILDER.get(ROCK_CUTTER.getId()),output, GT4RRef.ID, ROCK_CUTTER.getId() + "_power_unit_recipe", "rock_cutters",
-                ROCK_CUTTER.getToolStack(Material.NULL, Material.NULL), of('D', PropertyIngredient.builder("primary").types(AntimatterMaterialTypes.DUST).tags(GT4RMaterialTags.ROCK_CUTTER).build(), 'S', AntimatterDefaultTools.FILE.getTag(), 'P', PropertyIngredient.builder("secondary").itemTags(POWER_UNIT_ROCK_CUTTER).build()), "DS", "DP", "D ");
+        IAntimatterTool rock_cutter_lv = AntimatterAPI.get(IAntimatterTool.class, "rock_cutter_lv", GT4RRef.ID);
+        provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER.get(ROCK_CUTTER.getId() + "-lv"), output, GT4RRef.ID, "rock_cutter_lv", "rock_cutters", ROCK_CUTTER.getToolStack(Material.NULL, Material.NULL), of('D', PropertyIngredient.builder("primary").types(AntimatterMaterialTypes.DUST).tags(GT4RMaterialTags.ROCK_CUTTER).build(), 'P', PropertyIngredient.builder("secondary").mats(Titanium, TungstenSteel).types(PLATE).build(), 'R', PropertyIngredient.builder("secondary").mats(Titanium, TungstenSteel).types(ROD).build(), 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "DR ", "DP ", "DCB");
+        provider.addToolRecipe(ToolTypes.UNIT_POWERED_TOOL_BUILDER.get(ROCK_CUTTER.getId() + "-lv"),output, GT4RRef.ID, ROCK_CUTTER.getId() + "_power_unit_recipe", "rock_cutters",
+                resolveStack(rock_cutter_lv, Material.NULL, Aluminium, 0, 100000), of('D', PropertyIngredient.builder("primary").types(AntimatterMaterialTypes.DUST).tags(GT4RMaterialTags.ROCK_CUTTER).build(), 'S', AntimatterDefaultTools.FILE.getTag(), 'P', PropertyIngredient.builder("secondary").itemTags(POWER_UNIT_ROCK_CUTTER).build()), "DS", "DP", "D ");
 
 
         IAntimatterTool drill_lv = AntimatterAPI.get(IAntimatterTool.class, "drill_lv", GTCore.ID);

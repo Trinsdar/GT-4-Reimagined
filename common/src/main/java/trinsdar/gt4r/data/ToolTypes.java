@@ -75,7 +75,7 @@ public class ToolTypes {
         @Override
         public ItemStack build(CraftingContainer inv, MaterialRecipe.Result mats) {
             Tuple<Long, Tuple<Long, Material>> t = (Tuple<Long, Tuple<Long, Material>>) mats.mats.get("secondary");
-            String domain = id.equals(ROCK_CUTTER.getId()) ? GT4RRef.ID : GTCore.ID;
+            String domain = id.contains(ROCK_CUTTER.getId()) ? GT4RRef.ID : GTCore.ID;
             IAntimatterTool type = AntimatterAPI.get(IAntimatterTool.class, id.replace('-', '_'), domain);
             t.getB().getB();
             return type.resolveStack((Material) mats.mats.get("primary"), t.getB().getB(), t.getA(), t.getB().getA());

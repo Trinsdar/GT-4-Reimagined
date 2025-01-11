@@ -2,11 +2,11 @@ package trinsdar.gt4r.datagen;
 
 
 import muramasa.antimatter.AntimatterAPI;
-import muramasa.antimatter.Ref;
 import muramasa.antimatter.datagen.providers.AntimatterLanguageProvider;
 import muramasa.antimatter.item.ItemFluidCell;
 import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.machine.types.Machine;
+import muramasa.antimatter.tool.IAntimatterTool;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.BlockCasing;
 import trinsdar.gt4r.block.BlockFakeCasing;
@@ -16,7 +16,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import static muramasa.antimatter.material.Material.NULL;
 import static muramasa.antimatter.machine.Tier.LV;
 import static muramasa.antimatter.util.Utils.lowerUnderscoreToUpperSpaced;
 import static muramasa.antimatter.util.Utils.lowerUnderscoreToUpperSpacedRotated;
@@ -24,7 +23,6 @@ import static trinsdar.gt4r.data.GT4RMaterialTags.TURBINE_ROTOR;
 import static trinsdar.gt4r.data.Machines.ELECTROLYZER;
 import static trinsdar.gt4r.data.Machines.MACERATOR;
 import static trinsdar.gt4r.data.GT4RMaterialTags.BROKEN_TURBINE_ROTOR;
-import static trinsdar.gt4r.data.ToolTypes.ROCK_CUTTER;
 
 public class GT4RLocalizations {
 
@@ -73,7 +71,7 @@ public class GT4RLocalizations {
             super.english(domain, locale);
             AntimatterAPI.all(BlockCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
             AntimatterAPI.all(BlockFakeCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
-            override(Ref.ID, ROCK_CUTTER.getToolStack(NULL, NULL).getItem().getDescriptionId(), "Rock Cutter");
+            override(AntimatterAPI.get(IAntimatterTool.class, "rock_cutter_lv", GT4RRef.ID).getItem().getDescriptionId(), "Rock Cutter");
             override(GT4RData.StorageDataOrb.getDescriptionId(), "Data Orb");
             AntimatterAPI.all(Machine.class, domain).forEach(i -> {
                 Collection<Tier> tiers =  i.getTiers();
