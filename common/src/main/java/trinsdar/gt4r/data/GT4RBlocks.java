@@ -18,6 +18,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.BlockCasing;
+import trinsdar.gt4r.block.BlockColoredWall;
 import trinsdar.gt4r.block.BlockFakeCasing;
 
 import static muramasa.antimatter.fluid.AntimatterFluid.OVERLAY_TEXTURE;
@@ -33,6 +34,14 @@ public class GT4RBlocks {
     public static final BlockFakeCasing FIRE_BRICKS = new BlockFakeCasing(GT4RRef.ID, "fire_bricks", BlockBehaviour.Properties.of(Material.STONE, MaterialColor.DIRT).strength(1.0f, 10.0f).sound(SoundType.STONE));
     public static final BlockCasing IRIDIUM_REINFORCED_STONE = new BlockCasing(GT4RRef.ID, "iridium_reinforced_stone", Block.Properties.of(Material.STONE).strength(80.0f, 150.0f).sound(SoundType.STONE).requiresCorrectToolForDrops());
     public static final BlockCasing FUSION_COIL = new BlockCasing(GT4RRef.ID, "fusion_coil");
+    public static final BlockColoredWall WOOD_WALL = new BlockColoredWall(GT4RRef.ID, AntimatterMaterials.Wood, BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(2.0F, 3.0F).sound(SoundType.WOOD));
+    public static final BlockColoredWall STEEL_WALL = new BlockColoredWall(GT4RRef.ID, Materials.Steel);
+    public static final BlockColoredWall INVAR_WALL = new BlockColoredWall(GT4RRef.ID, Materials.Invar);
+    public static final BlockColoredWall STAINLESS_STEEL_WALL = new BlockColoredWall(GT4RRef.ID, Materials.StainlessSteel);
+    public static final BlockColoredWall TITANIUM_WALL = new BlockColoredWall(GT4RRef.ID, Materials.Titanium);
+    public static final BlockColoredWall NETHERITE_WALL = new BlockColoredWall(GT4RRef.ID, AntimatterMaterials.Netherite);
+    public static final BlockColoredWall TUNGSTENSTEEL_WALL = new BlockColoredWall(GT4RRef.ID, Materials.TungstenSteel);
+    public static final BlockColoredWall TUNGSTEN_WALL = new BlockColoredWall(GT4RRef.ID, Materials.Tungsten);
     public static final Cable<?> CABLE_SOLDERING_ALLOY = AntimatterAPI.register(Cable.class, new Cable<>(GT4RRef.ID, SolderingAlloy, 0.02, Tier.ULV).amps(1));
     public static final Cable<?> CABLE_LEAD = AntimatterAPI.register(Cable.class, new Cable<>(GT4RRef.ID, Lead, 2, Tier.LV).amps(2));
     public static final Cable<?> CABLE_TIN = AntimatterAPI.register(Cable.class, new Cable<>(GT4RRef.ID, Tin, 1, Tier.LV).amps(1));

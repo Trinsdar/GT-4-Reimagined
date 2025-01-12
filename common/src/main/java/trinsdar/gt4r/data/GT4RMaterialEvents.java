@@ -1,5 +1,7 @@
 package trinsdar.gt4r.data;
 
+import muramasa.antimatter.AntimatterAPI;
+import muramasa.antimatter.Ref;
 import muramasa.antimatter.data.AntimatterDefaultTools;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.data.AntimatterMaterials;
@@ -7,13 +9,15 @@ import muramasa.antimatter.event.MaterialEvent;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.material.MaterialTags;
 import net.minecraft.world.item.enchantment.Enchantments;
+import org.gtreimagined.gtcore.data.GTCoreBlocks;
+import org.gtreimagined.gtcore.data.GTCoreMaterials;
 import trinsdar.gt4r.material.GT4RMaterialEvent;
 
 import static com.google.common.collect.ImmutableMap.of;
-import static muramasa.antimatter.data.AntimatterMaterialTypes.FOIL;
-import static muramasa.antimatter.data.AntimatterMaterialTypes.PLATE;
-import static muramasa.antimatter.material.MaterialTags.NOSMASH;
-import static muramasa.antimatter.material.MaterialTags.RUBBERTOOLS;
+import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
+import static muramasa.antimatter.data.AntimatterMaterials.Gold;
+import static muramasa.antimatter.data.AntimatterMaterials.Netherite;
+import static muramasa.antimatter.material.MaterialTags.*;
 import static net.minecraft.world.item.Tiers.IRON;
 import static trinsdar.gt4r.data.GT4RMaterialTags.ELEC;
 import static trinsdar.gt4r.data.Materials.*;
@@ -241,6 +245,55 @@ public class GT4RMaterialEvents {
         //Cinnabar.setDirectSmeltInto(Mercury);
 
         HotCoolant.remove(MaterialTags.MOLTEN);
+        initMaterialMachines();
+    }
+
+    private static void initMaterialMachines(){
+        Machines.initTanks();
+        METAL.all().forEach(m -> {
+            if ((m.getElement() == null || !m.getElement().isIsotope) && m.has(PLATE) && m.has(ROD)){
+
+                //GTCoreBlocks.createWorkbench(m, false);
+                //GTCoreBlocks.createWorkbench(m, true);
+                //GTCoreBlocks.createLocker(m, false);
+                //GTCoreBlocks.createLocker(m, true);
+                if (m != GTCoreMaterials.Ironwood) {
+                    GTCoreBlocks.createMassStorage(m, 1000000);
+                }
+                //GTCoreBlocks.createChest(m, true);
+                //m.flags(RING, SCREW);
+                //GTCoreBlocks.createBarrel(m, true);
+            }
+        });
+        GTCoreBlocks.createHopper(Lead, 1);
+        GTCoreBlocks.createHopper(Bismuth, 2);
+        GTCoreBlocks.createHopper(Antimony, 2);
+        GTCoreBlocks.createHopper(Nickel, 3);
+        GTCoreBlocks.createHopper(Cupronickel, 3);
+        GTCoreBlocks.createHopper(Bronze, 3);
+        GTCoreBlocks.createHopper(Aluminium, 4);
+        GTCoreBlocks.createHopper(Brass, 4);
+        GTCoreBlocks.createHopper(BismuthBronze, 5);
+        GTCoreBlocks.createHopper(Invar, 5);
+        GTCoreBlocks.createHopper(Steel, 5);
+        GTCoreBlocks.createHopper(Gold, 6);
+        GTCoreBlocks.createHopper(Silver, 6);
+        GTCoreBlocks.createHopper(Manganese, 6);
+        GTCoreBlocks.createHopper(GTCoreMaterials.Lumium, 6);
+        if (AntimatterAPI.isModLoaded(Ref.MOD_TWILIGHT)) {
+            GTCoreBlocks.createHopper(GTCoreMaterials.Knightmetal, 7);
+        }
+        GTCoreBlocks.createHopper(Electrum, 9);
+        GTCoreBlocks.createHopper(StainlessSteel, 9);
+        GTCoreBlocks.createHopper(Titanium, 12);
+        GTCoreBlocks.createHopper(Netherite, 12);
+        GTCoreBlocks.createHopper(Chromium, 14);
+        GTCoreBlocks.createHopper(Platinum, 18);
+        GTCoreBlocks.createHopper(TungstenSteel, 27);
+        GTCoreBlocks.createHopper(TungstenCarbide, 27);
+        GTCoreBlocks.createHopper(Tungsten, 36);
+        GTCoreBlocks.createHopper(Iridium, 36);
+        GTCoreBlocks.createHopper(Osmium, 36);
     }
 
     private static void byProducts(GT4RMaterialEvent event){

@@ -1,6 +1,7 @@
 package trinsdar.gt4r.data;
 
 
+import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.blockentity.single.BlockEntityTransformer;
 import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.machine.Tier;
@@ -11,24 +12,34 @@ import muramasa.antimatter.machine.types.HatchMachine;
 import muramasa.antimatter.machine.types.MultiMachine;
 import muramasa.antimatter.machine.types.TankMachine;
 import muramasa.antimatter.blockentity.single.BlockEntityDigitalTransformer;
+import muramasa.antimatter.material.Material;
+import muramasa.antimatter.texture.Texture;
 import muramasa.antimatter.util.Utils;
 import net.minecraft.ChatFormatting;
+import net.minecraft.world.level.block.Block;
+import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import org.gtreimagined.gtcore.data.GTCoreMaterials;
 import org.gtreimagined.gtcore.machine.DrumMachine;
 import org.gtreimagined.gtcore.machine.LockerMachine;
 import org.gtreimagined.gtcore.machine.MaterialMachine;
+import org.gtreimagined.gtcore.machine.MultiblockTankMachine;
 import org.gtreimagined.gtcore.machine.WorkbenchMachine;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.BlockBatBox;
+import trinsdar.gt4r.block.BlockColoredWall;
 import trinsdar.gt4r.block.BlockRedstoneMachine;
 import trinsdar.gt4r.machine.*;
 import trinsdar.gt4r.blockentity.multi.*;
 import trinsdar.gt4r.blockentity.single.*;
 import trinsdar.gt4r.blockentity.single.BlockEntityQuantumChest;
 
+import java.util.function.Supplier;
+
 import static muramasa.antimatter.Data.*;
 import static muramasa.antimatter.cover.ICover.emptyFactory;
+import static muramasa.antimatter.data.AntimatterMaterials.Netherite;
+import static muramasa.antimatter.data.AntimatterMaterials.Wood;
 import static muramasa.antimatter.machine.MachineFlag.*;
 import static muramasa.antimatter.machine.Tier.*;
 import static trinsdar.gt4r.data.GT4RCovers.COVER_DYNAMO_OLD;
@@ -134,6 +145,26 @@ public class Machines {
     public static DrumMachine TUNGSTENSTEEL_DRUM = GTCoreBlocks.createDrum(Materials.TungstenSteel, 256000);
     public static DrumMachine NETHERITE_DRUM = GTCoreBlocks.createDrum(AntimatterMaterials.Netherite, 128000).acidProof();
 
+    public static MultiblockTankMachine WOOD_TANK;
+    public static MultiblockTankMachine[] STEEL_TANKS;
+    public static MultiblockTankMachine[] INVAR_TANKS;
+    public static MultiblockTankMachine[] STAINLESS_STEEL_TANKS;
+    public static MultiblockTankMachine[] TITANIUM_TANKS;
+    public static MultiblockTankMachine[] NETHERITE_TANKS;
+    public static MultiblockTankMachine[] TUNGSTENSTEEL_TANKS;
+    public static MultiblockTankMachine[] TUNGSTEN_TANKS;
+
+    public static void initTanks() {
+        WOOD_TANK = new MultiblockTankMachine(GT4RRef.ID, Wood, true, 432000, () -> GT4RBlocks.WOOD_WALL).maxHeat(350);
+        STEEL_TANKS = createTankMachine(Materials.Steel, 3);
+        INVAR_TANKS = createTankMachine(Materials.Invar, 2);
+        STAINLESS_STEEL_TANKS = createTankMachine(Materials.StainlessSteel, 4);
+        TITANIUM_TANKS = createTankMachine(Materials.Titanium, 8);
+        NETHERITE_TANKS = createTankMachine(Netherite, 8);
+        TUNGSTENSTEEL_TANKS = createTankMachine(Materials.TungstenSteel, 16);
+        TUNGSTEN_TANKS = createTankMachine(Materials.Tungsten, 16);
+    }
+
     public static MaterialMachine IRON_CABINET = GTCoreBlocks.createBarrel(AntimatterMaterials.Iron);
     public static MaterialMachine ALUMINIUM_CABINET = GTCoreBlocks.createBarrel(GTCoreMaterials.Aluminium);
     public static MaterialMachine WROUGHT_IRON_CABINET = GTCoreBlocks.createBarrel(GTCoreMaterials.WroughtIron);
@@ -187,5 +218,18 @@ public class Machines {
         WATERMILL.setOutputCover(COVER_DYNAMO_OLD);
         HEAT_EXCHANGER.removeFlags(EU);
         DUSTBIN.removeFlags(EU);
+    }
+
+    private static MultiblockTankMachine[] createTankMachine(Material material, int multiplier){
+        Supplier<Block> casing = () -> AntimatterAPI.get(BlockColoredWall.class, material.getId() + "_wall", GT4RRef.ID);
+        MultiblockTankMachine[] multiblockTankMachines = {
+                (MultiblockTankMachine) new MultiblockTankMachine(GT4RRef.ID, material, true, 432 * multiplier * 1000, casing).gasProof().baseTexture(new Texture(GT4RRef.ID, "block/casing/wall/metal")),
+                (MultiblockTankMachine) new MultiblockTankMachine(GT4RRef.ID, material, false, 2000 * multiplier * 1000, casing).gasProof().baseTexture(new Texture(GT4RRef.ID, "block/casing/wall/metal"))
+        };
+        if (material == Materials.StainlessSteel || material == Netherite){
+            multiblockTankMachines[0].acidProof();
+            multiblockTankMachines[1].acidProof();
+        }
+        return multiblockTankMachines;
     }
 }
