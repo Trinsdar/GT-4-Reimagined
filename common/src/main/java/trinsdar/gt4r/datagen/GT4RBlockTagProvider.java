@@ -12,7 +12,7 @@ import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.*;
 
 import static org.gtreimagined.gtcore.data.GTCoreBlocks.*;
-
+import static trinsdar.gt4r.data.GT4RBlocks.*;
 
 public class GT4RBlockTagProvider extends AntimatterBlockTagProvider {
 
