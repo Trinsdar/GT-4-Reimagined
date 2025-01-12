@@ -7,10 +7,13 @@ import muramasa.antimatter.datagen.providers.AntimatterBlockTagProvider;
 import muramasa.antimatter.util.TagUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
+import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.*;
 
 import static trinsdar.gt4r.data.GT4RData.*;
+import static org.gtreimagined.gtcore.data.GTCoreBlocks.*;
+
 
 public class GT4RBlockTagProvider extends AntimatterBlockTagProvider {
 
@@ -21,8 +24,8 @@ public class GT4RBlockTagProvider extends AntimatterBlockTagProvider {
     @Override
     public void processTags(String domain) {
         super.processTags(domain);
-        this.tag(TagUtils.getForgelikeBlockTag("wg_stone")).add(GRANITE_BLACK.getState().getBlock(), GRANITE_RED.getState().getBlock(), MARBLE.getState().getBlock(), AntimatterStoneTypes.BASALT.getState().getBlock(), KOMATIITE.getState().getBlock(), LIMESTONE.getState().getBlock(), GREEN_SCHIST.getState().getBlock(), BLUE_SCHIST.getState().getBlock(), KIMBERLITE.getState().getBlock(), QUARTZITE.getState().getBlock());
-        this.tag(TagUtils.getBlockTag(new ResourceLocation("minecraft","base_stone_overworld"))).add(GRANITE_BLACK.getState().getBlock(), GRANITE_RED.getState().getBlock(), MARBLE.getState().getBlock(), AntimatterStoneTypes.BASALT.getState().getBlock(), KOMATIITE.getState().getBlock(), LIMESTONE.getState().getBlock(), GREEN_SCHIST.getState().getBlock(), BLUE_SCHIST.getState().getBlock(), KIMBERLITE.getState().getBlock(), QUARTZITE.getState().getBlock());
+        this.tag(TagUtils.getForgelikeBlockTag("wg_stone")).add(BLACK_GRANITE.getState().getBlock(), RED_GRANITE.getState().getBlock(), MARBLE.getState().getBlock(), AntimatterStoneTypes.BASALT.getState().getBlock(), KOMATIITE.getState().getBlock(), LIMESTONE.getState().getBlock(), GREEN_SCHIST.getState().getBlock(), BLUE_SCHIST.getState().getBlock(), KIMBERLITE.getState().getBlock(), QUARTZITE.getState().getBlock());
+        this.tag(TagUtils.getBlockTag(new ResourceLocation("minecraft","base_stone_overworld"))).add(BLACK_GRANITE.getState().getBlock(), RED_GRANITE.getState().getBlock(), MARBLE.getState().getBlock(), AntimatterStoneTypes.BASALT.getState().getBlock(), KOMATIITE.getState().getBlock(), LIMESTONE.getState().getBlock(), GREEN_SCHIST.getState().getBlock(), BLUE_SCHIST.getState().getBlock(), KIMBERLITE.getState().getBlock(), QUARTZITE.getState().getBlock());
         AntimatterAPI.all(BlockCasing.class, GT4RRef.ID, cas -> {
             this.tag(AntimatterDefaultTools.PICKAXE.getToolType()).add(cas);
         });

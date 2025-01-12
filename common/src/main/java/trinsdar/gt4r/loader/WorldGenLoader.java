@@ -11,14 +11,15 @@ import muramasa.antimatter.worldgen.vanillaore.WorldGenVanillaOre;
 import muramasa.antimatter.worldgen.vanillaore.WorldGenVanillaOreBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import org.gtreimagined.gtcore.GTCore;
+import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.data.AntimatterStoneTypes.*;
-import static org.gtreimagined.gtcore.data.GTCoreBlocks.SHALE;
-import static org.gtreimagined.gtcore.data.GTCoreBlocks.SLATE;
-import static trinsdar.gt4r.data.GT4RData.*;
+
+import static org.gtreimagined.gtcore.data.GTCoreBlocks.*;
 import static trinsdar.gt4r.data.Materials.*;
 
 public class WorldGenLoader {
@@ -33,8 +34,8 @@ public class WorldGenLoader {
 
     private static void initStoneLayers(WorldGenEvent ev){
         ev.stoneLayer(new WorldGenStoneLayerBuilder("stone").withStone(STONE).withWeight(6).buildVein());
-        ev.stoneLayer(new WorldGenStoneLayerBuilder("black_granite").withStone(GRANITE_BLACK).withWeight(2).buildVein());
-        ev.stoneLayer(new WorldGenStoneLayerBuilder("red_granite").withStone(GRANITE_RED).withWeight(2).buildVein());
+        ev.stoneLayer(new WorldGenStoneLayerBuilder("black_granite").withStone(GTCoreBlocks.BLACK_GRANITE).withWeight(2).buildVein());
+        ev.stoneLayer(new WorldGenStoneLayerBuilder("red_granite").withStone(GTCoreBlocks.RED_GRANITE).withWeight(2).buildVein());
         ev.stoneLayer(new WorldGenStoneLayerBuilder("komatiite").withStone(KOMATIITE).withWeight(4).buildVein());
         ev.stoneLayer(new WorldGenStoneLayerBuilder("basalt").withStone(BASALT).withWeight(3).buildVein());
         ev.stoneLayer(new WorldGenStoneLayerBuilder("marble").withStone(MARBLE).withWeight(4).buildVein());

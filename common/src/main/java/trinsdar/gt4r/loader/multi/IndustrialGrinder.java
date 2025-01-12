@@ -11,6 +11,7 @@ import muramasa.antimatter.util.TagUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.data.GT4RData;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
@@ -66,8 +67,8 @@ public class IndustrialGrinder {
         addGrinderRecipe(AntimatterMaterials.Emerald, SulfuricAcid, new ItemStack(Items.EMERALD, 2), AntimatterMaterialTypes.DUST_SMALL.get(Aluminium, 1));
         addGrinderRecipe(Olivine, SulfuricAcid, AntimatterMaterialTypes.GEM.get(Olivine, 2), AntimatterMaterialTypes.DUST_SMALL.get(Pyrope, 2));
 
-        INDUSTRIAL_GRINDING.RB().ii(of(new ItemStack(GT4RData.GRANITE_BLACK.getState().getBlock(), 16))).fi(Water.getLiquid(1000)).io(DUST.get(BlackGranite, 16), DUST_SMALL.get(Thorium, 1)).add("black_granite",1600, 120);
-        INDUSTRIAL_GRINDING.RB().ii(of(new ItemStack(GT4RData.GRANITE_RED.getState().getBlock(), 16))).fi(Water.getLiquid(1000)).io(DUST.get(RedGranite, 16), DUST_SMALL.get(Uranium238, 1)).add("red_granite",1600, 120);
+        INDUSTRIAL_GRINDING.RB().ii(of(new ItemStack(GTCoreBlocks.BLACK_GRANITE.getState().getBlock(), 16))).fi(Water.getLiquid(1000)).io(DUST.get(BlackGranite, 16), DUST_SMALL.get(Thorium, 1)).add("black_granite",1600, 120);
+        INDUSTRIAL_GRINDING.RB().ii(of(new ItemStack(GTCoreBlocks.RED_GRANITE.getState().getBlock(), 16))).fi(Water.getLiquid(1000)).io(DUST.get(RedGranite, 16), DUST_SMALL.get(Uranium238, 1)).add("red_granite",1600, 120);
         INDUSTRIAL_GRINDING.RB().ii(of(new ItemStack(Items.END_STONE, 1))).fi(Water.getLiquid(1000)).io(DUST.get(Endstone, 16), DUST_TINY.get(Tungsten, 1)).add("end_stone",1600, 120);
         INDUSTRIAL_GRINDING.RB().ii(of(TagUtils.getForgelikeItemTag("sandless_ores/" + Coal.getId()), 1)).fi(Water.getLiquid(1000)).io(new ItemStack(Items.COAL), DUST.get(Coal, 1), DUST_SMALL.get(Thorium, 1)).add("coal",100, 120);
         INDUSTRIAL_GRINDING.RB().ii(of(Items.NETHER_QUARTZ_ORE, 1)).fi(Water.getLiquid(1000)).io(new ItemStack(Items.QUARTZ, 4), DUST_SMALL.get(Netherrack, 2)).add("nether_quartz",100, 120);

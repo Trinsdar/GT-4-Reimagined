@@ -154,18 +154,6 @@ public class GT4RData {
     public static ItemBasic<?> ZPM = new ItemMultiTextureBattery(GT4RRef.ID, "zpm", Tier.ZPM, 100000000000L, false);
     //public static ItemBasic<?> BatteryEnergyOrbCluster = new ItemBasic<>(Ref.ID, "battery_energy_orb_cluster");
 
-    public static StoneType GRANITE_RED = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "red_granite", Materials.RedGranite, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(4.5F, 60.0F).setHarvestLevel(3);
-    public static StoneType GRANITE_BLACK = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "black_granite", Materials.BlackGranite, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(4.5F, 60.0F).setHarvestLevel(3);
-    public static StoneType MARBLE = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "marble", Materials.Marble, "block/stone/", SoundType.STONE, true).setHardnessAndResistance(0.75F,7.5F));
-
-    public static StoneType KOMATIITE = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "komatiite", Materials.Komatiite, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(3.0F, 30.0F).setHarvestLevel(2);
-    public static StoneType LIMESTONE = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "limestone", Limestone, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(0.75F,7.5F);
-    public static StoneType GREEN_SCHIST = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "green_schist", GreenSchist, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(0.75F,7.5F);
-    public static StoneType BLUE_SCHIST = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "blue_schist", BlueSchist, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(0.75F,7.5F);
-    public static StoneType KIMBERLITE = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "kimberlite", Kimberlite, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(3.0F, 30.0F).setHarvestLevel(2);
-    public static StoneType QUARTZITE = AntimatterAPI.register(StoneType.class, new CobbleStoneType(GT4RRef.ID, "quartzite", Quartzite, "block/stone/", SoundType.STONE, true)).setHardnessAndResistance(0.75F,7.5F);
-
-
     public static final BlockFakeCasing STANDARD_MACHINE_CASING = new BlockFakeCasing(GT4RRef.ID, "standard_machine_casing");
     public static final BlockCasing REINFORCED_MACHINE_CASING = new BlockCasing(GT4RRef.ID, "reinforced_machine_casing");
     public static final BlockCasing ADVANCED_MACHINE_CASING = new BlockCasing(GT4RRef.ID, "advanced_machine_casing");
