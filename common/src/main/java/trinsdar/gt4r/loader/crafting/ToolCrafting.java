@@ -15,8 +15,7 @@ import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreTools;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
-import trinsdar.gt4r.data.CustomTags;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 import trinsdar.gt4r.data.ToolTypes;
 
@@ -45,31 +44,31 @@ public class ToolCrafting {
 
     private static void loadPoweredRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider){
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get(GTCoreTools.DRILL.getId()),output, GT4RRef.ID, GTCoreTools.DRILL.getId() + "_" + "recipe", "antimatter_drills",
-                GT4RData.Drill.getDefaultInstance(), of('S', PLATES_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), " S ", "SCS", "SBS");
+                GT4RItems.Drill.getDefaultInstance(), of('S', PLATES_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), " S ", "SCS", "SBS");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get("diamond_drill"),output, GT4RRef.ID,   "diamond_drill_" + "recipe", "antimatter_drills",
-                GT4RData.DiamondDrill.getDefaultInstance(), of('T', PLATE.getMaterialTag(Titanium), 'C', CIRCUITS_ADVANCED, 'D', GEM.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(DRILL).build()), " D ", "DBD", "TCT");
+                GT4RItems.DiamondDrill.getDefaultInstance(), of('T', PLATE.getMaterialTag(Titanium), 'C', CIRCUITS_ADVANCED, 'D', GEM.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(DRILL).build()), " D ", "DBD", "TCT");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get("advanced_drill"),output, GT4RRef.ID,   "advanced_drill_" + "recipe", "antimatter_drills",
-                GT4RData.AdvancedDrill.getDefaultInstance(), of('T', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_ELITE, 'D', GEM.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), "DDD", "TCT", "TBT");
+                GT4RItems.AdvancedDrill.getDefaultInstance(), of('T', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_ELITE, 'D', GEM.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), "DDD", "TCT", "TBT");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get(GTCoreTools.CHAINSAW.getId()),output, GT4RRef.ID, GTCoreTools.CHAINSAW.getId() + "_" + "recipe", "antimatter_drills",
-                GT4RData.Chainsaw.getDefaultInstance(), of('S', PLATES_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), " SS", "SCS", "BS ");
+                GT4RItems.Chainsaw.getDefaultInstance(), of('S', PLATES_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), " SS", "SCS", "BS ");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get("advanced_chainsaw"),output, GT4RRef.ID,   "advanced_chainsaw_" + "recipe", "antimatter_drills",
-                GT4RData.AdvancedChainsaw.getDefaultInstance(), of('T', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_ELITE, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), " TT", "TCT", "BT ");
+                GT4RItems.AdvancedChainsaw.getDefaultInstance(), of('T', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_ELITE, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), " TT", "TCT", "BT ");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get(GTCoreTools.ELECTRIC_WRENCH.getId()),output, GT4RRef.ID, GTCoreTools.ELECTRIC_WRENCH.getId() + "_" + "recipe", "antimatter_drills",
-                GT4RData.ElectricWrench.getDefaultInstance(), of('S', PLATES_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "S S", "SCS", " B ");
+                GT4RItems.ElectricWrench.getDefaultInstance(), of('S', PLATES_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "S S", "SCS", " B ");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get("advanced_wrench"),output, GT4RRef.ID,   "advanced_wrench_" + "recipe", "antimatter_drills",
-                GT4RData.AdvancedWrench.getDefaultInstance(), of('T', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_ELITE, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), "T T", "TCT", " B ");
+                GT4RItems.AdvancedWrench.getDefaultInstance(), of('T', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_ELITE, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), "T T", "TCT", " B ");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get(GTCoreTools.ELECTRIC_SCREWDRIVER.getId()),output, GT4RRef.ID, GTCoreTools.ELECTRIC_SCREWDRIVER.getId() + "_" + "recipe", "antimatter_drills",
-                GT4RData.ElectricScrewdriver.getDefaultInstance(), of('S', RODS_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "S  ", " SC", "  B");
+                GT4RItems.ElectricScrewdriver.getDefaultInstance(), of('S', RODS_STEELS, 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "S  ", " SC", "  B");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get(ROCK_CUTTER.getId()),output, GT4RRef.ID,  "rock_cutter_titanium", "antimatter_drills",
-                GT4RData.RockCutter.getDefaultInstance(), of('R', ROD.getMaterialTag(Titanium), 'P', PLATE.getMaterialTag(Titanium), 'C', CIRCUITS_BASIC, 'D', DUST.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "DR ", "DP ", "DCB");
+                GT4RItems.RockCutter.getDefaultInstance(), of('R', ROD.getMaterialTag(Titanium), 'P', PLATE.getMaterialTag(Titanium), 'C', CIRCUITS_BASIC, 'D', DUST.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "DR ", "DP ", "DCB");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get(ROCK_CUTTER.getId()),output, GT4RRef.ID,  "rock_cutter_tungstensteel", "antimatter_drills",
-                GT4RData.RockCutter.getDefaultInstance(), of('R', ROD.getMaterialTag(TungstenSteel), 'P', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_BASIC, 'D', DUST.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "DR ", "DP ", "DCB");
+                GT4RItems.RockCutter.getDefaultInstance(), of('R', ROD.getMaterialTag(TungstenSteel), 'P', PLATE.getMaterialTag(TungstenSteel), 'C', CIRCUITS_BASIC, 'D', DUST.getMaterialTag(Diamond), 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "DR ", "DP ", "DCB");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get("bronze_jackhammer"), output, GT4RRef.ID, "jackhammer_bronze", "drills",
-                GT4RData.BronzeJackHammer.getDefaultInstance(), of('R', ROD.getMaterialTag(Bronze), 'I', INGOT.getMaterialTag(Bronze), 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "RBR", " C ", " I ");
+                GT4RItems.BronzeJackHammer.getDefaultInstance(), of('R', ROD.getMaterialTag(Bronze), 'I', INGOT.getMaterialTag(Bronze), 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "RBR", " C ", " I ");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get("steel_jackhammer"), output, GT4RRef.ID, "jackhammer_steel", "drills",
-                GT4RData.SteelJackHammer.getDefaultInstance(), of('R', ROD.getMaterialTag(StainlessSteel), 'I', INGOT.getMaterialTag(StainlessSteel), 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "RBR", " C ", " I ");
+                GT4RItems.SteelJackHammer.getDefaultInstance(), of('R', ROD.getMaterialTag(StainlessSteel), 'I', INGOT.getMaterialTag(StainlessSteel), 'C', CIRCUITS_BASIC, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_SMALL).build()), "RBR", " C ", " I ");
         provider.addToolRecipe(ToolTypes.POWERED_TOOL_BUILDER_BASIC.get("diamond_jackhammer"), output, GT4RRef.ID, "jackhammer_diamond", "drills",
-                GT4RData.DiamondJackHammer.getDefaultInstance(), of('R', ROD.getMaterialTag(TungstenSteel), 'I', GEM.getMaterialTag(Diamond), 'C', CIRCUITS_ADVANCED, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), "RBR", " C ", " I ");
+                GT4RItems.DiamondJackHammer.getDefaultInstance(), of('R', ROD.getMaterialTag(TungstenSteel), 'I', GEM.getMaterialTag(Diamond), 'C', CIRCUITS_ADVANCED, 'B', PropertyIngredient.builder("battery").itemTags(BATTERIES_MEDIUM).build()), "RBR", " C ", " I ");
     }
 
     private static void loadBreakablePoweredRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider){

@@ -32,24 +32,24 @@ public class TierMaps {
     public static void buildTierMaps() {
         {
             ImmutableMap.Builder<Tier, Wire<?>> builder = ImmutableMap.builder();
-            builder.put(Tier.ULV, GT4RData.WIRE_SOLDERING_ALLOY);
-            builder.put(Tier.LV, GT4RData.WIRE_TIN);
-            builder.put(Tier.MV, GT4RData.WIRE_COPPER);
-            builder.put(Tier.HV, GT4RData.WIRE_GOLD);
-            builder.put(Tier.EV, GT4RData.WIRE_ALUMINIUM);
-            builder.put(Tier.IV, GT4RData.WIRE_TUNGSTEN);
-            builder.put(Tier.LUV, GT4RData.WIRE_SUPERCONDUCTOR);
+            builder.put(Tier.ULV, GT4RBlocks.WIRE_SOLDERING_ALLOY);
+            builder.put(Tier.LV, GT4RBlocks.WIRE_TIN);
+            builder.put(Tier.MV, GT4RBlocks.WIRE_COPPER);
+            builder.put(Tier.HV, GT4RBlocks.WIRE_GOLD);
+            builder.put(Tier.EV, GT4RBlocks.WIRE_ALUMINIUM);
+            builder.put(Tier.IV, GT4RBlocks.WIRE_TUNGSTEN);
+            builder.put(Tier.LUV, GT4RBlocks.WIRE_SUPERCONDUCTOR);
             TIER_WIRES = builder.build();
         }
         {
             ImmutableMap.Builder<Tier, Cable<?>> builder = ImmutableMap.builder();
-            builder.put(Tier.ULV, GT4RData.CABLE_SOLDERING_ALLOY);
-            builder.put(Tier.LV, GT4RData.CABLE_TIN);
-            builder.put(Tier.MV, GT4RData.CABLE_COPPER);
-            builder.put(Tier.HV, GT4RData.CABLE_GOLD);
-            builder.put(Tier.EV, GT4RData.CABLE_ALUMINIUM);
-            builder.put(Tier.IV, GT4RData.CABLE_TUNGSTEN);
-            builder.put(Tier.LUV, GT4RData.WIRE_SUPERCONDUCTOR);
+            builder.put(Tier.ULV, GT4RBlocks.CABLE_SOLDERING_ALLOY);
+            builder.put(Tier.LV, GT4RBlocks.CABLE_TIN);
+            builder.put(Tier.MV, GT4RBlocks.CABLE_COPPER);
+            builder.put(Tier.HV, GT4RBlocks.CABLE_GOLD);
+            builder.put(Tier.EV, GT4RBlocks.CABLE_ALUMINIUM);
+            builder.put(Tier.IV, GT4RBlocks.CABLE_TUNGSTEN);
+            builder.put(Tier.LUV, GT4RBlocks.WIRE_SUPERCONDUCTOR);
             TIER_CABLES = builder.build();
         }
         {

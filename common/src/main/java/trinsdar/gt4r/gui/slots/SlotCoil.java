@@ -9,7 +9,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 import tesseract.api.item.ExtendedItemContainer;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.data.Machines;
 import trinsdar.gt4r.data.RecipeMaps;
 import trinsdar.gt4r.blockentity.multi.BlockEntityIndustrialBlastFurnace;
@@ -26,7 +26,7 @@ public class SlotCoil extends AbstractSlot<SlotCoil> {
             return RecipeMaps.SMELTER_COILS.acceptsItem(stack);
         }
         BlockEntityMachine<?> m = (BlockEntityMachine<?>) holder;
-        return stack.getItem() == GT4RData.KanthalHeatingCoil || stack.getItem() == GT4RData.NichromeHeatingCoil || (m.getMachineType() == Machines.PYROLYSIS_OVEN && stack.getItem() == GT4RData.CupronickelHeatingCoil);
+        return stack.getItem() == GT4RItems.KanthalHeatingCoil || stack.getItem() == GT4RItems.NichromeHeatingCoil || (m.getMachineType() == Machines.PYROLYSIS_OVEN && stack.getItem() == GT4RItems.CupronickelHeatingCoil);
     }
 
     @Override

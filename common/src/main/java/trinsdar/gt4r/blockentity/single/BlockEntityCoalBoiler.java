@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.machine.CoalBoilerFluidHandler;
 import trinsdar.gt4r.machine.CoalBoilerRecipeHandler;
 
@@ -63,7 +63,7 @@ public class BlockEntityCoalBoiler extends BlockEntityMachine<BlockEntityCoalBoi
 
     @Override
     public InteractionResult onInteractServer(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, @Nullable AntimatterToolType type) {
-        if (player.getItemInHand(hand).getItem() == GT4RData.SteelUpgrade){
+        if (player.getItemInHand(hand).getItem() == GT4RItems.SteelUpgrade){
             CompoundTag nbt = new CompoundTag();
             this.saveAdditional(nbt);
             world.setBlock(pos, this.getMachineType().getBlockState(Tier.STEEL).defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, this.getFacing()), 3);

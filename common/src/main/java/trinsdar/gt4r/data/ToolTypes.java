@@ -1,7 +1,6 @@
 package trinsdar.gt4r.data;
 
 import com.google.common.collect.ImmutableMap;
-import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.Ref;
 import muramasa.antimatter.data.AntimatterDefaultTools;
@@ -14,7 +13,6 @@ import muramasa.antimatter.tool.IAntimatterTool;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Tuple;
 import net.minecraft.world.inventory.CraftingContainer;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import org.gtreimagined.gtcore.GTCore;
@@ -32,7 +30,7 @@ import java.util.Map;
 
 import static muramasa.antimatter.material.Material.NULL;
 import static net.minecraft.world.level.material.Material.*;
-import static trinsdar.gt4r.data.GT4RData.*;
+import static trinsdar.gt4r.data.GT4RItems.*;
 
 public class ToolTypes {
     public static final MaterialRecipe.Provider POWERED_TOOL_BUILDER = MaterialRecipe.registerProvider("powered-tool", GT4RRef.ID, id -> new MaterialRecipe.ItemBuilder() {

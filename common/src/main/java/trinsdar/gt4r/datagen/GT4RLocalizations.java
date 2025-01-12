@@ -10,7 +10,7 @@ import muramasa.antimatter.tool.IAntimatterTool;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.BlockCasing;
 import trinsdar.gt4r.block.BlockFakeCasing;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -72,7 +72,7 @@ public class GT4RLocalizations {
             AntimatterAPI.all(BlockCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
             AntimatterAPI.all(BlockFakeCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
             override(AntimatterAPI.get(IAntimatterTool.class, "rock_cutter_lv", GT4RRef.ID).getItem().getDescriptionId(), "Rock Cutter");
-            override(GT4RData.StorageDataOrb.getDescriptionId(), "Data Orb");
+            override(GT4RItems.StorageDataOrb.getDescriptionId(), "Data Orb");
             AntimatterAPI.all(Machine.class, domain).forEach(i -> {
                 Collection<Tier> tiers =  i.getTiers();
                 String value = i.getLang(locale).concat(" (%s)");

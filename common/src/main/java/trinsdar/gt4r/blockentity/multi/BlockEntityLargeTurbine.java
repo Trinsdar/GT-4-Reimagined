@@ -19,10 +19,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RBlocks;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 import trinsdar.gt4r.data.Machines;
-import trinsdar.gt4r.data.SlotTypes;
 import trinsdar.gt4r.items.ItemTurbineRotor;
 
 
@@ -150,9 +149,9 @@ public class BlockEntityLargeTurbine extends BlockEntityMultiMachine<BlockEntity
 
     public Block getCasing(){
         if (type == Machines.LARGE_GAS_TURBINE){
-            return GT4RData.REINFORCED_MACHINE_CASING;
+            return GT4RBlocks.REINFORCED_MACHINE_CASING;
         }
-        return GT4RData.STANDARD_MACHINE_CASING;
+        return GT4RBlocks.STANDARD_MACHINE_CASING;
     }
 
     @Override

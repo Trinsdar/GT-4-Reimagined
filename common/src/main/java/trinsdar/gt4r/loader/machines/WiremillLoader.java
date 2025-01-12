@@ -7,7 +7,7 @@ import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import org.gtreimagined.gtcore.data.GTCoreItems;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 
 import static muramasa.antimatter.data.AntimatterMaterials.Charcoal;
 import static muramasa.antimatter.data.AntimatterMaterials.Coal;
@@ -31,9 +31,9 @@ public class WiremillLoader {
             }*/
         });
 
-        WIRE_MILL.RB().ii(INGOT.getMaterialIngredient(Kanthal, 4)).io(new ItemStack(GT4RData.KanthalHeatingCoil)).add("kanthal_heating_coil",450, 12);
-        WIRE_MILL.RB().ii(INGOT.getMaterialIngredient(Nichrome, 5)).io(new ItemStack(GT4RData.NichromeHeatingCoil)).add("nichroome_heating_coil",600, 16);
-        WIRE_MILL.RB().ii(INGOT.getMaterialIngredient(Cupronickel, 3)).io(new ItemStack(GT4RData.CupronickelHeatingCoil)).add("cupronickel_heating_coil",300, 8);
+        WIRE_MILL.RB().ii(INGOT.getMaterialIngredient(Kanthal, 4)).io(new ItemStack(GT4RItems.KanthalHeatingCoil)).add("kanthal_heating_coil",450, 12);
+        WIRE_MILL.RB().ii(INGOT.getMaterialIngredient(Nichrome, 5)).io(new ItemStack(GT4RItems.NichromeHeatingCoil)).add("nichroome_heating_coil",600, 16);
+        WIRE_MILL.RB().ii(INGOT.getMaterialIngredient(Cupronickel, 3)).io(new ItemStack(GT4RItems.CupronickelHeatingCoil)).add("cupronickel_heating_coil",300, 8);
         WIRE_MILL.RB().ii(DUST.getMaterialIngredient(Carbon, 8)).io(new ItemStack(GTCoreItems.CarbonFibre)).add("carbon_fibre",400, 2);
         WIRE_MILL.RB().ii(DUST.getMaterialIngredient(Charcoal, 8)).io(new ItemStack(GTCoreItems.CarbonFibre)).add("carbon_fibre_1",400, 2);
         WIRE_MILL.RB().ii(DUST.getMaterialIngredient(Coal, 4)).io(new ItemStack(GTCoreItems.CarbonFibre)).add("carbon_fibre_2",400, 2);

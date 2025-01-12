@@ -13,10 +13,9 @@ import net.minecraft.world.item.Items;
 import net.minecraft.resources.ResourceLocation;
 import muramasa.antimatter.data.ForgeCTags;
 import org.gtreimagined.gtcore.data.GTCoreBlocks;
-import org.gtreimagined.gtcore.data.GTCoreItems;
+import trinsdar.gt4r.data.GT4RBlocks;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 import trinsdar.gt4r.data.RecipeMaps;
-import trinsdar.gt4r.data.TierMaps;
 
 import static muramasa.antimatter.machine.Tier.*;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
@@ -26,7 +25,7 @@ import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
 import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static trinsdar.gt4r.data.CustomTags.*;
-import static trinsdar.gt4r.data.GT4RData.*;
+import static trinsdar.gt4r.data.GT4RItems.*;
 import static trinsdar.gt4r.data.Machines.*;
 import static trinsdar.gt4r.data.Materials.*;
 
@@ -72,10 +71,10 @@ public class AssemblyLoader {
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Electrum, 4), PLATE.getMaterialIngredient(Silicon, 1)).io(new ItemStack(CircuitBoardAdvanced, 2)).add("circuit_board_advanced_1",1600,2);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Platinum, 1), of(CIRCUITS_ADVANCED, 1)).io(new ItemStack(CircuitBoardProcessor)).add("circuit_board_processor",1600,2);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Magnalium, 2), of(MACHINE_HULLS_BASIC, 1), of(BatteryRE, 1).setIgnoreNbt()).io(new ItemStack(WINDMILL.getItem(ULV), 1)).add("windmill",6400, 8);
-        RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(TungstenSteel, 1), of(GTCoreBlocks.REINFORCED_STONE, 1)).io(new ItemStack(TUNGSTENSTEEL_REINFORCED_STONE)).add("tungstensteel_reinforced_stone",400, 4);
-        RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(TungstenSteel, 1), of(IRIDIUM_REINFORCED_STONE, 1)).io(new ItemStack(IRIDIUM_TUNGSTENSTEEL_REINFORCED_STONE)).add("iridium_tungstensteel_reinforced_stone",400, 4);
-        RecipeMaps.ASSEMBLER.RB().ii(of(IridiumReinforcedPlate, 1), of(GTCoreBlocks.REINFORCED_STONE, 1)).io(new ItemStack(IRIDIUM_REINFORCED_STONE)).add("iridium_reinforced_stone",400, 4);
-        RecipeMaps.ASSEMBLER.RB().ii(of(IridiumReinforcedPlate, 1), of(TUNGSTENSTEEL_REINFORCED_STONE, 1)).io(new ItemStack(IRIDIUM_TUNGSTENSTEEL_REINFORCED_STONE)).add("iridium_tungstensteel_reinforced_stone_1",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(TungstenSteel, 1), of(GTCoreBlocks.REINFORCED_STONE, 1)).io(new ItemStack(GT4RBlocks.TUNGSTENSTEEL_REINFORCED_STONE)).add("tungstensteel_reinforced_stone",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(TungstenSteel, 1), of(GT4RBlocks.IRIDIUM_REINFORCED_STONE, 1)).io(new ItemStack(GT4RBlocks.IRIDIUM_TUNGSTENSTEEL_REINFORCED_STONE)).add("iridium_tungstensteel_reinforced_stone",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(of(IridiumReinforcedPlate, 1), of(GTCoreBlocks.REINFORCED_STONE, 1)).io(new ItemStack(GT4RBlocks.IRIDIUM_REINFORCED_STONE)).add("iridium_reinforced_stone",400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(of(IridiumReinforcedPlate, 1), of(GT4RBlocks.TUNGSTENSTEEL_REINFORCED_STONE, 1)).io(new ItemStack(GT4RBlocks.IRIDIUM_TUNGSTENSTEEL_REINFORCED_STONE)).add("iridium_tungstensteel_reinforced_stone_1",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(GEM.getMaterialIngredient(Emerald, 8), of(CIRCUITS_ADVANCED, 1)).io(new ItemStack(CircuitDataStorage, 4)).add("circuit_data_storage",6400, 8);
         RecipeMaps.ASSEMBLER.RB().ii(GEM.getMaterialIngredient(Olivine, 8), of(CIRCUITS_ADVANCED, 1)).io(new ItemStack(CircuitDataStorage, 4)).add("circuit_data_storage_1",6400, 8);
         RecipeMaps.ASSEMBLER.RB().ii(of(Items.ENDER_PEARL, 1), DUST.getMaterialIngredient(Blaze, 1)).io(new ItemStack(Items.ENDER_EYE)).add("ender_eye",400, 2);
@@ -94,7 +93,7 @@ public class AssemblyLoader {
         RecipeMaps.ASSEMBLER.RB().ii(of(getTag("forge", "rods/wooden"), 1), of(StickyResin, 1)).io(new ItemStack(Items.TORCH, 6)).add("torch_1",400, 1);
         RecipeMaps.ASSEMBLER.RB().ii(of(Items.COAL, 8), GEM.getMaterialIngredient(Flint, 1)).io(new ItemStack(CompressedCoalBall)).add("compressed_coal_ball",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(of(getTag("forge", "rods/wooden"), 1), of(ForgeCTags.COBBLESTONE, 1)).io(new ItemStack(Items.LEVER, 1)).add("lever",400, 1);
-        RecipeMaps.ASSEMBLER.RB().ii(of(CircuitBoardBasic, 1), of(CABLE_COPPER.getBlockItem(PipeSize.VTINY), 3)).io(new ItemStack(CircuitBasic)).add("circuit_basic",800, 1);
+        RecipeMaps.ASSEMBLER.RB().ii(of(CircuitBoardBasic, 1), of(GT4RBlocks.CABLE_COPPER.getBlockItem(PipeSize.VTINY), 3)).io(new ItemStack(CircuitBasic)).add("circuit_basic",800, 1);
         RecipeMaps.ASSEMBLER.RB().ii(of(CompressedCoalBall, 8), of(BLOCK.getMaterialTag(Iron), 1)).io(new ItemStack(CoalChunk)).add("coal_chunk_2",400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Carbon, 4), of(MACHINE_HULLS_BASIC, 1), of(BatteryRE, 1).setIgnoreNbt()).io(new ItemStack(WINDMILL.getItem(ULV), 1)).add("windmill_1",6400, 8);
         //missing
@@ -105,9 +104,9 @@ public class AssemblyLoader {
         RecipeMaps.ASSEMBLER.RB().ii(of(getTag("minecraft", "planks"), 8), DUST.getMaterialIngredient(Redstone, 1)).io(new ItemStack(Items.NOTE_BLOCK)).add("note_block_1",800, 1);
         RecipeMaps.ASSEMBLER.RB().ii(of(getTag("minecraft", "planks"), 8), GEM.getMaterialIngredient(Diamond, 1)).io(new ItemStack(Items.JUKEBOX)).add("jukebox_1",1600, 1);
         RecipeMaps.ASSEMBLER.RB().ii(of(CompressedCoalBall, 8), of(getForgelikeItemTag("obsidian"), 1)).io(new ItemStack(CoalChunk)).add("coal_chunk_3",400, 4);
-        RecipeMaps.ASSEMBLER.RB().ii(of(CABLE_TIN.getBlockItem(PipeSize.VTINY), 1), PLATE.getMaterialIngredient(BatteryAlloy, 1)).io(new ItemStack(BatteryHullSmall)).add("battery_hull_small",800, 1);
-        RecipeMaps.ASSEMBLER.RB().ii(of(CABLE_COPPER.getBlockItem(PipeSize.VTINY), 2), PLATE.getMaterialIngredient(BatteryAlloy, 3)).io(new ItemStack(BatteryHullMedium)).add("battery_hull_medium",1600, 2);
-        RecipeMaps.ASSEMBLER.RB().ii(of(CABLE_GOLD.getBlockItem(PipeSize.VTINY), 4), PLATE.getMaterialIngredient(BatteryAlloy, 9)).io(new ItemStack(BatteryHullLarge)).add("battery_hull_large",6400, 4);
+        RecipeMaps.ASSEMBLER.RB().ii(of(GT4RBlocks.CABLE_TIN.getBlockItem(PipeSize.VTINY), 1), PLATE.getMaterialIngredient(BatteryAlloy, 1)).io(new ItemStack(BatteryHullSmall)).add("battery_hull_small",800, 1);
+        RecipeMaps.ASSEMBLER.RB().ii(of(GT4RBlocks.CABLE_COPPER.getBlockItem(PipeSize.VTINY), 2), PLATE.getMaterialIngredient(BatteryAlloy, 3)).io(new ItemStack(BatteryHullMedium)).add("battery_hull_medium",1600, 2);
+        RecipeMaps.ASSEMBLER.RB().ii(of(GT4RBlocks.CABLE_GOLD.getBlockItem(PipeSize.VTINY), 4), PLATE.getMaterialIngredient(BatteryAlloy, 9)).io(new ItemStack(BatteryHullLarge)).add("battery_hull_large",6400, 4);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Invar, 2), GEM.getMaterialIngredient(Flint, 1)).io(new ItemStack(LighterEmpty)).add("lighter_empty",256, 16);
         RecipeMaps.ASSEMBLER.RB().ii(PLATE.getMaterialIngredient(Zinc, 4), of(CarbonMesh, 4)).io(new ItemStack(ItemFilter)).add("item_filter",1600, 32);
         RecipeMaps.ASSEMBLER.RB().ii(TRANSFORMER.getItem(HV), TransformerUpgrade).io(HVTransformerUpgrade).add("hv_transformer_upgrade", 3200, 4);

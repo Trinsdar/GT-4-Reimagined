@@ -6,9 +6,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.tags.ItemTags;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import org.gtreimagined.gtcore.data.GTCoreTags;
-import trinsdar.gt4r.data.CustomTags;
 import muramasa.antimatter.data.ForgeCTags;
-import trinsdar.gt4r.data.GT4RData;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;

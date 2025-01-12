@@ -12,8 +12,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import trinsdar.gt4r.data.GT4RData;
-import trinsdar.gt4r.data.SlotTypes;
+import trinsdar.gt4r.data.GT4RItems;
 
 import java.util.Arrays;
 import java.util.List;
@@ -107,6 +106,6 @@ public class BlockEntityThermalBoiler extends BlockEntityMultiMachine<BlockEntit
 
     @Override
     public boolean test(SlotType<?> slotType, int slot, ItemStack stack) {
-        return slotType != SlotType.STORAGE || stack.getItem() == GT4RData.LavaFilter;
+        return slotType != SlotType.STORAGE || stack.getItem() == GT4RItems.LavaFilter;
     }
 }

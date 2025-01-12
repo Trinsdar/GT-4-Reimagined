@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import org.gtreimagined.gtcore.data.GTCoreItems;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.material.MaterialTags.RUBBERTOOLS;
@@ -120,7 +120,7 @@ public class ExtruderLoader {
             }
         });
 
-        EXTRUDER.RB().ii(INGOT.getMaterialIngredient(Tin, 2), getReusable(GTCoreItems.ShapeCell)).io(new ItemStack(GT4RData.CellTin)).add("tin_cell",128, 32);
+        EXTRUDER.RB().ii(INGOT.getMaterialIngredient(Tin, 2), getReusable(GTCoreItems.ShapeCell)).io(new ItemStack(GT4RItems.CellTin)).add("tin_cell",128, 32);
         EXTRUDER.RB().ii(DUST.getMaterialIngredient(Rubber, 1), getReusable(GTCoreItems.ShapeIngot)).io(INGOT.get(Rubber, 1)).add("rubber_ingot",10, 16);
         EXTRUDER.RB().ii(INGOT.getMaterialIngredient(WroughtIron, 1), getReusable(GTCoreItems.ShapeIngot)).io(new ItemStack(Items.IRON_INGOT)).add("iron_ingot",10, 64);
         //EXTRUDING.RB().ii(DUST.getMaterialIngredient(SiliconDioxide, 1), getReusable(GTCoreItems.ShapeBottle)).io(new ItemStack(Items.GLASS_BOTTLE)).add("glass_bottle",32, 16);

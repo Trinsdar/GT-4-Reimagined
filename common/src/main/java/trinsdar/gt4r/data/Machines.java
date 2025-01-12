@@ -31,10 +31,10 @@ import static muramasa.antimatter.Data.*;
 import static muramasa.antimatter.cover.ICover.emptyFactory;
 import static muramasa.antimatter.machine.MachineFlag.*;
 import static muramasa.antimatter.machine.Tier.*;
-import static trinsdar.gt4r.data.GT4RData.COVER_DYNAMO_OLD;
-import static trinsdar.gt4r.data.GT4RData.COVER_FUSION_INPUT;
-import static trinsdar.gt4r.data.GT4RData.COVER_FUSION_OUTPUT;
-import static trinsdar.gt4r.data.GT4RData.COVER_STEAM_VENT;
+import static trinsdar.gt4r.data.GT4RCovers.COVER_DYNAMO_OLD;
+import static trinsdar.gt4r.data.GT4RCovers.COVER_FUSION_INPUT;
+import static trinsdar.gt4r.data.GT4RCovers.COVER_FUSION_OUTPUT;
+import static trinsdar.gt4r.data.GT4RCovers.COVER_STEAM_VENT;
 import static trinsdar.gt4r.data.RecipeMaps.*;
 
 public class Machines {

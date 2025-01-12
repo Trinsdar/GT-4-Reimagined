@@ -6,7 +6,7 @@ import muramasa.antimatter.material.MaterialTags;
 import muramasa.antimatter.material.MaterialTypeItem;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import muramasa.antimatter.util.AntimatterPlatformUtils;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 
 import static muramasa.antimatter.Ref.L;
@@ -20,9 +20,9 @@ import static trinsdar.gt4r.data.RecipeMaps.*;
 
 public class SmelterLoader {
     public static void init() {
-        SMELTER_COILS.RB().ii(RecipeIngredient.of(GT4RData.CupronickelHeatingCoil, 1)).add("cupronickel_heating_coil",0, 0, 250);
-        SMELTER_COILS.RB().ii(RecipeIngredient.of(GT4RData.KanthalHeatingCoil, 1)).add("kanthal_heating_coil",0, 0, 500);
-        SMELTER_COILS.RB().ii(RecipeIngredient.of(GT4RData.NichromeHeatingCoil, 1)).add("nichrome_heating_coil",0, 0, 750);
+        SMELTER_COILS.RB().ii(RecipeIngredient.of(GT4RItems.CupronickelHeatingCoil, 1)).add("cupronickel_heating_coil",0, 0, 250);
+        SMELTER_COILS.RB().ii(RecipeIngredient.of(GT4RItems.KanthalHeatingCoil, 1)).add("kanthal_heating_coil",0, 0, 500);
+        SMELTER_COILS.RB().ii(RecipeIngredient.of(GT4RItems.NichromeHeatingCoil, 1)).add("nichrome_heating_coil",0, 0, 750);
         MaterialTypeItem<?>[] items = new MaterialTypeItem<?>[]{INGOT, NUGGET, PLATE, PLATE_DENSE, ROD, ROD_LONG, RING, FOIL, BOLT, SCREW, GEAR, GEAR_SMALL, WIRE_FINE, ROTOR};
         for (MaterialTypeItem<?> item : items) {
             item.all().forEach(m -> {

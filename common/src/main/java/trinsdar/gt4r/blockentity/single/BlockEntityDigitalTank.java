@@ -17,7 +17,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import org.jetbrains.annotations.Nullable;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.data.SlotTypes;
 
 public class BlockEntityDigitalTank extends BlockEntityTank<BlockEntityDigitalTank> {
@@ -50,7 +50,7 @@ public class BlockEntityDigitalTank extends BlockEntityTank<BlockEntityDigitalTa
             if (data[1] == 0){
                 fluidHandler.ifPresent(f -> {
                     ItemStack orb = itemHandler.map(i -> i.getHandler(SlotTypes.DATA).getStackInSlot(0)).orElse(ItemStack.EMPTY);
-                    if (orb.getItem() == GT4RData.StorageDataOrb){
+                    if (orb.getItem() == GT4RItems.StorageDataOrb){
                         CompoundTag tag = orb.getTag();
                         if (tag != null && tag.contains("Data")) {
                             CompoundTag dataTag = tag.getCompound("Data");
@@ -77,7 +77,7 @@ public class BlockEntityDigitalTank extends BlockEntityTank<BlockEntityDigitalTa
                     ItemStack orb = itemHandler.map(i -> i.getHandler(SlotTypes.DATA).getStackInSlot(0)).orElse(ItemStack.EMPTY);
                     if (orb.getItem() == GTCoreItems.DataOrb){
                         if (f.getInputTanks().getTank(0).getStoredFluid().getFluidAmount() > 0){
-                            ItemStack newStack = new ItemStack(GT4RData.StorageDataOrb);
+                            ItemStack newStack = new ItemStack(GT4RItems.StorageDataOrb);
                             CompoundTag nbt = f.getInputTanks().getTank(0).getStoredFluid().serialize();
                             CompoundTag dataTag = new CompoundTag();
                             dataTag.put("Fluid", nbt);

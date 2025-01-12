@@ -14,7 +14,7 @@ import net.minecraft.world.item.Items;
 import org.gtreimagined.gtcore.data.GTCoreTags;
 import tesseract.FluidPlatformUtils;
 import tesseract.TesseractGraphWrappers;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RBlocks;
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class CentrifugingLoader {
         ItemStack[] itemStacks = AntimatterMaterials.Lava.getProcessInto().stream().filter(t -> t.m.has(AntimatterMaterialTypes.DUST_TINY)).map(t -> new ItemStack(AntimatterMaterialTypes.DUST_TINY.get(t.m), t.s))
                 .toArray(ItemStack[]::new);
         CENTRIFUGE.RB().fi(Lava.getLiquid(100)).io(itemStacks).outputChances(0.2, 0.1, 0.025, 0.025, 0.01).add("lava",200, 16);
-        CENTRIFUGE.RB().fi(FluidPlatformUtils.createFluidStack(GT4RData.PAHOEHOE_LAVA.getFluid(), 100 * TesseractGraphWrappers.dropletMultiplier)).io(itemStacks).outputChances(0.2, 0.1, 0.025, 0.025, 0.01).add("pahoehoe_lava", 200, 8);
+        CENTRIFUGE.RB().fi(FluidPlatformUtils.createFluidStack(GT4RBlocks.PAHOEHOE_LAVA.getFluid(), 100 * TesseractGraphWrappers.dropletMultiplier)).io(itemStacks).outputChances(0.2, 0.1, 0.025, 0.025, 0.01).add("pahoehoe_lava", 200, 8);
         add(EnderEye, 10, 792);
         CENTRIFUGE.RB().ii(of(MAGMA_CREAM, 1)).io(new ItemStack(SLIME_BALL), new ItemStack(BLAZE_POWDER)).add("magma_cream",156,16);
         CENTRIFUGE.RB().ii(of(DIRT, 64)).io(new ItemStack(Items.SAND, 32), new ItemStack(CLAY_BALL, 2), new ItemStack(Plantball, 4)).add("dirt",3125, 16);

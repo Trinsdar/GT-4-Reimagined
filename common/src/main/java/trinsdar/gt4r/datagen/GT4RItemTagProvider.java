@@ -15,14 +15,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.GT4RRef;
-import trinsdar.gt4r.data.CustomTags;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 
 import static muramasa.antimatter.util.Utils.getConventionalMaterialType;
 import static muramasa.antimatter.util.Utils.getConventionalStoneType;
 import static org.gtreimagined.gtcore.data.GTCoreTags.PLATES_IRON_ALUMINIUM;
 import static trinsdar.gt4r.data.CustomTags.*;
-import static trinsdar.gt4r.data.GT4RData.*;
+import static trinsdar.gt4r.data.GT4RItems.*;
 import static trinsdar.gt4r.data.Materials.*;
 
 public class GT4RItemTagProvider extends AntimatterItemTagProvider {

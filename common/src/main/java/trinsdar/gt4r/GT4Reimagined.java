@@ -1,7 +1,6 @@
 package trinsdar.gt4r;
 
 import muramasa.antimatter.AntimatterAPI;
-import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.datagen.AntimatterDynamics;
 import muramasa.antimatter.AntimatterMod;
 import muramasa.antimatter.datagen.providers.AntimatterBlockStateProvider;
@@ -27,7 +26,6 @@ import trinsdar.gt4r.datagen.GT4RRandomDropBonus;
 import trinsdar.gt4r.material.GT4RMaterialEvent;
 
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.DRILLBIT;
@@ -65,7 +63,9 @@ public class GT4Reimagined extends AntimatterMod {
                 Attributes.init();
                 RecipeMaps.init();
                 MenuHandlers.init();
-                GT4RData.init(side);
+                GT4RCovers.init();
+                GT4RBlocks.init();
+                GT4RItems.init(side);
                 Machines.init();
                 RecipeMaps.postInit();
                 Guis.init(side);
@@ -80,10 +80,10 @@ public class GT4Reimagined extends AntimatterMod {
                             GTCoreItems.CircuitBoardPlastic, GTCoreItems.CircuitBoardEpoxy, GTCoreItems.CircuitBoardFiber, GTCoreItems.CircuitBoardMultiFiber,
                             GTCoreItems.CircuitBoardWetware, GTCoreItems.CircuitGood, GTCoreItems.CircuitComplex, GTCoreItems.CircuitFuturistic,
                             GTCoreItems.Circuit3D, GTCoreItems.CircuitInfinite));
-                    l.addAll(Arrays.asList(GT4RData.AdvancedWrenchAlt, GT4RData.ElectricWrenchAlt, GTCoreItems.Fertilizer));
+                    l.addAll(Arrays.asList(GT4RItems.AdvancedWrenchAlt, GT4RItems.ElectricWrenchAlt, GTCoreItems.Fertilizer));
                     if (GT4RConfig.GT5_ELECTRIC_TOOLS.get()){
-                        l.addAll(Arrays.asList(GT4RData.Drill, GT4RData.DiamondDrill, GT4RData.AdvancedDrill, GT4RData.Chainsaw, GT4RData.AdvancedChainsaw,
-                                GT4RData.ElectricWrench, GT4RData.AdvancedWrench,GT4RData.ElectricScrewdriver, GT4RData.RockCutter));
+                        l.addAll(Arrays.asList(GT4RItems.Drill, GT4RItems.DiamondDrill, GT4RItems.AdvancedDrill, GT4RItems.Chainsaw, GT4RItems.AdvancedChainsaw,
+                                GT4RItems.ElectricWrench, GT4RItems.AdvancedWrench, GT4RItems.ElectricScrewdriver, GT4RItems.RockCutter));
                     } else {
                         if (!AntimatterAPI.isModLoaded("gt5r")){
                             l.addAll(AntimatterAPI.all(IAntimatterTool.class).stream().filter(i -> i.getAntimatterToolType().isPowered()).map(IBasicAntimatterTool::getItem).toList());
@@ -93,7 +93,7 @@ public class GT4Reimagined extends AntimatterMod {
                             l.addAll(DRILLBIT.all().stream().map(m -> DRILLBIT.get(m)).toList());
                             l.addAll(BUZZSAW_BLADE.all().stream().filter(m -> m != Steel).map(m -> BUZZSAW_BLADE.get(m)).toList());
                         } else {
-                            l.add(GT4RData.RockCutterPowerUnit);
+                            l.add(GT4RItems.RockCutterPowerUnit);
                             l.add(AntimatterAPI.get(IAntimatterTool.class, "rock_cutter", GT4RRef.ID).getItem());
                         }
                     }

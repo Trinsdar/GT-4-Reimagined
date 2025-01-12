@@ -24,7 +24,7 @@ import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 import tesseract.TesseractGraphWrappers;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 
 import static muramasa.antimatter.machine.Tier.BRONZE;
 import static trinsdar.gt4r.data.Machines.STEAM_FORGE_HAMMER;
@@ -46,7 +46,7 @@ public class BlockEntitySteamMachine extends BlockEntityMachine<BlockEntitySteam
 
     @Override
     public InteractionResult onInteractServer(BlockState state, Level world, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit, @Nullable AntimatterToolType type) {
-        if (player.getItemInHand(hand).getItem() == GT4RData.SteelUpgrade){
+        if (player.getItemInHand(hand).getItem() == GT4RItems.SteelUpgrade){
             CompoundTag nbt = new CompoundTag();
             this.saveAdditional(nbt);
             world.setBlock(pos, this.getMachineType().getBlockState(Tier.STEEL).defaultBlockState().setValue(BlockStateProperties.HORIZONTAL_FACING, this.getFacing()), 3);

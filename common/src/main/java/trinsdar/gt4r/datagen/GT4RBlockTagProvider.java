@@ -11,7 +11,6 @@ import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.block.*;
 
-import static trinsdar.gt4r.data.GT4RData.*;
 import static org.gtreimagined.gtcore.data.GTCoreBlocks.*;
 
 

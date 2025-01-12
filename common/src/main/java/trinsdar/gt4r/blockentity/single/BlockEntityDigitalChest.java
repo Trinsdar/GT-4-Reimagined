@@ -17,7 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import org.gtreimagined.gtcore.data.GTCoreItems;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.data.SlotTypes;
 
 public class BlockEntityDigitalChest extends BlockEntityMachine<BlockEntityDigitalChest> implements IFilterableHandler {
@@ -38,7 +38,7 @@ public class BlockEntityDigitalChest extends BlockEntityMachine<BlockEntityDigit
             if (data[1] == 0){
                 itemHandler.ifPresent(i -> {
                     ItemStack orb = i.getHandler(SlotTypes.DATA).getStackInSlot(0);
-                    if (orb.getItem() == GT4RData.StorageDataOrb){
+                    if (orb.getItem() == GT4RItems.StorageDataOrb){
                         CompoundTag tag = orb.getTag();
                         if (tag != null){
                             if (tag.contains("Data")){
@@ -78,7 +78,7 @@ public class BlockEntityDigitalChest extends BlockEntityMachine<BlockEntityDigit
                         ITrackedHandler storage = i.getHandler(SlotType.STORAGE);
                         if (!isInventoryEmpty(storage)){
                             CompoundTag nbt = ((TrackedItemHandler<?>)storage).serialize(new CompoundTag());
-                            ItemStack newStack = new ItemStack(GT4RData.StorageDataOrb);
+                            ItemStack newStack = new ItemStack(GT4RItems.StorageDataOrb);
                             newStack.getOrCreateTag().put("Data", nbt);
                             i.getHandler(SlotTypes.DATA).setStackInSlot(0, newStack);
                             for (int j = 0; j < storage.getSlots(); j++){
@@ -105,7 +105,7 @@ public class BlockEntityDigitalChest extends BlockEntityMachine<BlockEntityDigit
     @Override
     public boolean test(SlotType<?> slotType, int slot, ItemStack stack) {
         if (slotType == SlotType.STORAGE){
-            return stack.getItem() != GT4RData.StorageDataOrb;
+            return stack.getItem() != GT4RItems.StorageDataOrb;
         }
         return true;
     }

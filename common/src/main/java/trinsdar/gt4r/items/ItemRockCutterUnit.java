@@ -8,7 +8,7 @@ import org.gtreimagined.gtcore.item.ItemPowerUnit;
 import java.util.ArrayList;
 import java.util.List;
 
-import static trinsdar.gt4r.data.GT4RData.RockCutterPowerUnit;
+import static trinsdar.gt4r.data.GT4RItems.RockCutterPowerUnit;
 
 public class ItemRockCutterUnit extends ItemPowerUnit {
     public ItemRockCutterUnit(String domain, String id, Material material) {

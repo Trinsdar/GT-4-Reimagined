@@ -1,14 +1,12 @@
 package trinsdar.gt4r.blockentity.multi;
 
-import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import muramasa.antimatter.machine.event.IMachineEvent;
 import muramasa.antimatter.machine.types.Machine;
-import muramasa.antimatter.blockentity.multi.BlockEntityBasicMultiMachine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.machine.UpgradeableMachineRecipeHandler;
 
 public class BlockEntityPyrolysisOven extends BlockEntityUpgradeableBasicMultiblock<BlockEntityPyrolysisOven> {
@@ -26,9 +24,9 @@ public class BlockEntityPyrolysisOven extends BlockEntityUpgradeableBasicMultibl
                 r2.heatingCapacity = 0;
                 ItemStack stack = (ItemStack) data[0];
                 if (!stack.isEmpty()){
-                    if (stack.getItem() == GT4RData.CupronickelHeatingCoil){
+                    if (stack.getItem() == GT4RItems.CupronickelHeatingCoil){
                         r2.heatingCapacity += (100 * stack.getCount());
-                    } else if (stack.getItem() == GT4RData.KanthalHeatingCoil) {
+                    } else if (stack.getItem() == GT4RItems.KanthalHeatingCoil) {
                         r2.heatingCapacity += (200 * stack.getCount());
                     } else {
                         r2.heatingCapacity += (300 * stack.getCount());

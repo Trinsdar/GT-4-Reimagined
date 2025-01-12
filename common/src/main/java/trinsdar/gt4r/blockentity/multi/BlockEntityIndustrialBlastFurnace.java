@@ -1,7 +1,6 @@
 package trinsdar.gt4r.blockentity.multi;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import muramasa.antimatter.gui.GuiInstance;
 import muramasa.antimatter.gui.ICanSyncData;
 import muramasa.antimatter.gui.IGuiElement;
@@ -17,7 +16,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import trinsdar.gt4r.data.GT4RData;
+import trinsdar.gt4r.data.GT4RBlocks;
+import trinsdar.gt4r.data.GT4RItems;
 import trinsdar.gt4r.data.SlotTypes;
 import trinsdar.gt4r.machine.UpgradeableMachineRecipeHandler;
 
@@ -45,7 +45,7 @@ public class BlockEntityIndustrialBlastFurnace extends BlockEntityUpgradeableBas
             ItemStack stack = i.getHandler(SlotTypes.COIL).getStackInSlot(0);
             heatingCapacity = baseHeatingCapacity;
             if (!stack.isEmpty()){
-                if (stack.getItem() == GT4RData.KanthalHeatingCoil){
+                if (stack.getItem() == GT4RItems.KanthalHeatingCoil){
                     heatingCapacity += (125 * stack.getCount());
                 } else {
                     heatingCapacity += (250 * stack.getCount());
@@ -67,11 +67,11 @@ public class BlockEntityIndustrialBlastFurnace extends BlockEntityUpgradeableBas
     }
 
     public int getHeatPerCasing(Block block){
-        if (block == GT4RData.STANDARD_MACHINE_CASING){
+        if (block == GT4RBlocks.STANDARD_MACHINE_CASING){
             return 30;
-        } else if (block == GT4RData.REINFORCED_MACHINE_CASING){
+        } else if (block == GT4RBlocks.REINFORCED_MACHINE_CASING){
             return 50;
-        } else if (block == GT4RData.ADVANCED_MACHINE_CASING){
+        } else if (block == GT4RBlocks.ADVANCED_MACHINE_CASING){
             return 70;
         } else if (block == Blocks.LAVA){
             return 250;
@@ -86,7 +86,7 @@ public class BlockEntityIndustrialBlastFurnace extends BlockEntityUpgradeableBas
             heatingCapacity = baseHeatingCapacity;
             ItemStack stack = (ItemStack) data[0];
             if (!stack.isEmpty()){
-                if (stack.getItem() == GT4RData.KanthalHeatingCoil){
+                if (stack.getItem() == GT4RItems.KanthalHeatingCoil){
                     heatingCapacity += (125 * stack.getCount());
                 } else {
                     heatingCapacity += (250 * stack.getCount());
