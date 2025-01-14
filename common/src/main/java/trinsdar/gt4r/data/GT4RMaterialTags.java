@@ -54,12 +54,6 @@ public class GT4RMaterialTags {
     }));
     public static final MaterialTypeItem<?> BROKEN_TURBINE_ROTOR = new MaterialTypeItem<>("broken_turbine_rotor", 1, true, muramasa.antimatter.Ref.U * 17);
     public static final MaterialTag SEMIFLUID = new MaterialTag("semifluid");
-    public static final MaterialTag CABINET = new MaterialTag("cabinet");
-    public static final MaterialTag WORKBENCH = new MaterialTag("workbench");
-    public static final MaterialTag CHARGING_WORKBENCH = new MaterialTag("charging_workbench");
-    public static final MaterialTag LOCKER = new MaterialTag("locker");
-    public static final MaterialTag CHARGING_LOCKER = new MaterialTag("charging_locker");
-    public static final MaterialTag DRUM = new MaterialTag("drum");
 
     public static void init(){
         TURBINE_BLADE.unSplitName().setIgnoreTextureSets();
