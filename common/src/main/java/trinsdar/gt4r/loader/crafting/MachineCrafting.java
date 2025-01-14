@@ -265,7 +265,7 @@ public class MachineCrafting {
                 COMPUTER_CUBE.getItem(LV), of('C', CIRCUITS_MASTER, 'c', ComputerMonitor, 'B', MACHINE_HULLS_ADVANCED, 'D', CIRCUITS_ULTIMATE), "DcC", "cBc", "CcD");
         AntimatterAPI.all(ChestMachine.class).forEach(m -> {
             Material material = m.getMaterial();
-            if (material.has(RING) && material.has(PLATE)){
+            if (material.has(ROD) && material.has(PLATE)){
                 provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(NONE),
                         of('P', AntimatterMaterialTypes.PLATE.getMaterialTag(material), 'C', ForgeCTags.CHESTS_WOODEN, 'R', ROD.getMaterialTag(material), 'S', AntimatterDefaultTools.SAW.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "SPW", "RCR", "PPP");
             }
