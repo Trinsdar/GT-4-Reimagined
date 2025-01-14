@@ -8,15 +8,22 @@ import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;
 import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.machine.types.Machine;
+import muramasa.antimatter.material.Material;
+import muramasa.antimatter.material.MaterialTags;
 import muramasa.antimatter.pipe.PipeSize;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import org.gtreimagined.gtcore.data.GTCoreMaterials;
+import org.gtreimagined.gtcore.machine.BarrelMachine;
+import org.gtreimagined.gtcore.machine.ChestMachine;
+import org.gtreimagined.gtcore.machine.MassStorageMachine;
+import org.gtreimagined.gtcore.machine.MultiblockTankMachine;
 import org.gtreimagined.gtcore.machine.WorkbenchMachine;
 import trinsdar.gt4r.GT4RRef;
 import muramasa.antimatter.data.ForgeCTags;
@@ -31,6 +38,7 @@ import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.data.AntimatterDefaultTools.*;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.Iron;
+import static muramasa.antimatter.data.AntimatterMaterials.Wood;
 import static muramasa.antimatter.machine.Tier.*;
 import static muramasa.antimatter.util.TagUtils.getForgelikeItemTag;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
@@ -224,10 +232,10 @@ public class MachineCrafting {
     private static void loadUtilityBlockRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider){
         AntimatterAPI.all(WorkbenchMachine.class).forEach(m -> {
             if (!m.getId().contains("charging")) {
-                provider.addItemRecipe(output, GT4RRef.ID, "", "machines", m.getItem(NONE),
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(NONE),
                         of('P', PLATE.getMaterialTag(m.getMaterial()), 'C', ForgeCTags.CHESTS_WOODEN, 'c', Items.CRAFTING_TABLE, 'S', SCREWDRIVER.getTag()), "PSP", "PcP", "PCP");
             } else {
-                provider.addItemRecipe(output, GT4RRef.ID, "", "machines", m.getItem(HV),
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(HV),
                         of('S', SCREWDRIVER.getTag(), 'w', WIRE_CUTTER.getTag(), 'W', Machine.get(m.getId().replace("charging_", ""), GTCore.ID).map(mch -> mch.getItem(NONE)).orElse(Items.AIR), 'c', GT4RBlocks.CABLE_GOLD.getBlock(PipeSize.SMALL), 'C', CIRCUITS_ADVANCED, 'R', ROD.getMaterialTag(m.getMaterial())), "RCR", "SWw", "ccc");
             }
         });
@@ -255,9 +263,44 @@ public class MachineCrafting {
                 QUANTUM_CHEST.getItem(MAX), ImmutableMap.<Character, Object>builder().put('D', DataOrb).put('C', ComputerMonitor).put('H', GT4RBlocks.HIGHLY_ADVANCED_MACHINE_BLOCK).put('T', TELEPORTER.getItem(HV)).put('d', DIGITAL_CHEST.getItem(LV)).build(), "DCD", "HTH", "DdD");
         provider.addItemRecipe(output, GT4RRef.ID, "computer_cube", "machines",
                 COMPUTER_CUBE.getItem(LV), of('C', CIRCUITS_MASTER, 'c', ComputerMonitor, 'B', MACHINE_HULLS_ADVANCED, 'D', CIRCUITS_ULTIMATE), "DcC", "cBc", "CcD");
-        GT4RMaterialTags.CABINET.all().forEach(m -> {
-            provider.addItemRecipe(output, GT4RRef.ID, "barrel_" + m.getId(), "machines", Machine.get(m.getId() + "_barrel", GTCore.ID).map(mch -> mch.getItem(NONE)).orElse(Items.AIR), of('P', AntimatterMaterialTypes.PLATE.getMaterialTag(m), 'C', Items.BARREL, 'R', ROD.getMaterialTag(m), 'S', AntimatterDefaultTools.SAW.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "PRP", "SCW", "PRP");
-            provider.addItemRecipe(output, GT4RRef.ID, "chest_" + m.getId(), "machines", Machine.get(m.getId() + "_chest", GTCore.ID).map(mch -> mch.getItem(NONE)).orElse(Items.AIR), of('P', AntimatterMaterialTypes.PLATE.getMaterialTag(m), 'C', ForgeCTags.CHESTS_WOODEN, 'R', ROD.getMaterialTag(m), 'S', AntimatterDefaultTools.SAW.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "SPW", "RCR", "PPP");
+        AntimatterAPI.all(ChestMachine.class).forEach(m -> {
+            Material material = m.getMaterial();
+            if (material.has(RING) && material.has(PLATE)){
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(NONE),
+                        of('P', AntimatterMaterialTypes.PLATE.getMaterialTag(material), 'C', ForgeCTags.CHESTS_WOODEN, 'R', ROD.getMaterialTag(material), 'S', AntimatterDefaultTools.SAW.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "SPW", "RCR", "PPP");
+            }
+        });
+        AntimatterAPI.all(BarrelMachine.class).forEach(m -> {
+            Material material = m.getMaterial();
+            if (material.has(ROD) && material.has(PLATE)){
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(NONE),
+                        of('P', AntimatterMaterialTypes.PLATE.getMaterialTag(material), 'C', Items.BARREL, 'R', ROD.getMaterialTag(material), 'S', AntimatterDefaultTools.SAW.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag()), "PRP", "SCW", "PRP");
+            }
+        });
+
+        AntimatterAPI.all(MassStorageMachine.class).forEach(m -> {
+            Material material = m.getMaterial();
+            ChestMachine chest = AntimatterAPI.get(ChestMachine.class, material.getId() + "_chest", GTCore.ID);
+            if (material.has(SCREW) && material.has(PLATE) && !material.has(MaterialTags.WOOD) && chest != null){
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(NONE),
+                        of('C', chest.getItem(NONE), 'S', SCREW.getMaterialTag(material), 'c', MACHINE_HULLS_ADVANCED, 's', SCREWDRIVER.getTag(), 'W', WRENCH.getTag()), "SCS", "Wcs", "SCS");
+            }
+        });
+
+        AntimatterAPI.all(MultiblockTankMachine.class, GT4RRef.ID).forEach(m -> {
+            if (m.isSmall()){
+                Block block = AntimatterAPI.get(Block.class, m.getMaterial().getId() + "_wall", GT4RRef.ID);
+                if (block == null) return;
+                Material ringMaterial = m.getMaterial() == Wood ? Lead : m.getMaterial();
+                TagKey<Item> hammer = m.getMaterial() == Wood ? SOFT_HAMMER.getTag() : HAMMER.getTag();
+                provider.addItemRecipe(output, "multiblock_tanks", m.getItem(NONE),
+                        of('R', RING.getMaterialTag(ringMaterial), 'S', SAW.getTag(), 'H', hammer, 'W', block.asItem()), " R ", "HWS", " R ");
+            } else {
+                Block block = AntimatterAPI.get(Block.class, m.getId().replace("large", "small"), GT4RRef.ID);
+                if (block == null) return;
+                provider.addItemRecipe(output, "multiblock_tanks", m.getItem(NONE),
+                        of('P', PLATE.getMaterialTag(m.getMaterial()), 'S', SAW.getTag(), 'H', HAMMER.getTag(), 'W', block.asItem()), "PPP", "HWS", "PPP");
+            }
         });
 
         /*GT4RMaterialTags.LOCKER.all().forEach(m -> {

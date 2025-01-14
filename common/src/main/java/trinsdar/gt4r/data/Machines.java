@@ -165,26 +165,6 @@ public class Machines {
         TUNGSTEN_TANKS = createTankMachine(Materials.Tungsten, 16);
     }
 
-    public static MaterialMachine IRON_CABINET = GTCoreBlocks.createBarrel(AntimatterMaterials.Iron);
-    public static MaterialMachine ALUMINIUM_CABINET = GTCoreBlocks.createBarrel(GTCoreMaterials.Aluminium);
-    public static MaterialMachine WROUGHT_IRON_CABINET = GTCoreBlocks.createBarrel(GTCoreMaterials.WroughtIron);
-    public static MaterialMachine BRASS_CABINET = GTCoreBlocks.createBarrel(GTCoreMaterials.Brass);
-
-    public static MaterialMachine IRON_CHEST = GTCoreBlocks.createChest(AntimatterMaterials.Iron);
-    public static MaterialMachine ALUMINIUM_CHEST = GTCoreBlocks.createChest(GTCoreMaterials.Aluminium);
-    public static MaterialMachine WROUGHT_IRON_CHEST = GTCoreBlocks.createChest(GTCoreMaterials.WroughtIron);
-    public static MaterialMachine BRASS_CHEST = GTCoreBlocks.createChest(GTCoreMaterials.Brass);
-
-    public static WorkbenchMachine BRONZE_WORKBENCH = GTCoreBlocks.createWorkbench(Materials.Bronze, false);
-    public static WorkbenchMachine IRON_WORKBENCH = GTCoreBlocks.createWorkbench(AntimatterMaterials.Iron, false);
-    public static WorkbenchMachine ALUMINIUM_WORKBENCH = GTCoreBlocks.createWorkbench(Materials.Aluminium, false);
-    public static WorkbenchMachine IRON_CHARGING_WORKBENCH = GTCoreBlocks.createWorkbench(AntimatterMaterials.Iron, true);
-    public static WorkbenchMachine ALUMINIUM_CHARGING_WORKBENCH = GTCoreBlocks.createWorkbench(Materials.Aluminium, true);
-    public static LockerMachine IRON_LOCKER = GTCoreBlocks.createLocker(AntimatterMaterials.Iron, false);
-    public static LockerMachine ALUMINIUM_LOCKER = GTCoreBlocks.createLocker(Materials.Aluminium, false);
-    public static LockerMachine IRON_CHARGING_LOCKER = GTCoreBlocks.createLocker(AntimatterMaterials.Iron, true);
-    public static LockerMachine ALUMINIUM_CHARGING_LOCKER = GTCoreBlocks.createLocker(Materials.Aluminium, true);
-
     public static GeneratorMachine STEAM_TURBINE = new GeneratorMachine(GT4RRef.ID, "steam_turbine").baseTexture(Textures.BASE_HANDLER).frontCovers().allowFrontIO().setMap(STEAM_FUELS).setTiers(LV).addFlags(GUI, ITEM, FLUID, GENERATOR, CELL).covers(emptyFactory,emptyFactory,emptyFactory,emptyFactory,emptyFactory, COVER_DYNAMO_OLD).setVerticalFacingAllowed(false).setOutputCover(COVER_DYNAMO_OLD).setTile(BlockEntityCoveredGenerator::new);
     public static GeneratorMachine GAS_TURBINE = new GeneratorMachine(GT4RRef.ID, "gas_turbine").baseTexture(Textures.BASE_HANDLER).frontCovers().allowFrontIO().setMap(GAS_FUELS).setTiers(LV).addFlags(GUI, ITEM, FLUID, GENERATOR, CELL).covers(emptyFactory,emptyFactory,emptyFactory,emptyFactory,emptyFactory, COVER_DYNAMO_OLD).setVerticalFacingAllowed(false).setOutputCover(COVER_DYNAMO_OLD).setTile(BlockEntityCoveredGenerator::new);
     public static BasicMachine HEAT_EXCHANGER = new BasicMachine(GT4RRef.ID, "heat_exchanger").baseTexture(Textures.BASE_HANDLER).setMap(HOT_FUELS).setTiers(LV).addFlags(GUI, FLUID).overlayTexture(Textures.LEFT_RIGHT_HANDLER).covers(emptyFactory).setTile(BlockEntityHeatExchanger::new);
