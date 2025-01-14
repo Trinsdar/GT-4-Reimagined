@@ -22,6 +22,7 @@ import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import org.gtreimagined.gtcore.data.GTCoreMaterials;
 import org.gtreimagined.gtcore.machine.BarrelMachine;
 import org.gtreimagined.gtcore.machine.ChestMachine;
+import org.gtreimagined.gtcore.machine.LockerMachine;
 import org.gtreimagined.gtcore.machine.MassStorageMachine;
 import org.gtreimagined.gtcore.machine.MultiblockTankMachine;
 import org.gtreimagined.gtcore.machine.WorkbenchMachine;
@@ -44,6 +45,7 @@ import static muramasa.antimatter.util.TagUtils.getForgelikeItemTag;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
 import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static trinsdar.gt4r.data.CustomTags.*;
+import static trinsdar.gt4r.data.GT4RBlocks.CABLE_GOLD;
 import static trinsdar.gt4r.data.GT4RItems.*;
 import static trinsdar.gt4r.data.Machines.*;
 import static trinsdar.gt4r.data.Materials.*;
@@ -143,7 +145,7 @@ public class MachineCrafting {
         provider.addItemRecipe(output, "machines", TRANSFORMER.getItem(MV),
                 of('C', GT4RBlocks.CABLE_COPPER.getBlockItem(PipeSize.VTINY), 'H', MACHINE_HULLS_ADVANCED), "C", "H", "C");
         provider.addItemRecipe(output, "machines", TRANSFORMER.getItem(HV),
-                of('C', CIRCUITS_BASIC, 'c', GT4RBlocks.CABLE_GOLD.getBlockItem(PipeSize.VTINY), 'T', TRANSFORMER.getItem(MV), 'B', BatteryMediumLithium), " c ", "CTB", " c ");
+                of('C', CIRCUITS_BASIC, 'c', CABLE_GOLD.getBlockItem(PipeSize.VTINY), 'T', TRANSFORMER.getItem(MV), 'B', BatteryMediumLithium), " c ", "CTB", " c ");
         provider.addItemRecipe(output, "machines", TRANSFORMER.getItem(EV),
                 of('C', CIRCUITS_ADVANCED, 'T', TRANSFORMER.getItem(HV), 'c', GT4RBlocks.CABLE_STEEL.getBlockItem(PipeSize.VTINY), 'B', LapotronCrystal), " c ", "CTB", " c ");
         provider.addItemRecipe(output, "machines", TRANSFORMER.getItem(IV),
@@ -236,7 +238,7 @@ public class MachineCrafting {
                         of('P', PLATE.getMaterialTag(m.getMaterial()), 'C', ForgeCTags.CHESTS_WOODEN, 'c', Items.CRAFTING_TABLE, 'S', SCREWDRIVER.getTag()), "PSP", "PcP", "PCP");
             } else {
                 provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(HV),
-                        of('S', SCREWDRIVER.getTag(), 'w', WIRE_CUTTER.getTag(), 'W', Machine.get(m.getId().replace("charging_", ""), GTCore.ID).map(mch -> mch.getItem(NONE)).orElse(Items.AIR), 'c', GT4RBlocks.CABLE_GOLD.getBlock(PipeSize.SMALL), 'C', CIRCUITS_ADVANCED, 'R', ROD.getMaterialTag(m.getMaterial())), "RCR", "SWw", "ccc");
+                        of('S', SCREWDRIVER.getTag(), 'w', WIRE_CUTTER.getTag(), 'W', Machine.get(m.getId().replace("charging_", ""), GTCore.ID).map(mch -> mch.getItem(NONE)).orElse(Items.AIR), 'c', CABLE_GOLD.getBlock(PipeSize.SMALL), 'C', CIRCUITS_ADVANCED, 'R', ROD.getMaterialTag(m.getMaterial())), "RCR", "SWw", "ccc");
             }
         });
         provider.addItemRecipe(output, "item_barrels", GTCoreBlocks.WOOD_ITEM_BARREL.getItem(NONE), of('S', SOFT_HAMMER.getTag(), 'C', ForgeCTags.CHESTS, 'R', ROD_LONG.getMaterialTag(Bronze), 'W', ItemTags.PLANKS, 's', SAW.getTag()), "SCs", "WRW", "WRW");
@@ -293,22 +295,27 @@ public class MachineCrafting {
                 if (block == null) return;
                 Material ringMaterial = m.getMaterial() == Wood ? Lead : m.getMaterial();
                 TagKey<Item> hammer = m.getMaterial() == Wood ? SOFT_HAMMER.getTag() : HAMMER.getTag();
-                provider.addItemRecipe(output, "multiblock_tanks", m.getItem(NONE),
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "multiblock_tanks", m.getItem(NONE),
                         of('R', RING.getMaterialTag(ringMaterial), 'S', SAW.getTag(), 'H', hammer, 'W', block.asItem()), " R ", "HWS", " R ");
             } else {
                 Block block = AntimatterAPI.get(Block.class, m.getId().replace("large", "small"), GT4RRef.ID);
                 if (block == null) return;
-                provider.addItemRecipe(output, "multiblock_tanks", m.getItem(NONE),
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "multiblock_tanks", m.getItem(NONE),
                         of('P', PLATE.getMaterialTag(m.getMaterial()), 'S', SAW.getTag(), 'H', HAMMER.getTag(), 'W', block.asItem()), "PPP", "HWS", "PPP");
             }
         });
-
-        /*GT4RMaterialTags.LOCKER.all().forEach(m -> {
-            provider.addItemRecipe(output, Ref.ID, "locker_" + m.getId(), "machines", "has_chest", provider.hasSafeItem(Machine.get(m.getId() + "_cabinet", Ref.ID).map(mch -> mch.getItem(LV)).orElse(Items.AIR)), Machine.get(m.getId() + "_locker", Ref.ID).map(mch -> mch.getItem(LV)).orElse(Items.AIR), of('P', AntimatterMaterialTypes.PLATE.getMaterialTag(m), 'R', AntimatterMaterialTypes.ROD.getMaterialTag(m), 'L', Items.LEATHER, 'C', Machine.get(m.getId() + "_cabinet", Ref.ID).map(mch -> mch.getItem(LV)).orElse(Items.AIR), 'M', GT4RMaterialTags.HULL.getMaterialTag(m)), "RLR", "LCL", "PMP");
+        AntimatterAPI.all(LockerMachine.class).forEach(m -> {
+            if (!m.getId().contains("charging")) {
+                ChestMachine chest = AntimatterAPI.get(ChestMachine.class, m.getMaterial().getId() + "_chest", GTCore.ID);
+                if (chest == null) return;
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(NONE),
+                        of('P', PLATE.getMaterialTag(m.getMaterial()), 'R', ROD.getMaterialTag(m.getMaterial()), 'L', Items.LEATHER, 'C', chest.getItem(NONE), 'M', MACHINE_HULLS_ADVANCED), "RLR", "LCL", "PMP");
+            } else {
+                provider.addItemRecipe(output, GT4RRef.ID, m.getId(), "machines", m.getItem(HV),
+                        of('L', Machine.get(m.getId().replace("charging_", ""), GTCore.ID).map(mch -> mch.getItem(NONE)).orElse(Items.AIR), 'c', CABLE_GOLD.getBlockItem(PipeSize.VTINY), 'C', CIRCUITS_ADVANCED), "cCc", "cLc", "cCc");
+            }
         });
-        GT4RMaterialTags.CHARGING_LOCKER.all().forEach(m -> {
-            provider.addItemRecipe(output, Ref.ID, "charging_locker_" + m.getId(), "machines", "has_chest", provider.hasSafeItem(Machine.get(m.getId() + "_locker", Ref.ID).map(mch -> mch.getItem(LV)).orElse(Items.AIR)), Machine.get(m.getId() + "_charging_locker", Ref.ID).map(mch -> mch.getItem(HV)).orElse(Items.AIR), of('L', Machine.get(m.getId() + "_locker", Ref.ID).map(mch -> mch.getItem(LV)).orElse(Items.AIR), 'c', CABLE_GOLD.getBlockItem(PipeSize.VTINY), 'C', CIRCUITS_ADVANCED), "cCc", "cLc", "cCc");
-        });*/
+
         provider.addItemRecipe(output, GT4RRef.ID, "hv_teleporter", "machines", TELEPORTER.getItem(HV), of('C', CIRCUITS_ADVANCED, 'S', MACHINE_HULLS_STABILIZED, 'D', AntimatterMaterialTypes.GEM.getMaterialTag(AntimatterMaterials.Diamond), 'c', GT4RBlocks.CABLE_ELECTRUM.getBlock(PipeSize.TINY), 'f', FrequencyTransmitter), "CfC", "cSc", "CDC");
         provider.addItemRecipe(output, GT4RRef.ID, "luv_teleporter", "machines", TELEPORTER.getItem(LUV), of('T', TELEPORTER.getItem(HV), 'M', GT4RBlocks.HIGHLY_ADVANCED_MACHINE_BLOCK, 'L', BatteryEnergyOrb, 'C', CIRCUITS_MASTER), "CTC", "TMT", "CLC");
         provider.addItemRecipe(output, "trash_bin", GTCoreBlocks.ENDER_GARBAGE_BIN.getItem(NONE),
