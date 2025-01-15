@@ -8,6 +8,7 @@ import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import org.gtreimagined.gtcore.GTCoreConfig;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import org.gtreimagined.gtcore.data.GTCoreMaterials;
 import trinsdar.gt4r.data.GT4RMaterialTags;
@@ -38,7 +39,7 @@ public class AlloySmelterLoader {
         //TODO compat for bluepower
         //ALLOY_SMELTING.RB().ii(DUST.getMaterialIngredient(Nikolite, 4), DUST.getMaterialIngredient(Copper)).io(INGOT.get(BlueAlloy, 1)).add(50, 16);
         //ALLOY_SMELTING.RB().ii(DUST.getMaterialIngredient(Nikolite, 4), INGOT.getMaterialIngredient(Copper)).io(INGOT.get(BlueAlloy, 1)).add(50, 16);
-        int ingotCount = 1;//AntimatterConfig.GAMEPLAY.LOSSY_PART_CRAFTING ? 2 : 1;
+        int ingotCount = GTCoreConfig.LOSSY_PART_CRAFTING.get() ? 2 : 1;
         AntimatterMaterialTypes.PLATE.all().forEach(m -> {
             if (!m.has(GT4RMaterialTags.NEEDS_BLAST_FURNACE) && m.has(AntimatterMaterialTypes.INGOT)){
                 int euTick = m.has(RUBBERTOOLS) ? 16 : 32;
