@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "trinsdar.gt4r.mixin.fabric",
+  "package": "org.gtreimagined.gt4r.mixin.fabric",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],

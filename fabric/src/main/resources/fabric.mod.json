@@ -25,14 +25,14 @@
   },
   "entrypoints": {
     "antimatter_client": [
-      "trinsdar.gt4r.client.fabric.GT4RClientInitializer"
+      "org.gtreimagined.gt4r.client.fabric.GT4RClientInitializer"
     ],
     "main": [
-      "trinsdar.gt4r.fabric.GT4ReimaginedFabric"
+      "org.gtreimagined.gt4r.fabric.GT4ReimaginedFabric"
     ],
     "antimatter": [
-      "trinsdar.gt4r.GT4Reimagined",
-      "trinsdar.gt4r.fabric.GT4RFabricRegistrar"
+      "org.gtreimagined.gt4r.GT4Reimagined",
+      "org.gtreimagined.gt4r.fabric.GT4RFabricRegistrar"
     ]
   }
 }
