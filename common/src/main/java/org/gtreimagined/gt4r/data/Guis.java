@@ -25,6 +25,7 @@ import static muramasa.antimatter.machine.Tier.MV;
 import static org.gtreimagined.gt4r.data.Machines.*;
 import static org.gtreimagined.gt4r.data.SlotTypes.DATA;
 import static org.gtreimagined.gt4r.data.SlotTypes.QUANTUM;
+import static org.gtreimagined.gt4r.gui.ButtonOverlays.*;
 
 public class Guis {
 

@@ -7,6 +7,7 @@ import net.minecraft.world.item.Items;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.BLOCK;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.GEM;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.COKING;
 import static org.gtreimagined.gt4r.data.RecipeMaps.PYROLYSING;
 

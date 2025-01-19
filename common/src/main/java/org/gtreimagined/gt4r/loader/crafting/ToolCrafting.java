@@ -25,6 +25,8 @@ import java.util.function.Consumer;
 import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.Diamond;
+import static org.gtreimagined.gt4r.data.CustomTags.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.MotorLV;
 import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static org.gtreimagined.gt4r.data.ToolTypes.ROCK_CUTTER;

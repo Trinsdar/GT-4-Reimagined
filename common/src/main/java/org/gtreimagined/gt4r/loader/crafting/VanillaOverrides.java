@@ -26,6 +26,7 @@ import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.util.TagUtils.getForgelikeItemTag;
+import static org.gtreimagined.gt4r.data.Materials.*;
 
 public class VanillaOverrides {
 

@@ -16,6 +16,7 @@ import java.util.List;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static org.gtreimagined.gt4r.data.GT4RMaterialTags.ELEC;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.ELECTROLYZER;
 
 public class ElectrolyzerLoader {

@@ -17,6 +17,7 @@ import static muramasa.antimatter.data.AntimatterMaterials.Water;
 import static muramasa.antimatter.data.AntimatterMaterials.Wood;
 import static org.gtreimagined.gt4r.data.Materials.DistilledWater;
 import static org.gtreimagined.gt4r.data.Materials.Lubricant;
+import static org.gtreimagined.gt4r.data.RecipeMaps.*;
 
 public class IndustrialSawmill {
     public static void init(){

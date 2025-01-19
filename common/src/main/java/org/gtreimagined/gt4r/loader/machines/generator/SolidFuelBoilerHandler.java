@@ -8,6 +8,7 @@ import net.minecraft.world.item.Items;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.Charcoal;
 import static muramasa.antimatter.data.AntimatterMaterials.Coal;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.SOLID_FUEL_BOILERS;
 
 public class SolidFuelBoilerHandler {

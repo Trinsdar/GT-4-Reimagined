@@ -30,6 +30,7 @@ import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.material.Material.NULL;
 import static muramasa.antimatter.material.MaterialTags.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.Biochaff;
 import static org.gtreimagined.gtcore.data.GTCoreItems.Plantball;
 import static org.gtreimagined.gt4r.data.RecipeMaps.SIFTER;

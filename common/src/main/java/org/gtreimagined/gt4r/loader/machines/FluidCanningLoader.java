@@ -14,6 +14,7 @@ import tesseract.TesseractGraphWrappers;
 import org.gtreimagined.gt4r.data.RecipeMaps;
 
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.FLUID_CANNER;
 

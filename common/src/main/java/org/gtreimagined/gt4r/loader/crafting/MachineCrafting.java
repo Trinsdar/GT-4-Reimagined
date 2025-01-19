@@ -42,6 +42,10 @@ import static muramasa.antimatter.data.AntimatterMaterials.Iron;
 import static muramasa.antimatter.data.AntimatterMaterials.Wood;
 import static muramasa.antimatter.machine.Tier.*;
 import static muramasa.antimatter.util.TagUtils.getForgelikeItemTag;
+import static org.gtreimagined.gt4r.data.CustomTags.*;
+import static org.gtreimagined.gt4r.data.GT4RItems.*;
+import static org.gtreimagined.gt4r.data.Machines.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
 import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static org.gtreimagined.gt4r.data.GT4RBlocks.CABLE_GOLD;
@@ -105,7 +109,7 @@ public class MachineCrafting {
         for (Tier tier : getSteam()) {
             TagKey<Item> plate = tier == BRONZE ? PLATE.getMaterialTag(Bronze) : PLATES_STEELS;
             TagKey<Item> gear = tier == BRONZE ? GEAR.getMaterialTag(Bronze) : GEARS_STEELS;
-            TagKey<Item> hull = tier == BRONZE ? MACHINE_HULLS_CHEAP : CustomTags.MACHINE_HULLS_BASIC;
+            TagKey<Item> hull = tier == BRONZE ? MACHINE_HULLS_CHEAP : MACHINE_HULLS_BASIC;
             String prefix = tier == BRONZE ? "high_pressure_" : "";
             provider.addItemRecipe(output, GT4RRef.ID,prefix + "solid_fuel_boiler","machines",
                     SOLID_FUEL_BOILER.getItem(tier), of( 'P',  plate, 'W', AntimatterDefaultTools.WRENCH.getTag(), 'B', Items.BRICKS, 'F', Items.FURNACE), "PPP", "PWP", "BFB");

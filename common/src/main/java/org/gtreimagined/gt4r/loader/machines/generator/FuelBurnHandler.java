@@ -9,11 +9,13 @@ import static muramasa.antimatter.data.AntimatterMaterialTypes.GAS;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.LIQUID;
 import static muramasa.antimatter.data.AntimatterMaterials.Lava;
 import static org.gtreimagined.gt4r.data.GT4RMaterialTags.SEMIFLUID;
+import static org.gtreimagined.gt4r.data.Materials.*;
+import static org.gtreimagined.gt4r.data.RecipeMaps.*;
 
 public class FuelBurnHandler {
     public static void init() {
         AntimatterAPI.all(Material.class, mat -> {
-            if (mat != Materials.Steam && mat.has(MaterialTags.FUEL_POWER) && MaterialTags.FUEL_POWER.getInt(mat) > 0) {
+            if (mat != Steam && mat.has(MaterialTags.FUEL_POWER) && MaterialTags.FUEL_POWER.getInt(mat) > 0) {
                 if (mat.has(LIQUID)) {
                     int power = 16, ticks = MaterialTags.FUEL_POWER.getInt(mat) / 16;
                     if (MaterialTags.FUEL_POWER.getInt(mat) < 16) {

@@ -17,6 +17,7 @@ import org.gtreimagined.gt4r.data.GT4RItems;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.material.MaterialTags.RUBBERTOOLS;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.EXTRUDER;
 
 public class ExtruderLoader {

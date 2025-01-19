@@ -17,6 +17,8 @@ import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.data.AntimatterDefaultTools.*;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.PLATE;
 import static muramasa.antimatter.data.AntimatterMaterials.Wood;
+import static org.gtreimagined.gt4r.data.CustomTags.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static org.gtreimagined.gt4r.data.GT4RItems.ItemSuperconductor;
 import static org.gtreimagined.gt4r.data.GT4RItems.NichromeHeatingCoil;

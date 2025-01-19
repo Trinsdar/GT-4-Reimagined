@@ -4,6 +4,8 @@ import muramasa.antimatter.material.Material;
 import muramasa.antimatter.material.MaterialItem;
 import muramasa.antimatter.material.MaterialType;
 
+import static org.gtreimagined.gt4r.data.Materials.*;
+
 public class ItemTurbineRotor extends MaterialItem {
 
     public ItemTurbineRotor(String domain, MaterialType<?> type, Material material, Properties properties) {

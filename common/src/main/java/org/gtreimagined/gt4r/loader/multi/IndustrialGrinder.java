@@ -16,6 +16,7 @@ import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.INDUSTRIAL_GRINDING;
 
 public class IndustrialGrinder {

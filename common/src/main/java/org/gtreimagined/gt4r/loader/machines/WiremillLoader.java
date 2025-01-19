@@ -13,6 +13,7 @@ import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.INGOT;
 import static muramasa.antimatter.data.AntimatterMaterials.Charcoal;
 import static muramasa.antimatter.data.AntimatterMaterials.Coal;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.WIRE_MILL;
 
 public class WiremillLoader {

@@ -23,6 +23,7 @@ import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
 import static net.minecraft.world.item.Items.*;
 import static net.minecraft.world.level.block.Blocks.GRASS_BLOCK;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.Plantball;
 import static org.gtreimagined.gtcore.data.GTCoreItems.StickyResin;
 import static org.gtreimagined.gt4r.data.RecipeMaps.CENTRIFUGE;

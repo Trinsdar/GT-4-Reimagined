@@ -8,6 +8,7 @@ import org.gtreimagined.gt4r.data.GT4RBlocks;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.NUGGET;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.HOT_FUELS;
 import static org.gtreimagined.gt4r.data.RecipeMaps.THERMAL_BOILER_FUELS;
 

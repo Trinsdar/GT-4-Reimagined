@@ -18,6 +18,7 @@ import org.gtreimagined.gt4r.data.GT4RMaterialTags;
 import java.util.function.Consumer;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 
 public class MaterialRecipeLoader {
 

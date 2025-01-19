@@ -5,6 +5,7 @@ import org.gtreimagined.gtcore.data.GTCoreItems;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST_SMALL;
 import static muramasa.antimatter.data.AntimatterMaterials.Sugar;
 import static muramasa.antimatter.data.AntimatterMaterials.Water;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.DISTILLERY;
 
 public class DistillingLoader {

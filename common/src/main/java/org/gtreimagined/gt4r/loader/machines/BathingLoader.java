@@ -13,6 +13,7 @@ import org.gtreimagined.gt4r.data.GT4RMaterialTags;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.BATH;
 
 public class BathingLoader {

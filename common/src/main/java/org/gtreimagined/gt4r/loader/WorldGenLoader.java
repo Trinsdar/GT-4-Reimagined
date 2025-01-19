@@ -15,6 +15,7 @@ import org.gtreimagined.gt4r.GT4RRef;
 
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.data.AntimatterStoneTypes.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreBlocks.*;
 
 public class WorldGenLoader {

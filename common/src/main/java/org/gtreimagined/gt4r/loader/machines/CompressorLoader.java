@@ -10,6 +10,7 @@ import org.gtreimagined.gtcore.data.GTCoreTags;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.CompressedFireClay;
 import static org.gtreimagined.gtcore.data.GTCoreItems.Plantball;
 import static org.gtreimagined.gt4r.data.CustomTags.CORALS;

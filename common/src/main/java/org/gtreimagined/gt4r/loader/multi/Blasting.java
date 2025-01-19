@@ -13,6 +13,7 @@ import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.material.MaterialTags.DIRECT_SMELT_INTO;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
 import static org.gtreimagined.gt4r.data.CustomTags.DUSTS_COALS;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.BASIC_BLASTING;
 import static org.gtreimagined.gt4r.data.RecipeMaps.BLASTING;
 

@@ -7,6 +7,7 @@ import org.gtreimagined.gtcore.data.GTCoreItems;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST_TINY;
 import static muramasa.antimatter.data.AntimatterMaterials.Water;
+import static org.gtreimagined.gt4r.data.Materials.*;
 import static org.gtreimagined.gt4r.data.RecipeMaps.CHEMICAL_REACTOR;
 
 public class ChemicalReactorLoader {
