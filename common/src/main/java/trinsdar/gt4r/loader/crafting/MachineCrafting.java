@@ -102,7 +102,7 @@ public class MachineCrafting {
         provider.addItemRecipe(output, GT4RRef.ID, "steam_turbine", "machines",
                 STEAM_TURBINE.getItem(LV), of('P', PLATES_STEELS, 'M', MACHINE_HULLS_ADVANCED, 'C', CIRCUITS_BASIC, 'B', GT4RMaterialTags.TURBINE_ROTOR.getMaterialTag(Bronze)), "PCP", "BMB", "PCP");
         provider.addItemRecipe(output, "machines", THERMAL_GENERATOR.getItem(LV),
-                of('I', PLATES_INVAR_ALUMINIUM, 'C', CIRCUITS_BASIC, 'G', GTCoreBlocks.REINFORCED_GLASS, 'M', MACHINE_HULLS_ADVANCED, 'B', BatteryRE), "IBI", "IGI", "CMC");
+                of('I', PLATE.getMaterialTag(Invar), 'C', CIRCUITS_BASIC, 'G', GTCoreBlocks.REINFORCED_GLASS, 'M', MACHINE_HULLS_ADVANCED, 'B', BatteryRE), "IBI", "IGI", "CMC");
     }
 
     private static void loadSteamMachineRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider){
