@@ -61,14 +61,14 @@ public class RecipeRenderer {
         RecipeMaps.INT_CIRCUITS.setInfoRenderer(INT_CIRCUIT_RENDERER);
         RecipeMaps.SMELTER_COILS.setInfoRenderer(FLUID_EXTRACTOR_COILS_RENDERER);
         RecipeMaps.THERMAL_BOILER_FUELS.setInfoRenderer(InfoRenderers.EMPTY_RENDERER);
-        RecipeMaps.STEAM_FUELS.setInfoRenderer(FUEL_RENDERER);
-        RecipeMaps.GAS_FUELS.setInfoRenderer(FUEL_RENDERER);
+        RecipeMaps.STEAM_FUELS.setInfoRenderer(InfoRenderers.FUEL_RENDERER);
+        RecipeMaps.GAS_FUELS.setInfoRenderer(InfoRenderers.FUEL_RENDERER);
         RecipeMaps.LARGE_STEAM_FUELS.setInfoRenderer(LARGE_FUEL_RENDERER);
         RecipeMaps.LARGE_GAS_FUELS.setInfoRenderer(LARGE_FUEL_RENDERER);
-        RecipeMaps.DIESEL_FUELS.setInfoRenderer(FUEL_RENDERER);
+        RecipeMaps.DIESEL_FUELS.setInfoRenderer(InfoRenderers.FUEL_RENDERER);
         RecipeMaps.HOT_FUELS.setInfoRenderer(HOT_FUEL_RENDERER);
-        RecipeMaps.SEMIFLUID_FUELS.setInfoRenderer(FUEL_RENDERER);
-        RecipeMaps.THERMAL_FUELS.setInfoRenderer(FUEL_RENDERER);
+        RecipeMaps.SEMIFLUID_FUELS.setInfoRenderer(InfoRenderers.FUEL_RENDERER);
+        RecipeMaps.THERMAL_FUELS.setInfoRenderer(InfoRenderers.FUEL_RENDERER);
 
         RecipeMaps.BLASTING.setInfoRenderer(InfoRenderers.BLASTING_RENDERER);
         RecipeMaps.STEAM_FURNACE.setInfoRenderer(InfoRenderers.STEAM_RENDERER);
