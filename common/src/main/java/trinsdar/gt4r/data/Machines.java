@@ -172,7 +172,7 @@ public class Machines {
     public static GeneratorMachine SEMIFLUID_GENERATOR = new GeneratorMachine(GT4RRef.ID, "semifluid_generator").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(SEMIFLUID_FUELS).addFlags(GUI, FLUID, CELL).efficiency(t -> 100);
     public static GeneratorMachine THERMAL_GENERATOR = new GeneratorMachine(GT4RRef.ID, "thermal_generator").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(THERMAL_FUELS).addFlags(GUI, FLUID, CELL).efficiency(t -> 80);
     public static GeneratorMachine WINDMILL = new GeneratorMachine(GT4RRef.ID, "windmill").baseTexture(Textures.BASE_HANDLER).setTiers(ULV);
-    public static GeneratorMachine WATERMILL = new GeneratorMachine(GT4RRef.ID, "watermill").baseTexture(Textures.BASE_HANDLER).setTiers(ULV).custom();
+    public static GeneratorMachine WATERMILL = new GeneratorMachine(GT4RRef.ID, "watermill").baseTexture(Textures.BASE_HANDLER).setTiers(ULV).setTile(BlockEntityWatermill::new).custom();
 
     public static UpgradeableMachine BATTERY_BUFFER_FOUR = new UpgradeableMachine(GT4RRef.ID, "4x_battery_buffer").setTiers(LV).noCovers().addFlags(GUI, EU, ITEM).setUpgrades(CustomTags.TRANSFORMER_UPGRADES).setTile(BlockEntityBatteryBox::new).setBlock(BlockBatBox::new).setItemBlockClass(() -> BlockBatBox.class).overlayTexture(Textures.TIER_SPECIFIC_OVERLAY_HANDLER).baseTexture(Textures.BATBOX_HANDLER).allowFrontIO().setVerticalFacingAllowed(true);
     public static UpgradeableMachine BATTERY_BUFFER_EIGHT = new UpgradeableMachine(GT4RRef.ID, "8x_battery_buffer").setTiers(LV).noCovers().addFlags(GUI, EU, ITEM).setUpgrades(CustomTags.TRANSFORMER_UPGRADES).setTile(BlockEntityBatteryBox::new).setBlock(BlockBatBox::new).setItemBlockClass(() -> BlockBatBox.class).overlayTexture(Textures.TIER_SPECIFIC_OVERLAY_HANDLER).baseTexture(Textures.BATBOX_HANDLER).allowFrontIO().setVerticalFacingAllowed(true);
@@ -190,12 +190,6 @@ public class Machines {
     public static BasicMachine TRANSFORMER_DIGITAL = new BasicMachine(GT4RRef.ID, "transformer_digital").addFlags(GUI, EU).setTiers(EV, IV).setTile(BlockEntityDigitalTransformer::new).noCovers().allowFrontIO();
 
     public static void init() {
-        STEAM_TURBINE.setOutputCover(COVER_DYNAMO_OLD);
-        GAS_TURBINE.setOutputCover(COVER_DYNAMO_OLD);
-        DIESEL_GENERATOR.setOutputCover(COVER_DYNAMO_OLD);
-        SEMIFLUID_GENERATOR.setOutputCover(COVER_DYNAMO_OLD);
-        WINDMILL.setOutputCover(COVER_DYNAMO_OLD);
-        WATERMILL.setOutputCover(COVER_DYNAMO_OLD);
         HEAT_EXCHANGER.removeFlags(EU);
         DUSTBIN.removeFlags(EU);
     }
