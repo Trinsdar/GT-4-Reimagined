@@ -177,8 +177,6 @@ public class Guis {
         SEMIFLUID_GENERATOR.add(BASIC_TANK.getSlots());
         HEAT_EXCHANGER.add(FL_IN, 35, 63).add(FL_IN, 53, 63).add(FL_OUT, 107, 63).add(FL_OUT, 125, 63);
 
-        INFINITE_STEAM.add(BASIC_TANK.getSlots());
-
         QUANTUM_TANK.add(BASIC_TANK.getSlots());
         PRIMITIVE_BLAST_FURNACE.add(IT_IN, 53, 16, new ResourceLocation(GT4RRef.ID, "primitive_ingot"))
                 .add(IT_IN, 53, 34, new ResourceLocation(GT4RRef.ID, "primitive_fire"))
@@ -256,7 +254,6 @@ public class Guis {
         GAS_TURBINE.getGui().setBackgroundTexture("basic_tank");
         DIESEL_GENERATOR.getGui().setBackgroundTexture("basic_tank");
         SEMIFLUID_GENERATOR.getGui().setBackgroundTexture("basic_tank");
-        INFINITE_STEAM.getGui().setBackgroundTexture("basic_tank");
         QUANTUM_TANK.getGui().setBackgroundTexture("basic_tank");
         ELECTRIC_ITEM_FILTER.getGui().setBackgroundTexture("electric_item_filter");
         ELECTRIC_TYPE_FILTER.getGui().setBackgroundTexture("electric_type_filter");
