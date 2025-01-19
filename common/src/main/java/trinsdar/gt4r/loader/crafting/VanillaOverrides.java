@@ -24,8 +24,7 @@ import java.util.function.Consumer;
 
 import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
-import static muramasa.antimatter.data.AntimatterMaterials.Coal;
-import static muramasa.antimatter.data.AntimatterMaterials.Stone;
+import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.util.TagUtils.getForgelikeItemTag;
 import static trinsdar.gt4r.data.Materials.*;
 
@@ -61,6 +60,8 @@ public class VanillaOverrides {
                 of('C', Ingredient.of(RAW_ORE.get(Coal), DUST.get(Coal), DUST_IMPURE.get(Coal), DUST_PURE.get(Coal), CRUSHED.get(Coal),CRUSHED_PURIFIED.get(Coal), CRUSHED_REFINED.get(Coal)), 'S', Items.STICK), "C", "S");
         provider.addStackRecipe(consumer, GT4RRef.ID, "torch_from_creosote", "torches", new ItemStack(Items.TORCH, 6),
                 of('W', ItemTags.WOOL, 'C', Creosote.getLiquid().getBucket(), 'S', Items.STICK), "C", "W", "S");
+        provider.addItemRecipe(consumer, "overrides", Items.SHEARS,
+                of('P', PLATE.getMaterialTag(Iron), 'H', AntimatterDefaultTools.HAMMER.getTag()), " P", "PH");
         Material[] mats = new Material[]{Bronze, WroughtIron, Aluminium, Steel, Titanium};
         for (Material m : mats){
             provider.addItemRecipe(consumer, GT4RRef.ID, "piston_" + m.getId(), "pistons",
