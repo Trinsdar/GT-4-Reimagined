@@ -1,10 +1,10 @@
 package trinsdar.gt4r.blockentity.single;
 
+import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.capability.machine.MachineEnergyHandler;
 import muramasa.antimatter.cover.IHaveCover;
 import muramasa.antimatter.machine.MachineState;
 import muramasa.antimatter.machine.types.Machine;
-import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.tool.AntimatterToolType;
 import muramasa.antimatter.tool.IAntimatterTool;
 import net.minecraft.core.BlockPos;

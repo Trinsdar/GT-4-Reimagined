@@ -1,23 +1,20 @@
 package trinsdar.gt4r.cover.redstone;
 
+import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.blockentity.pipe.BlockEntityPipe;
 import muramasa.antimatter.capability.ICoverHandler;
 import muramasa.antimatter.cover.BaseCover;
 import muramasa.antimatter.cover.CoverFactory;
-import muramasa.antimatter.cover.ICoverMode;
-import muramasa.antimatter.cover.ICoverModeHandler;
 import muramasa.antimatter.gui.ButtonOverlay;
 import muramasa.antimatter.gui.event.GuiEvents;
 import muramasa.antimatter.gui.event.IGuiEvent;
 import muramasa.antimatter.machine.MachineState;
 import muramasa.antimatter.machine.Tier;
-import muramasa.antimatter.blockentity.BlockEntityMachine;
 import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import org.jetbrains.annotations.Nullable;
 import trinsdar.gt4r.GT4RRef;
-import trinsdar.gt4r.cover.RedstoneMode;
 
 public class CoverRedstoneMachineController extends BaseCover {
 

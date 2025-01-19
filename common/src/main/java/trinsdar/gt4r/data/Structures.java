@@ -2,15 +2,26 @@ package trinsdar.gt4r.data;
 
 import com.gtnewhorizon.structurelib.structure.IStructureElement;
 import com.gtnewhorizon.structurelib.structure.StructureUtility;
+import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.structure.FakeTileElement;
-import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.structure.PatternBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import trinsdar.gt4r.blockentity.multi.*;
+import trinsdar.gt4r.blockentity.multi.BlockEntityCokeOven;
+import trinsdar.gt4r.blockentity.multi.BlockEntityDistillationTower;
+import trinsdar.gt4r.blockentity.multi.BlockEntityFusionReactor;
+import trinsdar.gt4r.blockentity.multi.BlockEntityImplosionCompressor;
+import trinsdar.gt4r.blockentity.multi.BlockEntityIndustrialBlastFurnace;
+import trinsdar.gt4r.blockentity.multi.BlockEntityIndustrialGrinder;
+import trinsdar.gt4r.blockentity.multi.BlockEntityIndustrialSawmill;
+import trinsdar.gt4r.blockentity.multi.BlockEntityLargeTurbine;
+import trinsdar.gt4r.blockentity.multi.BlockEntityPrimitiveBlastFurnace;
+import trinsdar.gt4r.blockentity.multi.BlockEntityPyrolysisOven;
+import trinsdar.gt4r.blockentity.multi.BlockEntityThermalBoiler;
+import trinsdar.gt4r.blockentity.multi.BlockEntityVacuumFreezer;
 
 import java.util.function.BiFunction;
 

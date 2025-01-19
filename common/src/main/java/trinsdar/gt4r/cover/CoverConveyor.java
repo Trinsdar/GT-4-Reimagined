@@ -1,9 +1,9 @@
 package trinsdar.gt4r.cover;
 
+import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.capability.ICoverHandler;
 import muramasa.antimatter.cover.CoverFactory;
 import muramasa.antimatter.machine.Tier;
-import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.util.Utils;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -18,12 +18,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 import tesseract.TesseractCapUtils;
 import tesseract.api.item.ExtendedItemContainer;
-import trinsdar.gt4r.cover.redstone.CoverRedstoneMachineController;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static trinsdar.gt4r.gui.ButtonOverlays.*;
 
 public class CoverConveyor extends CoverBasicTransport {
 

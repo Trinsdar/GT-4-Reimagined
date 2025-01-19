@@ -9,8 +9,8 @@ import muramasa.antimatter.material.MaterialTags;
 import muramasa.antimatter.recipe.ingredient.PropertyIngredient;
 import muramasa.antimatter.tool.IAntimatterTool;
 import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.Enchantment;
 import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreTools;
 import trinsdar.gt4r.GT4RConfig;
@@ -30,7 +30,6 @@ import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static trinsdar.gt4r.data.CustomTags.*;
 import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.ToolTypes.ROCK_CUTTER;
-import static trinsdar.gt4r.loader.crafting.CraftingHelper.of2;
 
 public class ToolCrafting {
     public static void loadRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider){

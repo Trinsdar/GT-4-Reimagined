@@ -3,8 +3,6 @@ package trinsdar.gt4r.items;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.material.MaterialItem;
 import muramasa.antimatter.material.MaterialType;
-import muramasa.antimatter.texture.Texture;
-import trinsdar.gt4r.data.Textures;
 
 import static trinsdar.gt4r.data.Materials.*;
 

@@ -1,6 +1,7 @@
 package trinsdar.gt4r.gui.widgets;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.gui.GuiInstance;
 import muramasa.antimatter.gui.ICanSyncData;
 import muramasa.antimatter.gui.IGuiElement;
@@ -9,7 +10,6 @@ import muramasa.antimatter.gui.container.ContainerMachine;
 import muramasa.antimatter.gui.widget.WidgetSupplier;
 import muramasa.antimatter.integration.jeirei.AntimatterJEIREIPlugin;
 import muramasa.antimatter.mixin.client.AbstractContainerScreenAccessor;
-import muramasa.antimatter.blockentity.BlockEntityMachine;
 import net.minecraft.network.chat.TextComponent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

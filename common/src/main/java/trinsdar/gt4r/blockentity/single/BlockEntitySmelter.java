@@ -9,8 +9,8 @@ import muramasa.antimatter.recipe.IRecipe;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
-import trinsdar.gt4r.data.RecipeMaps;
 import trinsdar.gt4r.blockentity.multi.BlockEntityIndustrialBlastFurnace;
+import trinsdar.gt4r.data.RecipeMaps;
 
 public class BlockEntitySmelter extends BlockEntityMachine<BlockEntitySmelter> {
     public BlockEntitySmelter(Machine<?> type, BlockPos pos, BlockState state) {

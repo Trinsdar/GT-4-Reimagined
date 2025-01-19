@@ -19,10 +19,10 @@ import java.util.Map;
 import static muramasa.antimatter.machine.Tier.LV;
 import static muramasa.antimatter.util.Utils.lowerUnderscoreToUpperSpaced;
 import static muramasa.antimatter.util.Utils.lowerUnderscoreToUpperSpacedRotated;
+import static trinsdar.gt4r.data.GT4RMaterialTags.BROKEN_TURBINE_ROTOR;
 import static trinsdar.gt4r.data.GT4RMaterialTags.TURBINE_ROTOR;
 import static trinsdar.gt4r.data.Machines.ELECTROLYZER;
 import static trinsdar.gt4r.data.Machines.MACERATOR;
-import static trinsdar.gt4r.data.GT4RMaterialTags.BROKEN_TURBINE_ROTOR;
 
 public class GT4RLocalizations {
 

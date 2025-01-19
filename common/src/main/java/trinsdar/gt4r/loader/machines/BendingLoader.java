@@ -9,7 +9,7 @@ import org.gtreimagined.gtcore.data.GTCoreTags;
 import trinsdar.gt4r.data.GT4RItems;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
-import static muramasa.antimatter.data.AntimatterMaterials.*;
+import static muramasa.antimatter.data.AntimatterMaterials.Iron;
 import static trinsdar.gt4r.data.Materials.Tin;
 import static trinsdar.gt4r.data.RecipeMaps.PLATE_BENDER;
 

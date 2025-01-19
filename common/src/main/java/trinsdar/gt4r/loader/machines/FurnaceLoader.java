@@ -5,14 +5,15 @@ import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.datagen.builder.AntimatterCookingRecipeBuilder;
 import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.GT4RRef;
 
 import java.util.function.Consumer;
 
-import static trinsdar.gt4r.data.Materials.*;
+import static trinsdar.gt4r.data.Materials.Tetrahedrite;
+import static trinsdar.gt4r.data.Materials.WroughtIron;
 
 public class FurnaceLoader {
     public static void loadRecipes(Consumer<FinishedRecipe> output, AntimatterRecipeProvider provider){

@@ -7,12 +7,14 @@ import muramasa.antimatter.datagen.providers.AntimatterBlockTagProvider;
 import muramasa.antimatter.util.TagUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
-import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.GT4RRef;
-import trinsdar.gt4r.block.*;
+import trinsdar.gt4r.block.BlockCasing;
+import trinsdar.gt4r.block.BlockFakeCasing;
+import trinsdar.gt4r.block.BlockNonSolidMachine;
+import trinsdar.gt4r.block.BlockRedstoneMachine;
 
 import static org.gtreimagined.gtcore.data.GTCoreBlocks.*;
-import static trinsdar.gt4r.data.GT4RBlocks.*;
+import static trinsdar.gt4r.data.GT4RBlocks.IRIDIUM_REINFORCED_STONE;
 
 public class GT4RBlockTagProvider extends AntimatterBlockTagProvider {
 

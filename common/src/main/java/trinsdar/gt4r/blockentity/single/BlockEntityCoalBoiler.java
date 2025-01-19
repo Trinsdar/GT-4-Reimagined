@@ -1,8 +1,8 @@
 package trinsdar.gt4r.blockentity.single;
 
+import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.machine.types.Machine;
-import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.tool.AntimatterToolType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;

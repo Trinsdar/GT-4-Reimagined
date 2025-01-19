@@ -3,10 +3,10 @@ package trinsdar.gt4r.loader.machines;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.gtreimagined.gtcore.data.GTCoreItems;
-import trinsdar.gt4r.data.TierMaps;
 
-import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
-import static muramasa.antimatter.data.AntimatterMaterials.*;
+import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;
+import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST_TINY;
+import static muramasa.antimatter.data.AntimatterMaterials.Water;
 import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.CHEMICAL_REACTOR;
 

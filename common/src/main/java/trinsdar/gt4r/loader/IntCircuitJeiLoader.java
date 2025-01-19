@@ -5,7 +5,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.RecipeMaps;
-import trinsdar.gt4r.data.TierMaps;
 
 public class IntCircuitJeiLoader {
     public static void init(){

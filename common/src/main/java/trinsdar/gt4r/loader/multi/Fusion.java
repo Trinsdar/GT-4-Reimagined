@@ -1,13 +1,5 @@
 package trinsdar.gt4r.loader.multi;
 
-import muramasa.antimatter.data.AntimatterMaterials;
-import trinsdar.gt4r.data.RecipeMaps;
-
-import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;
-import static muramasa.antimatter.data.AntimatterMaterials.Gold;
-import static muramasa.antimatter.data.AntimatterMaterials.Iron;
-import static trinsdar.gt4r.data.Materials.*;
-
 public class Fusion {
     public static void init(){
         /*RecipeMaps.FUSION.RB().fi(Helium3.getGas(125), Deuterium.getGas(125)).fo(Helium.getPlasma(125)).add("helium",16, 2048, 60000000);

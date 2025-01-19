@@ -5,7 +5,6 @@ import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.tags.Tag;
 import net.minecraft.world.level.ItemLike;
 
 public class CraftingHelper {

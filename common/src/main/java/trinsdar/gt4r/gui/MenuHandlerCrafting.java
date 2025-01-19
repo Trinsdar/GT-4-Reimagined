@@ -1,6 +1,5 @@
 package trinsdar.gt4r.gui;
 
-import muramasa.antimatter.capability.ICoverHandler;
 import muramasa.antimatter.capability.ICoverHandlerProvider;
 import muramasa.antimatter.capability.IGuiHandler;
 import muramasa.antimatter.cover.ICover;
@@ -12,8 +11,6 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.inventory.ContainerLevelAccess;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import trinsdar.gt4r.GT4RRef;
-
-import java.util.Optional;
 
 public class MenuHandlerCrafting extends MenuHandler<GTWorkbenchContainer> {
     public MenuHandlerCrafting(String domain, String id) {

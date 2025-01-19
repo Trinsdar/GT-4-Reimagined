@@ -6,9 +6,7 @@ import earth.terrarium.botarium.common.fluid.base.PlatformFluidHandler;
 import earth.terrarium.botarium.common.fluid.utils.FluidHooks;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import muramasa.antimatter.blockentity.BlockEntityMachine;
-import muramasa.antimatter.capability.item.FakeTrackedItemHandler;
 import muramasa.antimatter.capability.machine.MachineEnergyHandler;
-import muramasa.antimatter.capability.machine.MachineItemHandler;
 import muramasa.antimatter.gui.GuiInstance;
 import muramasa.antimatter.gui.IGuiElement;
 import muramasa.antimatter.gui.SlotType;
@@ -33,7 +31,6 @@ import tesseract.FluidPlatformUtils;
 import tesseract.TesseractCapUtils;
 import tesseract.TesseractGraphWrappers;
 import tesseract.api.item.ExtendedItemContainer;
-import trinsdar.gt4r.data.SlotTypes;
 import trinsdar.gt4r.gui.ButtonOverlays;
 
 import java.util.List;

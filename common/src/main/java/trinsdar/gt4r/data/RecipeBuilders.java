@@ -1,16 +1,7 @@
 package trinsdar.gt4r.data;
 
-import muramasa.antimatter.Antimatter;
-import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.recipe.IRecipe;
 import muramasa.antimatter.recipe.map.RecipeBuilder;
-import muramasa.antimatter.recipe.map.RecipeMap;
-import muramasa.antimatter.util.Utils;
-import net.minecraft.world.item.ItemStack;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Objects;
 
 public class RecipeBuilders {
 

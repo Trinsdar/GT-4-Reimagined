@@ -3,6 +3,7 @@ package trinsdar.gt4r.loader.crafting;
 import muramasa.antimatter.data.AntimatterDefaultTools;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.data.AntimatterMaterials;
+import muramasa.antimatter.data.ForgeCTags;
 import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.pipe.PipeSize;
@@ -13,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.GT4RRef;
-import muramasa.antimatter.data.ForgeCTags;
 import trinsdar.gt4r.data.GT4RBlocks;
 import trinsdar.gt4r.data.Machines;
 

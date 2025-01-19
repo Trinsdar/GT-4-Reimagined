@@ -1,9 +1,9 @@
 package trinsdar.gt4r.loader.multi;
 
 import muramasa.antimatter.util.TagUtils;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.resources.ResourceLocation;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.data.GT4RMaterialTags;

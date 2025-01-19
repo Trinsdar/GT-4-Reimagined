@@ -15,9 +15,7 @@ import trinsdar.gt4r.data.RecipeMaps;
 
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
-import static trinsdar.gt4r.data.Materials.Mercury;
-import static trinsdar.gt4r.data.Materials.Propane;
-import static trinsdar.gt4r.data.Materials.SulfuricAcid;
+import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.FLUID_CANNER;
 
 public class FluidCanningLoader {

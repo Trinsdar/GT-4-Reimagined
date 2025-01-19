@@ -1,19 +1,12 @@
 package trinsdar.gt4r.loader.machines;
 
-import muramasa.antimatter.material.Material;
-import muramasa.antimatter.material.MaterialTags;
-import muramasa.antimatter.material.MaterialTypeItem;
+import muramasa.antimatter.data.ForgeCTags;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
-import muramasa.antimatter.util.AntimatterPlatformUtils;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.tags.ItemTags;
-import muramasa.antimatter.data.ForgeCTags;
 
-import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
-import static trinsdar.gt4r.data.Materials.FishOil;
-import static trinsdar.gt4r.data.Materials.Honey;
-import static trinsdar.gt4r.data.Materials.SeedOil;
+import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.FLUID_PRESS;
 
 public class FluidPressLoader {

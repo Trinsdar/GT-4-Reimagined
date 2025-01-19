@@ -5,20 +5,18 @@ import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.data.AntimatterDefaultTools;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;
-import muramasa.antimatter.material.MaterialTags;
 import muramasa.antimatter.util.AntimatterPlatformUtils;
 import net.minecraft.advancements.CriterionTriggerInstance;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
-import net.minecraft.resources.ResourceLocation;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.data.GT4RMaterialTags;
 
 import java.util.function.Consumer;
 
-import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static trinsdar.gt4r.data.Materials.*;
 

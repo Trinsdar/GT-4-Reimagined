@@ -19,7 +19,8 @@ import static muramasa.antimatter.data.AntimatterMaterialTypes.PLATE;
 import static muramasa.antimatter.data.AntimatterMaterials.Wood;
 import static org.gtreimagined.gtcore.data.GTCoreTags.*;
 import static trinsdar.gt4r.data.CustomTags.*;
-import static trinsdar.gt4r.data.GT4RItems.*;
+import static trinsdar.gt4r.data.GT4RItems.ItemSuperconductor;
+import static trinsdar.gt4r.data.GT4RItems.NichromeHeatingCoil;
 import static trinsdar.gt4r.data.Materials.*;
 
 public class BlockCrafting {

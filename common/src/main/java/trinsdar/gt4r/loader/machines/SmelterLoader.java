@@ -12,11 +12,11 @@ import trinsdar.gt4r.data.GT4RMaterialTags;
 import static muramasa.antimatter.Ref.L;
 import static muramasa.antimatter.Ref.U;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
-import static muramasa.antimatter.data.AntimatterMaterialTypes.PLATE_DENSE;
 import static muramasa.antimatter.data.AntimatterMaterials.Lava;
 import static muramasa.antimatter.material.MaterialTags.MOLTEN;
-import static trinsdar.gt4r.data.Materials.*;
-import static trinsdar.gt4r.data.RecipeMaps.*;
+import static trinsdar.gt4r.data.Materials.Obsidian;
+import static trinsdar.gt4r.data.RecipeMaps.SMELTER;
+import static trinsdar.gt4r.data.RecipeMaps.SMELTER_COILS;
 
 public class SmelterLoader {
     public static void init() {

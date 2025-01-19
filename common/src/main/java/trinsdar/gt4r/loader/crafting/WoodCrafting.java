@@ -6,13 +6,10 @@ import muramasa.antimatter.util.AntimatterPlatformUtils;
 import muramasa.antimatter.util.TagUtils;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import org.gtreimagined.gtcore.GTCoreConfig;
-import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 
 import java.util.function.Consumer;

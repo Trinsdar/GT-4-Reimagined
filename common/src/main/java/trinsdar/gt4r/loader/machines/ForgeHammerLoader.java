@@ -3,6 +3,7 @@ package trinsdar.gt4r.loader.machines;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.data.AntimatterMaterials;
+import muramasa.antimatter.data.ForgeCTags;
 import muramasa.antimatter.material.MaterialTags;
 import muramasa.antimatter.ore.CobbleStoneType;
 import muramasa.antimatter.ore.StoneType;
@@ -12,13 +13,10 @@ import muramasa.antimatter.util.Utils;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import trinsdar.gt4r.GT4RRef;
-import muramasa.antimatter.data.ForgeCTags;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
-import static muramasa.antimatter.material.MaterialTags.MACERATE_INTO;
-import static muramasa.antimatter.material.MaterialTags.ORE_MULTI;
-import static muramasa.antimatter.material.MaterialTags.RUBBERTOOLS;
-import static trinsdar.gt4r.data.Materials.*;
+import static muramasa.antimatter.material.MaterialTags.*;
+import static trinsdar.gt4r.data.Materials.Brick;
 import static trinsdar.gt4r.data.RecipeMaps.FORGE_HAMMER;
 
 public class ForgeHammerLoader {

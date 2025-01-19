@@ -14,31 +14,26 @@ import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import muramasa.antimatter.recipe.map.RecipeMap;
 import muramasa.antimatter.util.AntimatterPlatformUtils;
 import muramasa.antimatter.util.Utils;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.resources.ResourceLocation;
 import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.GT4RRef;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static muramasa.antimatter.material.Material.NULL;
-import static muramasa.antimatter.material.MaterialTags.BY_PRODUCT_MULTI;
-import static muramasa.antimatter.material.MaterialTags.MACERATE_INTO;
-import static muramasa.antimatter.material.MaterialTags.ORE_MULTI;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
+import static muramasa.antimatter.material.Material.NULL;
+import static muramasa.antimatter.material.MaterialTags.*;
 import static org.gtreimagined.gtcore.data.GTCoreItems.Biochaff;
 import static org.gtreimagined.gtcore.data.GTCoreItems.Plantball;
-import static trinsdar.gt4r.data.Materials.Brick;
-import static trinsdar.gt4r.data.Materials.Clay;
-import static trinsdar.gt4r.data.Materials.Limestone;
-import static trinsdar.gt4r.data.Materials.Scoria;
-import static trinsdar.gt4r.data.RecipeMaps.*;
+import static trinsdar.gt4r.data.Materials.*;
+import static trinsdar.gt4r.data.RecipeMaps.SIFTER;
 import static trinsdar.gt4r.data.RecipeMaps.UNIVERSAL_MACERATOR;
 
 public class MaceratorLoader {

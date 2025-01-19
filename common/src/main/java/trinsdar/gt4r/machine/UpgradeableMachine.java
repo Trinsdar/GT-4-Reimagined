@@ -1,6 +1,5 @@
 package trinsdar.gt4r.machine;
 
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import muramasa.antimatter.Data;
 import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.blockentity.multi.BlockEntityMultiMachine;
@@ -11,8 +10,6 @@ import muramasa.antimatter.gui.widget.MachineStateWidget;
 import muramasa.antimatter.gui.widget.ProgressWidget;
 import muramasa.antimatter.gui.widget.TextWidget;
 import muramasa.antimatter.gui.widget.WidgetSupplier;
-import muramasa.antimatter.machine.types.BasicMachine;
-import muramasa.antimatter.machine.types.BasicMultiMachine;
 import muramasa.antimatter.machine.types.Machine;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
@@ -25,7 +22,6 @@ import trinsdar.gt4r.data.Textures;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import static muramasa.antimatter.machine.MachineFlag.*;
 

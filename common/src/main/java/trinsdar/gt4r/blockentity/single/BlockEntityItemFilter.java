@@ -1,6 +1,7 @@
 package trinsdar.gt4r.blockentity.single;
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
+import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.capability.IFilterableHandler;
 import muramasa.antimatter.capability.machine.MachineEnergyHandler;
 import muramasa.antimatter.gui.GuiInstance;
@@ -10,7 +11,6 @@ import muramasa.antimatter.gui.event.GuiEvents;
 import muramasa.antimatter.gui.event.IGuiEvent;
 import muramasa.antimatter.machine.event.IMachineEvent;
 import muramasa.antimatter.machine.types.Machine;
-import muramasa.antimatter.blockentity.BlockEntityMachine;
 import muramasa.antimatter.util.AntimatterPlatformUtils;
 import muramasa.antimatter.util.Utils;
 import net.minecraft.core.BlockPos;

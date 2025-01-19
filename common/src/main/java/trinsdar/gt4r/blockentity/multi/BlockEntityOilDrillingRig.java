@@ -1,7 +1,7 @@
 package trinsdar.gt4r.blockentity.multi;
 
-import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.blockentity.multi.BlockEntityMultiMachine;
+import muramasa.antimatter.machine.types.Machine;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 

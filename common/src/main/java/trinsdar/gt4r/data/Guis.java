@@ -20,9 +20,11 @@ import java.util.function.BiFunction;
 import static muramasa.antimatter.gui.ButtonOverlay.*;
 import static muramasa.antimatter.gui.SlotType.*;
 import static muramasa.antimatter.gui.Widget.builder;
-import static muramasa.antimatter.machine.Tier.*;
+import static muramasa.antimatter.machine.Tier.LV;
+import static muramasa.antimatter.machine.Tier.MV;
 import static trinsdar.gt4r.data.Machines.*;
-import static trinsdar.gt4r.data.SlotTypes.*;
+import static trinsdar.gt4r.data.SlotTypes.DATA;
+import static trinsdar.gt4r.data.SlotTypes.QUANTUM;
 import static trinsdar.gt4r.gui.ButtonOverlays.*;
 
 public class Guis {

@@ -2,7 +2,6 @@ package trinsdar.gt4r.loader.machines;
 
 import com.google.common.collect.ImmutableMap;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
-import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.material.Material;
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import net.minecraft.tags.TagKey;

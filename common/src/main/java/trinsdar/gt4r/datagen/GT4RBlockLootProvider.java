@@ -27,7 +27,6 @@ import java.util.function.Function;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.data.AntimatterMaterials.*;
-import static muramasa.antimatter.data.AntimatterMaterials.Diamond;
 import static trinsdar.gt4r.data.Materials.*;
 
 public class GT4RBlockLootProvider extends AntimatterBlockLootProvider {

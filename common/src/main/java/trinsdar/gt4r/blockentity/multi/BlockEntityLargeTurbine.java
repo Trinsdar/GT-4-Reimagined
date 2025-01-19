@@ -1,12 +1,12 @@
 package trinsdar.gt4r.blockentity.multi;
 
+import muramasa.antimatter.blockentity.multi.BlockEntityMultiMachine;
 import muramasa.antimatter.capability.IFilterableHandler;
 import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import muramasa.antimatter.gui.SlotType;
 import muramasa.antimatter.machine.event.IMachineEvent;
 import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.recipe.IRecipe;
-import muramasa.antimatter.blockentity.multi.BlockEntityMultiMachine;
 import muramasa.antimatter.util.Utils;
 import muramasa.antimatter.util.int3;
 import net.minecraft.core.BlockPos;

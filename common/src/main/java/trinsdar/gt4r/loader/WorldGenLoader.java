@@ -7,18 +7,14 @@ import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.event.WorldGenEvent;
 import muramasa.antimatter.worldgen.object.WorldGenStoneLayerBuilder;
 import muramasa.antimatter.worldgen.smallore.WorldGenSmallOreBuilder;
-import muramasa.antimatter.worldgen.vanillaore.WorldGenVanillaOre;
 import muramasa.antimatter.worldgen.vanillaore.WorldGenVanillaOreBuilder;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
-import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreBlocks;
 import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 
 import static muramasa.antimatter.data.AntimatterMaterials.*;
 import static muramasa.antimatter.data.AntimatterStoneTypes.*;
-
 import static org.gtreimagined.gtcore.data.GTCoreBlocks.*;
 import static trinsdar.gt4r.data.Materials.*;
 

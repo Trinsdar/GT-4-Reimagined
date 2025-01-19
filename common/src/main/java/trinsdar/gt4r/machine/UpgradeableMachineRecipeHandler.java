@@ -1,8 +1,7 @@
 package trinsdar.gt4r.machine;
 
-import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import muramasa.antimatter.blockentity.BlockEntityMachine;
-import tesseract.FluidPlatformUtils;
+import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import tesseract.TesseractGraphWrappers;
 import trinsdar.gt4r.data.CustomTags;
 

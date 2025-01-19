@@ -1,8 +1,8 @@
 package trinsdar.gt4r.machine;
 
 import muramasa.antimatter.Data;
-import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.blockentity.BlockEntityMachine;
+import muramasa.antimatter.machine.types.Machine;
 import trinsdar.gt4r.block.BlockNonSolidMachine;
 
 import static muramasa.antimatter.machine.MachineFlag.BASIC;

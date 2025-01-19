@@ -4,7 +4,6 @@ import muramasa.antimatter.AntimatterMod;
 import muramasa.antimatter.registration.RegistrationEvent;
 import muramasa.antimatter.registration.Side;
 import trinsdar.gt4r.GT4RRef;
-import trinsdar.gt4r.proxy.CommonHandler;
 
 public class GT4RFabricRegistrar extends AntimatterMod {
 

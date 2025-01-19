@@ -1,8 +1,8 @@
 package trinsdar.gt4r.blockentity.single;
 
+import muramasa.antimatter.blockentity.single.BlockEntityGenerator;
 import muramasa.antimatter.capability.machine.MachineEnergyHandler;
 import muramasa.antimatter.machine.types.Machine;
-import muramasa.antimatter.blockentity.single.BlockEntityGenerator;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.state.BlockState;

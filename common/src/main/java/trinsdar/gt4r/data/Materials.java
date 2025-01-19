@@ -5,7 +5,6 @@ import muramasa.antimatter.material.Material;
 import net.minecraft.resources.ResourceLocation;
 import trinsdar.gt4r.GT4RRef;
 
-import static com.google.common.collect.ImmutableMap.of;
 import static muramasa.antimatter.material.Element.*;
 import static muramasa.antimatter.material.TextureSet.*;
 

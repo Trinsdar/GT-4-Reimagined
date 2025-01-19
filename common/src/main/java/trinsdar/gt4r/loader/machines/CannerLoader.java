@@ -6,9 +6,7 @@ import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;
 import static muramasa.antimatter.data.AntimatterMaterials.Redstone;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
 import static org.gtreimagined.gtcore.data.GTCoreItems.*;
-import static trinsdar.gt4r.data.Materials.Cadmium;
-import static trinsdar.gt4r.data.Materials.Lithium;
-import static trinsdar.gt4r.data.Materials.Sodium;
+import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.CANNER;
 
 public class CannerLoader {

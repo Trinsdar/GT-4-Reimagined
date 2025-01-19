@@ -30,7 +30,7 @@ import java.util.Map;
 
 import static muramasa.antimatter.material.Material.NULL;
 import static net.minecraft.world.level.material.Material.*;
-import static trinsdar.gt4r.data.GT4RItems.*;
+import static trinsdar.gt4r.data.GT4RItems.RockCutterPowerUnit;
 
 public class ToolTypes {
     public static final MaterialRecipe.Provider POWERED_TOOL_BUILDER = MaterialRecipe.registerProvider("powered-tool", GT4RRef.ID, id -> new MaterialRecipe.ItemBuilder() {

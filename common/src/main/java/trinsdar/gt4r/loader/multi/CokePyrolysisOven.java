@@ -1,16 +1,13 @@
 package trinsdar.gt4r.loader.multi;
 
 import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
-import net.minecraft.tags.ItemTags;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.resources.ResourceLocation;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.BLOCK;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.GEM;
-import static trinsdar.gt4r.data.Materials.CoalCoke;
-import static trinsdar.gt4r.data.Materials.Creosote;
-import static trinsdar.gt4r.data.Materials.WoodGas;
+import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.COKING;
 import static trinsdar.gt4r.data.RecipeMaps.PYROLYSING;
 

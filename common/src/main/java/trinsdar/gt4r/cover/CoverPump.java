@@ -11,12 +11,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import org.jetbrains.annotations.Nullable;
 import tesseract.TesseractCapUtils;
-import trinsdar.gt4r.cover.redstone.CoverRedstoneMachineController;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static trinsdar.gt4r.gui.ButtonOverlays.*;
 
 public class CoverPump extends CoverBasicTransport {
 

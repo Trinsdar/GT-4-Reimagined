@@ -1,8 +1,8 @@
 package trinsdar.gt4r;
 
 import muramasa.antimatter.AntimatterAPI;
-import muramasa.antimatter.datagen.AntimatterDynamics;
 import muramasa.antimatter.AntimatterMod;
+import muramasa.antimatter.datagen.AntimatterDynamics;
 import muramasa.antimatter.datagen.providers.AntimatterBlockStateProvider;
 import muramasa.antimatter.event.MaterialEvent;
 import muramasa.antimatter.integration.jeirei.AntimatterJEIREIPlugin;
@@ -19,7 +19,21 @@ import org.apache.logging.log4j.Logger;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import org.gtreimagined.gtcore.item.ItemPowerUnit;
 import trinsdar.gt4r.config.OreConfigHandler;
-import trinsdar.gt4r.data.*;
+import trinsdar.gt4r.data.Attributes;
+import trinsdar.gt4r.data.GT4RBlocks;
+import trinsdar.gt4r.data.GT4RCovers;
+import trinsdar.gt4r.data.GT4RItems;
+import trinsdar.gt4r.data.GT4RMaterialEvents;
+import trinsdar.gt4r.data.GT4RMaterialTags;
+import trinsdar.gt4r.data.Guis;
+import trinsdar.gt4r.data.Machines;
+import trinsdar.gt4r.data.Materials;
+import trinsdar.gt4r.data.MenuHandlers;
+import trinsdar.gt4r.data.Models;
+import trinsdar.gt4r.data.RecipeMaps;
+import trinsdar.gt4r.data.Structures;
+import trinsdar.gt4r.data.TierMaps;
+import trinsdar.gt4r.data.ToolTypes;
 import trinsdar.gt4r.data.client.ScreenFactories;
 import trinsdar.gt4r.datagen.GT4RItemModelProvider;
 import trinsdar.gt4r.datagen.GT4RLocalizations;
@@ -29,7 +43,6 @@ import trinsdar.gt4r.material.GT4RMaterialEvent;
 import java.util.Arrays;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
-import static muramasa.antimatter.data.AntimatterMaterialTypes.DRILLBIT;
 import static trinsdar.gt4r.data.Materials.Steel;
 
 

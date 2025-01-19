@@ -1,17 +1,10 @@
 package trinsdar.gt4r.events;
 
 import muramasa.antimatter.tool.IAntimatterTool;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.InventoryMenu;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-
-import java.util.UUID;
 
 import static muramasa.antimatter.data.AntimatterDefaultTools.PICKAXE;
 import static org.gtreimagined.gtcore.data.GTCoreTools.DRILL;

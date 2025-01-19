@@ -7,7 +7,6 @@ import muramasa.antimatter.capability.machine.MachineRecipeHandler;
 import muramasa.antimatter.client.SoundHelper;
 import muramasa.antimatter.machine.MachineState;
 import muramasa.antimatter.machine.Tier;
-import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.tool.AntimatterToolType;
 import muramasa.antimatter.util.TagUtils;
 import muramasa.antimatter.util.Utils;

@@ -9,10 +9,10 @@ import net.minecraft.world.item.ItemStack;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 import trinsdar.gt4r.data.GT4RItems;
 
-import static muramasa.antimatter.data.AntimatterMaterials.Charcoal;
-import static muramasa.antimatter.data.AntimatterMaterials.Coal;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.INGOT;
+import static muramasa.antimatter.data.AntimatterMaterials.Charcoal;
+import static muramasa.antimatter.data.AntimatterMaterials.Coal;
 import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.WIRE_MILL;
 

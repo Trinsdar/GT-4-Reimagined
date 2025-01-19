@@ -5,9 +5,9 @@ import net.minecraft.world.item.Items;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.DUST;
+import static muramasa.antimatter.data.AntimatterMaterialTypes.GEM;
 import static muramasa.antimatter.data.AntimatterMaterials.Diamond;
 import static muramasa.antimatter.data.AntimatterMaterials.Emerald;
-import static muramasa.antimatter.data.AntimatterMaterialTypes.GEM;
 import static muramasa.antimatter.recipe.ingredient.RecipeIngredient.of;
 import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.IMPLOSION_COMPRESSING;

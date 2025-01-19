@@ -4,8 +4,6 @@ import muramasa.antimatter.event.forge.AntimatterCraftingEvent;
 import muramasa.antimatter.event.forge.AntimatterProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.config.ModConfigEvent;
-import trinsdar.gt4r.GT4RConfig;
 import trinsdar.gt4r.GT4RRef;
 import trinsdar.gt4r.events.AntimatterEvents;
 

@@ -8,10 +8,8 @@ import trinsdar.gt4r.data.Materials;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.GAS;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.LIQUID;
 import static muramasa.antimatter.data.AntimatterMaterials.Lava;
-import static trinsdar.gt4r.data.Materials.DistilledWater;
-import static trinsdar.gt4r.data.Materials.NitroDiesel;
 import static trinsdar.gt4r.data.GT4RMaterialTags.SEMIFLUID;
-import static trinsdar.gt4r.data.Materials.Steam;
+import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.*;
 
 public class FuelBurnHandler {

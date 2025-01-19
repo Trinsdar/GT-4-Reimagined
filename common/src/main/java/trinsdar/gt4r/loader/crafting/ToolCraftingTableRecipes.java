@@ -3,7 +3,6 @@ package trinsdar.gt4r.loader.crafting;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.util.Pair;
 import muramasa.antimatter.AntimatterAPI;
-import muramasa.antimatter.AntimatterConfig;
 import muramasa.antimatter.data.AntimatterDefaultTools;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.datagen.providers.AntimatterRecipeProvider;

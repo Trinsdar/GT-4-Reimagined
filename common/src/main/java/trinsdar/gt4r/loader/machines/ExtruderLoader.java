@@ -17,9 +17,7 @@ import trinsdar.gt4r.data.GT4RItems;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.*;
 import static muramasa.antimatter.material.MaterialTags.RUBBERTOOLS;
-import static trinsdar.gt4r.data.Materials.Rubber;
-import static trinsdar.gt4r.data.Materials.Tin;
-import static trinsdar.gt4r.data.Materials.WroughtIron;
+import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.EXTRUDER;
 
 public class ExtruderLoader {

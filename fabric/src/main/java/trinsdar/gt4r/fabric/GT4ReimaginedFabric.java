@@ -1,6 +1,5 @@
 package trinsdar.gt4r.fabric;
 
-import io.github.fabricators_of_create.porting_lib.event.common.PlayerTickEvents;
 import muramasa.antimatter.AntimatterAPI;
 import muramasa.antimatter.event.fabric.CraftingEvents;
 import muramasa.antimatter.event.fabric.LoaderEvents;

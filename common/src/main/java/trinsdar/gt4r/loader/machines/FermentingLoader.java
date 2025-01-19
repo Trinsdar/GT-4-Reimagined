@@ -4,9 +4,7 @@ import muramasa.antimatter.recipe.ingredient.RecipeIngredient;
 import org.gtreimagined.gtcore.data.GTCoreItems;
 
 import static muramasa.antimatter.data.AntimatterMaterials.Water;
-import static trinsdar.gt4r.data.Materials.Biomass;
-import static trinsdar.gt4r.data.Materials.Honey;
-import static trinsdar.gt4r.data.Materials.Methane;
+import static trinsdar.gt4r.data.Materials.*;
 import static trinsdar.gt4r.data.RecipeMaps.FERMENTER;
 
 public class FermentingLoader {
