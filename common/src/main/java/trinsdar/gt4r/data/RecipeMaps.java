@@ -26,6 +26,7 @@ public class RecipeMaps {
     public static RecipeMap<?> DIESEL_FUELS = AntimatterAPI.register(RecipeMap.class, new RecipeMap<>(GT4RRef.ID, "diesel_fuels", new RecipeBuilder()));
     public static RecipeMap<?> HOT_FUELS = AntimatterAPI.register(RecipeMap.class, new RecipeMap<>(GT4RRef.ID, "hot_fuels", new RecipeBuilder()));
     public static RecipeMap<?> SEMIFLUID_FUELS = AntimatterAPI.register(RecipeMap.class, new RecipeMap<>(GT4RRef.ID, "semifluid_fuels", new RecipeBuilder()));
+    public static RecipeMap<?> THERMAL_FUELS = AntimatterAPI.register(RecipeMap.class, new RecipeMap<>(GT4RRef.ID, "thermal_fuels", new RecipeBuilder()));
     public static RecipeMap<?> THERMAL_BOILER_FUELS = AntimatterAPI.register(RecipeMap.class, new RecipeMap<>(GT4RRef.ID, "thermal_boiler_fuels", new RecipeBuilder()));
 
     public static RecipeMap<?> STEAM_FURNACE = AntimatterAPI.register(RecipeMap.class, new RecipeMap<>(GT4RRef.ID, "steam_furnace", new RecipeBuilder()).setProxy(RecipeProxies.FURNACE_PROXY.apply(8, 180)));
@@ -99,6 +100,7 @@ public class RecipeMaps {
         DIESEL_FUELS.setGuiData(MULTI_DISPLAY, DIESEL_GENERATOR);
         HOT_FUELS.setGuiData(MULTI_DISPLAY, HEAT_EXCHANGER);
         SEMIFLUID_FUELS.setGuiData(MULTI_DISPLAY, SEMIFLUID_GENERATOR);
+        THERMAL_FUELS.setGuiData(MULTI_DISPLAY, THERMAL_GENERATOR);
         THERMAL_BOILER_FUELS.setGuiData(MULTI_DISPLAY, THERMAL_BOILER);
         SOLID_FUEL_BOILERS.setGuiData(MULTI_DISPLAY, SOLID_FUEL_BOILER);
         COKING.setGuiData(MULTI_DISPLAY, COKE_OVEN);

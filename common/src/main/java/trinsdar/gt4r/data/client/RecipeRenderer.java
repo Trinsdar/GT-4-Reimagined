@@ -68,6 +68,7 @@ public class RecipeRenderer {
         RecipeMaps.DIESEL_FUELS.setInfoRenderer(FUEL_RENDERER);
         RecipeMaps.HOT_FUELS.setInfoRenderer(HOT_FUEL_RENDERER);
         RecipeMaps.SEMIFLUID_FUELS.setInfoRenderer(FUEL_RENDERER);
+        RecipeMaps.THERMAL_FUELS.setInfoRenderer(FUEL_RENDERER);
 
         RecipeMaps.BLASTING.setInfoRenderer(InfoRenderers.BLASTING_RENDERER);
         RecipeMaps.STEAM_FURNACE.setInfoRenderer(InfoRenderers.STEAM_RENDERER);

@@ -7,6 +7,7 @@ import trinsdar.gt4r.data.Materials;
 
 import static muramasa.antimatter.data.AntimatterMaterialTypes.GAS;
 import static muramasa.antimatter.data.AntimatterMaterialTypes.LIQUID;
+import static muramasa.antimatter.data.AntimatterMaterials.Lava;
 import static trinsdar.gt4r.data.Materials.DistilledWater;
 import static trinsdar.gt4r.data.Materials.NitroDiesel;
 import static trinsdar.gt4r.data.GT4RMaterialTags.SEMIFLUID;
@@ -47,6 +48,6 @@ public class FuelBurnHandler {
         });
         STEAM_FUELS.RB().fi(Steam.getGas(32)).add("steam",1,16);
         LARGE_STEAM_FUELS.RB().fi(Steam.getGas(1600)).fo(DistilledWater.getLiquid(10)).add("steam",1, 800);
-
+        THERMAL_FUELS.RB().fi(Lava.getLiquid(1)).add("lava", 1, 30);
     }
 }
