@@ -6,6 +6,7 @@ import muramasa.antimatter.AntimatterMod;
 import muramasa.antimatter.datagen.providers.AntimatterBlockStateProvider;
 import muramasa.antimatter.event.MaterialEvent;
 import muramasa.antimatter.integration.jeirei.AntimatterJEIREIPlugin;
+import muramasa.antimatter.machine.Tier;
 import muramasa.antimatter.proxy.IProxyHandler;
 import muramasa.antimatter.registration.RegistrationEvent;
 import muramasa.antimatter.registration.Side;
@@ -78,6 +79,8 @@ public class GT4Reimagined extends AntimatterMod {
                             GTCoreItems.CircuitBoardEmpty, GTCoreItems.CircuitBoardProcessorEmpty, GTCoreItems.CircuitGood,
                             GTCoreItems.CircuitComplex, GTCoreItems.CircuitFuturistic,
                             GTCoreItems.Circuit3D, GTCoreItems.CircuitInfinite));
+                    l.addAll(Machines.BATTERY_BUFFER_FOUR.getTiers().stream().filter(t -> t != Tier.LV).map(Machines.BATTERY_BUFFER_FOUR::getItem).toList());
+                    l.addAll(Machines.BATTERY_BUFFER_EIGHT.getTiers().stream().filter(t -> t != Tier.LV).map(Machines.BATTERY_BUFFER_EIGHT::getItem).toList());
                     l.addAll(Arrays.asList(GT4RItems.AdvancedWrenchAlt, GT4RItems.ElectricWrenchAlt, GTCoreItems.Fertilizer));
                     if (GT4RConfig.GT5_ELECTRIC_TOOLS.get()){
                         l.addAll(Arrays.asList(GT4RItems.Drill, GT4RItems.DiamondDrill, GT4RItems.AdvancedDrill, GT4RItems.Chainsaw, GT4RItems.AdvancedChainsaw,

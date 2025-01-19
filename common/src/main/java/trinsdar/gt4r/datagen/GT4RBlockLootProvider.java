@@ -1,12 +1,10 @@
 package trinsdar.gt4r.datagen;
 
 import muramasa.antimatter.AntimatterAPI;
-import muramasa.antimatter.Ref;
 import muramasa.antimatter.data.AntimatterMaterialTypes;
 import muramasa.antimatter.data.AntimatterMaterials;
 import muramasa.antimatter.data.AntimatterStoneTypes;
 import muramasa.antimatter.datagen.providers.AntimatterBlockLootProvider;
-import muramasa.antimatter.material.MaterialTags;
 import muramasa.antimatter.mixin.BlockLootTablesAccessor;
 import muramasa.antimatter.ore.BlockOre;
 import muramasa.antimatter.ore.BlockOreStone;
@@ -21,11 +19,9 @@ import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
-import trinsdar.gt4r.block.BlockBatBox;
 import trinsdar.gt4r.block.BlockCasing;
 import trinsdar.gt4r.block.BlockFakeCasing;
 import trinsdar.gt4r.block.BlockNonSolidMachine;
-import trinsdar.gt4r.material.GT4RMaterialEvent;
 
 import java.util.function.Function;
 
@@ -43,8 +39,6 @@ public class GT4RBlockLootProvider extends AntimatterBlockLootProvider {
     protected void loot() {
         super.loot();
         AntimatterAPI.all(BlockNonSolidMachine.class, providerDomain, this::add);
-        AntimatterAPI.all(BlockBatBox.class, providerDomain, this::add);
-
         AntimatterAPI.all(BlockCasing.class, providerDomain, this::add);
         AntimatterAPI.all(BlockFakeCasing.class, providerDomain, this::add);
         if (!AntimatterAPI.isModLoaded("gt5r")){

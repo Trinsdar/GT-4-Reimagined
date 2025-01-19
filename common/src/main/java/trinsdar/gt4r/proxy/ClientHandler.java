@@ -6,15 +6,10 @@ import muramasa.antimatter.proxy.IProxyHandler;
 import muramasa.antimatter.util.AntimatterPlatformUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.server.packs.AbstractPackResources;
-import net.minecraft.server.packs.FilePackResources;
-import net.minecraft.server.packs.PackResources;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.Level;
-import org.apache.commons.io.FileUtils;
 import trinsdar.gt4r.GT4Reimagined;
-import trinsdar.gt4r.block.BlockBatBox;
 import trinsdar.gt4r.block.BlockCasing;
 import trinsdar.gt4r.block.BlockRedstoneMachine;
 import trinsdar.gt4r.data.Machines;
@@ -37,7 +32,6 @@ public class ClientHandler implements IProxyHandler {
             ModelUtils.INSTANCE.setRenderLayer(((BlockItem)Machines.DUSTBIN.getItem(LV)).getBlock(), RenderType.cutout());
             AntimatterAPI.all(BlockCasing.class, t -> ModelUtils.INSTANCE.setRenderLayer(t, RenderType.cutout()));
             AntimatterAPI.all(BlockRedstoneMachine.class, b -> ModelUtils.INSTANCE.setRenderLayer(b, RenderType.cutout()));
-            AntimatterAPI.all(BlockBatBox.class, b -> ModelUtils.INSTANCE.setRenderLayer(b, RenderType.cutout()));
         });
         copyProgrammerArtIfMissing();
     }

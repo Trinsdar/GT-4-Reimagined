@@ -17,16 +17,10 @@ import muramasa.antimatter.texture.Texture;
 import muramasa.antimatter.util.Utils;
 import net.minecraft.ChatFormatting;
 import net.minecraft.world.level.block.Block;
-import org.gtreimagined.gtcore.GTCore;
 import org.gtreimagined.gtcore.data.GTCoreBlocks;
-import org.gtreimagined.gtcore.data.GTCoreMaterials;
 import org.gtreimagined.gtcore.machine.DrumMachine;
-import org.gtreimagined.gtcore.machine.LockerMachine;
-import org.gtreimagined.gtcore.machine.MaterialMachine;
 import org.gtreimagined.gtcore.machine.MultiblockTankMachine;
-import org.gtreimagined.gtcore.machine.WorkbenchMachine;
 import trinsdar.gt4r.GT4RRef;
-import trinsdar.gt4r.block.BlockBatBox;
 import trinsdar.gt4r.block.BlockColoredWall;
 import trinsdar.gt4r.block.BlockRedstoneMachine;
 import trinsdar.gt4r.machine.*;
@@ -174,8 +168,8 @@ public class Machines {
     public static GeneratorMachine WINDMILL = new GeneratorMachine(GT4RRef.ID, "windmill").baseTexture(Textures.BASE_HANDLER).setTiers(ULV);
     public static GeneratorMachine WATERMILL = new GeneratorMachine(GT4RRef.ID, "watermill").baseTexture(Textures.BASE_HANDLER).setTiers(ULV).setTile(BlockEntityWatermill::new).custom();
 
-    public static UpgradeableMachine BATTERY_BUFFER_FOUR = new UpgradeableMachine(GT4RRef.ID, "4x_battery_buffer").setTiers(LV).noCovers().addFlags(GUI, EU, ITEM).setUpgrades(CustomTags.TRANSFORMER_UPGRADES).setTile(BlockEntityBatteryBox::new).setBlock(BlockBatBox::new).setItemBlockClass(() -> BlockBatBox.class).overlayTexture(Textures.TIER_SPECIFIC_OVERLAY_HANDLER).baseTexture(Textures.BATBOX_HANDLER).allowFrontIO().setVerticalFacingAllowed(true);
-    public static UpgradeableMachine BATTERY_BUFFER_EIGHT = new UpgradeableMachine(GT4RRef.ID, "8x_battery_buffer").setTiers(LV).noCovers().addFlags(GUI, EU, ITEM).setUpgrades(CustomTags.TRANSFORMER_UPGRADES).setTile(BlockEntityBatteryBox::new).setBlock(BlockBatBox::new).setItemBlockClass(() -> BlockBatBox.class).overlayTexture(Textures.TIER_SPECIFIC_OVERLAY_HANDLER).baseTexture(Textures.BATBOX_HANDLER).allowFrontIO().setVerticalFacingAllowed(true);
+    public static BasicMachine BATTERY_BUFFER_FOUR = new BasicMachine(GT4RRef.ID, "4x_battery_buffer").setTiers(Tier.getStandardWithIV()).noCovers().addFlags(GUI, EU, ITEM).setTile(BlockEntityBatteryBox::new).overlayTexture(Textures.TIER_SPECIFIC_OVERLAY_HANDLER).baseTexture(Textures.BATBOX_HANDLER).allowFrontIO().setVerticalFacingAllowed(true);
+    public static BasicMachine BATTERY_BUFFER_EIGHT = new BasicMachine(GT4RRef.ID, "8x_battery_buffer").setTiers(Tier.getStandardWithIV()).noCovers().addFlags(GUI, EU, ITEM).setTile(BlockEntityBatteryBox::new).overlayTexture(Textures.TIER_SPECIFIC_OVERLAY_HANDLER).baseTexture(Textures.BATBOX_HANDLER).allowFrontIO().setVerticalFacingAllowed(true);
     public static BasicMachine TRANSFORMER = new BasicMachine(GT4RRef.ID, "transformer").setTiers(Tier.getStandardWithIV()).addFlags(EU).baseTexture(Textures.BATBOX_HANDLER).overlayTexture(Textures.TIER_SPECIFIC_OVERLAY_HANDLER).setTile((m, p, s) -> new BlockEntityTransformer<>(m, p, s, 1)).noCovers().setVerticalFacingAllowed(true).allowFrontIO().addTooltipInfo((machine, stack, world, tooltip, flag) -> {
         tooltip.remove(tooltip.size() - 1);
         tooltip.remove(tooltip.size() - 1);
