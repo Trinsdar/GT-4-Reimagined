@@ -245,6 +245,8 @@ public class MachineCrafting {
         if (GTCoreBlocks.IRONWOOD_ITEM_BARREL != null) {
             provider.addItemRecipe(output, "item_barrels", GTCoreBlocks.IRONWOOD_ITEM_BARREL.getItem(NONE), of('S', SOFT_HAMMER.getTag(), 'C', ForgeCTags.CHESTS, 'R', ROD_LONG.getMaterialTag(Iron), 'W', PLATE.getMaterialTag(GTCoreMaterials.Ironwood), 's', SAW.getTag()), "SCs", "WRW", "WRW");
         }
+        provider.addItemRecipe(output, "item_barrels", GTCoreBlocks.PLASTIC_STORAGE_BOX.getItem(NONE),
+                of('P', PLATE.getMaterialTag(Plastic), 'S', SCREW.getMaterialTag(Plastic), 'C', ForgeCTags.CHESTS_WOODEN), "SPS", "PCP", "SPS");
         provider.addItemRecipe(output, GT4RRef.ID, "dustbin", "machines",
                 DUSTBIN.getItem(LV), of2('H', AntimatterDefaultTools.HAMMER.getTag(), 'W', AntimatterDefaultTools.WRENCH.getTag(), 'S', AntimatterDefaultTools.SAW.getTag(), 'P', PLATES_STEELS, 'h', Items.HOPPER, 'R', RODS_STEELS), "HWS", "PhP", "RPR");
         provider.addItemRecipe(output, GT4RRef.ID, "electric_item_translocator", "machines",
