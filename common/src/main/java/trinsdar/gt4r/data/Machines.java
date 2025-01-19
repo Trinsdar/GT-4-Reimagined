@@ -165,11 +165,11 @@ public class Machines {
         TUNGSTEN_TANKS = createTankMachine(Materials.Tungsten, 16);
     }
 
-    public static GeneratorMachine STEAM_TURBINE = new GeneratorMachine(GT4RRef.ID, "steam_turbine").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(STEAM_FUELS).addFlags(GUI, FLUID, CELL);
-    public static GeneratorMachine GAS_TURBINE = new GeneratorMachine(GT4RRef.ID, "gas_turbine").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(GAS_FUELS).addFlags(GUI, FLUID, CELL);
+    public static GeneratorMachine STEAM_TURBINE = new GeneratorMachine(GT4RRef.ID, "steam_turbine").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(STEAM_FUELS).addFlags(GUI, FLUID, CELL).efficiency(t -> 100);
+    public static GeneratorMachine GAS_TURBINE = new GeneratorMachine(GT4RRef.ID, "gas_turbine").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(GAS_FUELS).addFlags(GUI, FLUID, CELL).efficiency(t -> 100);
     public static BasicMachine HEAT_EXCHANGER = new BasicMachine(GT4RRef.ID, "heat_exchanger").baseTexture(Textures.BASE_HANDLER).setMap(HOT_FUELS).setTiers(LV).addFlags(GUI, FLUID).overlayTexture(Textures.LEFT_RIGHT_HANDLER).covers(emptyFactory).setTile(BlockEntityHeatExchanger::new);
-    public static GeneratorMachine DIESEL_GENERATOR = new GeneratorMachine(GT4RRef.ID, "diesel_generator").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(DIESEL_FUELS).addFlags(GUI, FLUID, CELL);
-    public static GeneratorMachine SEMIFLUID_GENERATOR = new GeneratorMachine(GT4RRef.ID, "semifluid_generator").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(SEMIFLUID_FUELS).addFlags(GUI, FLUID, CELL);
+    public static GeneratorMachine DIESEL_GENERATOR = new GeneratorMachine(GT4RRef.ID, "diesel_generator").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(DIESEL_FUELS).addFlags(GUI, FLUID, CELL).efficiency(t -> 100);
+    public static GeneratorMachine SEMIFLUID_GENERATOR = new GeneratorMachine(GT4RRef.ID, "semifluid_generator").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(SEMIFLUID_FUELS).addFlags(GUI, FLUID, CELL).efficiency(t -> 100);
     public static GeneratorMachine THERMAL_GENERATOR = new GeneratorMachine(GT4RRef.ID, "thermal_generator").baseTexture(Textures.BASE_HANDLER).setTiers(LV).setMap(THERMAL_FUELS).addFlags(GUI, FLUID, CELL).efficiency(t -> 80);
     public static GeneratorMachine WINDMILL = new GeneratorMachine(GT4RRef.ID, "windmill").baseTexture(Textures.BASE_HANDLER).setTiers(ULV);
     public static GeneratorMachine WATERMILL = new GeneratorMachine(GT4RRef.ID, "watermill").baseTexture(Textures.BASE_HANDLER).setTiers(ULV).custom();
