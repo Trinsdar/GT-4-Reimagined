@@ -39,7 +39,7 @@ public class BlockCrafting {
         AntimatterAPI.all(BlockColoredWall.class, b -> {
             if (b.getMaterial() == Wood){
                 provider.addItemRecipe(output, "walls", b.asItem(),
-                        of('P', PLATE.getMaterialTag(Lead), 'H', HAMMER.getTag(), 'S', SAW.getTag(), 'W', ItemTags.PLANKS), "W W", "SPH", "W W");
+                        of('P', PLATE.getMaterialTag(Bronze), 'H', HAMMER.getTag(), 'S', SAW.getTag(), 'W', ItemTags.PLANKS), "W W", "SPH", "W W");
             } else {
                 provider.addItemRecipe(output, "walls", b.asItem(),
                         of('P', PLATE.getMaterialTag(b.getMaterial()), 'H', HAMMER.getTag(), 'W', WRENCH.getTag()), "WPP", "HPP");
