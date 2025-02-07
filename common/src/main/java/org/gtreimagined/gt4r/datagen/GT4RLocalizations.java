@@ -9,6 +9,7 @@ import muramasa.antimatter.machine.types.Machine;
 import muramasa.antimatter.tool.IAntimatterTool;
 import org.gtreimagined.gt4r.GT4RRef;
 import org.gtreimagined.gt4r.block.BlockCasing;
+import org.gtreimagined.gt4r.block.BlockColoredWall;
 import org.gtreimagined.gt4r.block.BlockFakeCasing;
 import org.gtreimagined.gt4r.data.GT4RItems;
 
@@ -71,6 +72,7 @@ public class GT4RLocalizations {
             super.english(domain, locale);
             AntimatterAPI.all(BlockCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
             AntimatterAPI.all(BlockFakeCasing.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
+            AntimatterAPI.all(BlockColoredWall.class, domain).forEach(i -> add(i, lowerUnderscoreToUpperSpaced(i.getId())));
             override(AntimatterAPI.get(IAntimatterTool.class, "rock_cutter_lv", GT4RRef.ID).getItem().getDescriptionId(), "Rock Cutter");
             override(GT4RItems.StorageDataOrb.getDescriptionId(), "Data Orb");
             AntimatterAPI.all(Machine.class, domain).forEach(i -> {
